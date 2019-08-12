@@ -30,7 +30,7 @@ namespace EssentialUIKit
             //    typeof(Analytics),
             //    typeof(Crashes));
 #endif
-
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTMxMjE5QDMxMzcyZTMyMmUzMFZvdUt0ckx2UmRDYVVBMHFXeklaM0FlYXZWa3J3dkFFbTJmZG1OWnpqTVE9");
             this.InitializeComponent();
 
             // this.MainPage = new AppShell();

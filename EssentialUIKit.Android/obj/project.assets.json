@@ -3157,18 +3157,18 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\desaExcelsis\\Source\\Repos\\essential-ui-kit-for-xamarin.forms\\EssentialUIKit.Android\\EssentialUIKit.Android.csproj",
+      "projectUniqueName": "C:\\app2\\EssentialUIKit.Android\\EssentialUIKit.Android.csproj",
       "projectName": "EssentialUIKit.Android",
-      "projectPath": "C:\\Users\\desaExcelsis\\Source\\Repos\\essential-ui-kit-for-xamarin.forms\\EssentialUIKit.Android\\EssentialUIKit.Android.csproj",
+      "projectPath": "C:\\app2\\EssentialUIKit.Android\\EssentialUIKit.Android.csproj",
       "packagesPath": "C:\\Users\\desaExcelsis\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\desaExcelsis\\Source\\Repos\\essential-ui-kit-for-xamarin.forms\\EssentialUIKit.Android\\obj\\",
+      "outputPath": "C:\\app2\\EssentialUIKit.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\ProgramData\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\desaExcelsis\\Source\\Repos\\essential-ui-kit-for-xamarin.forms\\NuGet.Config",
+        "C:\\app2\\NuGet.Config",
         "C:\\Users\\desaExcelsis\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -3180,13 +3180,14 @@
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {},
         "https://github.com/alexrainman/CarouselView": {},
+        "https://nuget.syncfusion.com/nuget_xamarin/nuget/getsyncfusionpackages/xamarin": {},
         "https://www.nuget.org/packages/Xamarin.Forms.PancakeView": {}
       },
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Users\\desaExcelsis\\Source\\Repos\\essential-ui-kit-for-xamarin.forms\\EssentialUIKit\\EssentialUIKit.csproj": {
-              "projectPath": "C:\\Users\\desaExcelsis\\Source\\Repos\\essential-ui-kit-for-xamarin.forms\\EssentialUIKit\\EssentialUIKit.csproj"
+            "C:\\app2\\EssentialUIKit\\EssentialUIKit.csproj": {
+              "projectPath": "C:\\app2\\EssentialUIKit\\EssentialUIKit.csproj"
             }
           }
         }
