@@ -131,7 +131,7 @@
                             Grid.Column="1"
                             FontSize="Micro"
                             HorizontalOptions="StartAndExpand"
-                            Text="Syncfusion's"
+                            Text="{Binding userLogged}"
                             FontFamily="{StaticResource Montserrat-Regular}"
                             TextColor="White"
                             />

@@ -11,6 +11,8 @@ namespace EssentialUIKit.AppLayout.ViewModels
     [Preserve(AllMembers = true)]
     public class HomePageViewModel
     {
+        public string userLogged { get; set; }
+
         private const string sampleListFile = "EssentialUIKit.AppLayout.TemplateList.xml";
 
         public List<Category> Templates { get; set; }
@@ -39,6 +41,7 @@ namespace EssentialUIKit.AppLayout.ViewModels
             Templates = new List<Category>();
 
             PopulateList();
+            userLogged = "Diego Mendez Franco";
         }
 
         private void PopulateList()

@@ -13,7 +13,7 @@
   </Category>
 
   <Category Icon="ecommerce.png" Name="E-Commerce" Description="Let users browse products and item details, and add them to a wish list or shopping cart.">
-    <Page Name="Category Tile Page" Description="View all product categories as tiles on a page" PageName="Views.ECommerce.CategoryTilePage"/>
+    <Page Name="Category Tile Page Diego" Description="View all product categories as tiles on a page" PageName="Views.ECommerce.CategoryTilePage"/>
     <Page Name="Catalog Tile Page" Description="View all product catalog as tiles on a page" PageName="Views.ECommerce.CatalogTilePage"/>
     <Page Name="Catalog List Page" Description="View all product catalog as a list" PageName="Views.ECommerce.CatalogListPage"/>
     <Page Name="Detail Page" Description="View detailed information regarding your orders" PageName="Views.ECommerce.DetailPage"/>
