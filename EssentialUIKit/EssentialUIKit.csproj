@@ -110,6 +110,9 @@
     <Compile Update="Views\Login\SimpleForgotPasswordPage.xaml.cs">
       <DependentUpon>SimpleForgotPasswordPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\Login\RendimientoPage.xaml.cs">
+      <DependentUpon>RendimientoPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Login\SimpleLoginPage.xaml.cs">
       <DependentUpon>SimpleLoginPage.xaml</DependentUpon>
     </Compile>

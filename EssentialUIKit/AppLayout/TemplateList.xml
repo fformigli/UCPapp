@@ -1,6 +1,23 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Samples>
 
+  <Category Icon="log-in.png" Name="Rendimiento" Description="Un solo panel, toda la información sobre tu desempeño">
+    <Page Name="Simple Login Page" Description="Sign in to browse products and make purchases from this app." PageName="Views.Login.RendimientoPage"/>
+   
+  </Category>
+  <Category Icon="log-in.png" Name="Horarios" Description="Un solo panel, toda la información sobre tu desempeño">
+    <Page Name="Simple Login Page" Description="Sign in to browse products and make purchases from this app." PageName="Views.Login.SimpleLoginPage"/>
+
+  </Category>
+  <Category Icon="log-in.png" Name="Caja" Description="Un solo panel, toda la información sobre tu desempeño">
+    <Page Name="Simple Login Page" Description="Sign in to browse products and make purchases from this app." PageName="Views.Login.SimpleLoginPage"/>
+
+  </Category>
+
+  <Category Icon="log-in.png" Name="Inscripciones" Description="Un solo panel, toda la información sobre tu desempeño">
+    <Page Name="Simple Login Page" Description="Sign in to browse products and make purchases from this app." PageName="Views.Login.SimpleLoginPage"/>
+
+  </Category>
   <Category Icon="log-in.png" Name="Login" Description="Prompt users for their credentials so they can log in to an app.">
     <Page Name="Simple Login Page" Description="Sign in to browse products and make purchases from this app." PageName="Views.Login.SimpleLoginPage"/>
     <Page Name="Simple Sign Up Page" Description="Don’t have an account? That’s fine! Creating one is easy." PageName="Views.Login.SimpleSignUpPage"/>

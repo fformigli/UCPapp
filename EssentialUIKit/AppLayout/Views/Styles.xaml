@@ -11,9 +11,11 @@
 
     <converters:StringToImageResourceConverter x:Key="ImageResourceConverter"/>
 
-    <x:String x:Key="HomePageTitle">Essential UI Kit</x:String>
+    <x:String x:Key="HomePageTitle">Universidad Columbia del Paraguay</x:String>
+    <x:String x:Key="HomePageBienvenido">Bienvenido</x:String>
+    
 
-    <x:String x:Key="Description">Diego Mendez Essential UI Kit for Xamarin.Forms includes elegantly designed XAML templates for Xamarin.Forms apps</x:String>
+    <x:String x:Key="Description">Diego Mendez Futuro Ingerniero en Informática. Essential UI Kit for Xamarin.Forms includes elegantly designed XAML templates for Xamarin.Forms apps</x:String>
 
     <!--Common style for action bar icons-->
     <Style x:Key="ActionBarSettingIconStyle" TargetType="Button">

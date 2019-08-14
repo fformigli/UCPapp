@@ -151,7 +151,7 @@
                             TextColor="White"
                             FontFamily="{StaticResource Montserrat-Regular}"
                             HorizontalOptions="StartAndExpand"
-                            Text="{StaticResource HomePageTitle}" />
+                            Text="{StaticResource HomePageBienvenido}" />
 
                         <Label
                             x:Name="Description"
