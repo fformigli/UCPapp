@@ -46,6 +46,10 @@
       "frameworks": {
         "xamarinios10": {
           "dependencies": {
+            "CarouselView.FormsPlugin": {
+              "target": "Package",
+              "version": "[4.4.2, )"
+            },
             "Syncfusion.Xamarin.Buttons": {
               "target": "Package",
               "version": "[17.2.0.35, )"
@@ -107,6 +111,10 @@
               "version": "[2.4.11.982, )"
             },
             "Xamarin.FFImageLoading.Svg.Forms": {
+              "target": "Package",
+              "version": "[2.4.11.982, )"
+            },
+            "Xamarin.FFImageLoading.Transformations": {
               "target": "Package",
               "version": "[2.4.11.982, )"
             },
@@ -172,6 +180,10 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "CarouselView.FormsPlugin": {
+              "target": "Package",
+              "version": "[4.4.2, )"
+            },
             "Microsoft.AppCenter.Analytics": {
               "target": "Package",
               "version": "[2.0.0, )"
@@ -245,6 +257,10 @@
               "version": "[2.4.11.982, )"
             },
             "Xamarin.FFImageLoading.Svg.Forms": {
+              "target": "Package",
+              "version": "[2.4.11.982, )"
+            },
+            "Xamarin.FFImageLoading.Transformations": {
               "target": "Package",
               "version": "[2.4.11.982, )"
             },

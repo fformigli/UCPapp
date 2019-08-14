@@ -2,6 +2,20 @@
   "version": 3,
   "targets": {
     "Xamarin.iOS,Version=v1.0": {
+      "CarouselView.FormsPlugin/4.4.2": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.3.193"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/CarouselView.FormsPlugin.Abstractions.dll": {},
+          "lib/Xamarin.iOS10/CarouselView.FormsPlugin.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/CarouselView.FormsPlugin.Abstractions.dll": {},
+          "lib/Xamarin.iOS10/CarouselView.FormsPlugin.iOS.dll": {}
+        }
+      },
       "Microsoft.AppCenter/2.0.0": {
         "type": "package",
         "compile": {
@@ -388,6 +402,18 @@
           "lib/Xamarin.iOS10/FFImageLoading.Svg.Forms.dll": {}
         }
       },
+      "Xamarin.FFImageLoading.Transformations/2.4.11.982": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.FFImageLoading": "2.4.11.982"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/FFImageLoading.Transformations.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/FFImageLoading.Transformations.dll": {}
+        }
+      },
       "Xamarin.Forms/4.0.0.497661": {
         "type": "package",
         "compile": {
@@ -515,6 +541,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "CarouselView.FormsPlugin": "4.4.2",
           "Microsoft.AppCenter.Analytics": "2.0.0",
           "Microsoft.AppCenter.Crashes": "2.0.0",
           "NETStandard.Library": "2.0.3",
@@ -534,6 +561,7 @@
           "Syncfusion.Xamarin.SfRotator": "17.2.0.35",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
           "Xamarin.FFImageLoading.Svg.Forms": "2.4.11.982",
+          "Xamarin.FFImageLoading.Transformations": "2.4.11.982",
           "Xamarin.Forms": "4.0.0.497661"
         },
         "compile": {
@@ -545,6 +573,20 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win": {
+      "CarouselView.FormsPlugin/4.4.2": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.3.193"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/CarouselView.FormsPlugin.Abstractions.dll": {},
+          "lib/Xamarin.iOS10/CarouselView.FormsPlugin.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/CarouselView.FormsPlugin.Abstractions.dll": {},
+          "lib/Xamarin.iOS10/CarouselView.FormsPlugin.iOS.dll": {}
+        }
+      },
       "Microsoft.AppCenter/2.0.0": {
         "type": "package",
         "compile": {
@@ -895,6 +937,18 @@
           "lib/Xamarin.iOS10/FFImageLoading.Svg.Forms.dll": {}
         }
       },
+      "Xamarin.FFImageLoading.Transformations/2.4.11.982": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.FFImageLoading": "2.4.11.982"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/FFImageLoading.Transformations.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/FFImageLoading.Transformations.dll": {}
+        }
+      },
       "Xamarin.Forms/4.0.0.497661": {
         "type": "package",
         "compile": {
@@ -1022,6 +1076,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "CarouselView.FormsPlugin": "4.4.2",
           "Microsoft.AppCenter.Analytics": "2.0.0",
           "Microsoft.AppCenter.Crashes": "2.0.0",
           "NETStandard.Library": "2.0.3",
@@ -1041,6 +1096,7 @@
           "Syncfusion.Xamarin.SfRotator": "17.2.0.35",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
           "Xamarin.FFImageLoading.Svg.Forms": "2.4.11.982",
+          "Xamarin.FFImageLoading.Transformations": "2.4.11.982",
           "Xamarin.Forms": "4.0.0.497661"
         },
         "compile": {
@@ -1052,6 +1108,20 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win-x64": {
+      "CarouselView.FormsPlugin/4.4.2": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.3.193"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/CarouselView.FormsPlugin.Abstractions.dll": {},
+          "lib/Xamarin.iOS10/CarouselView.FormsPlugin.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/CarouselView.FormsPlugin.Abstractions.dll": {},
+          "lib/Xamarin.iOS10/CarouselView.FormsPlugin.iOS.dll": {}
+        }
+      },
       "Microsoft.AppCenter/2.0.0": {
         "type": "package",
         "compile": {
@@ -1405,6 +1475,18 @@
           "lib/Xamarin.iOS10/FFImageLoading.Svg.Forms.dll": {}
         }
       },
+      "Xamarin.FFImageLoading.Transformations/2.4.11.982": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.FFImageLoading": "2.4.11.982"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/FFImageLoading.Transformations.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/FFImageLoading.Transformations.dll": {}
+        }
+      },
       "Xamarin.Forms/4.0.0.497661": {
         "type": "package",
         "compile": {
@@ -1532,6 +1614,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "CarouselView.FormsPlugin": "4.4.2",
           "Microsoft.AppCenter.Analytics": "2.0.0",
           "Microsoft.AppCenter.Crashes": "2.0.0",
           "NETStandard.Library": "2.0.3",
@@ -1551,6 +1634,7 @@
           "Syncfusion.Xamarin.SfRotator": "17.2.0.35",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
           "Xamarin.FFImageLoading.Svg.Forms": "2.4.11.982",
+          "Xamarin.FFImageLoading.Transformations": "2.4.11.982",
           "Xamarin.Forms": "4.0.0.497661"
         },
         "compile": {
@@ -1562,6 +1646,20 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win-x86": {
+      "CarouselView.FormsPlugin/4.4.2": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.3.193"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/CarouselView.FormsPlugin.Abstractions.dll": {},
+          "lib/Xamarin.iOS10/CarouselView.FormsPlugin.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/CarouselView.FormsPlugin.Abstractions.dll": {},
+          "lib/Xamarin.iOS10/CarouselView.FormsPlugin.iOS.dll": {}
+        }
+      },
       "Microsoft.AppCenter/2.0.0": {
         "type": "package",
         "compile": {
@@ -1915,6 +2013,18 @@
           "lib/Xamarin.iOS10/FFImageLoading.Svg.Forms.dll": {}
         }
       },
+      "Xamarin.FFImageLoading.Transformations/2.4.11.982": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.FFImageLoading": "2.4.11.982"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/FFImageLoading.Transformations.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/FFImageLoading.Transformations.dll": {}
+        }
+      },
       "Xamarin.Forms/4.0.0.497661": {
         "type": "package",
         "compile": {
@@ -2042,6 +2152,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "CarouselView.FormsPlugin": "4.4.2",
           "Microsoft.AppCenter.Analytics": "2.0.0",
           "Microsoft.AppCenter.Crashes": "2.0.0",
           "NETStandard.Library": "2.0.3",
@@ -2061,6 +2172,7 @@
           "Syncfusion.Xamarin.SfRotator": "17.2.0.35",
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
           "Xamarin.FFImageLoading.Svg.Forms": "2.4.11.982",
+          "Xamarin.FFImageLoading.Transformations": "2.4.11.982",
           "Xamarin.Forms": "4.0.0.497661"
         },
         "compile": {
@@ -2073,6 +2185,29 @@
     }
   },
   "libraries": {
+    "CarouselView.FormsPlugin/4.4.2": {
+      "sha512": "CjzFJwQQ5ih5KgaN0rwYSq0oeNfcLin2awy9M27OOdh0X7eE/xUSlzCgyprmoTNg2VpPCvpYxydXl4SVVg3Cjw==",
+      "type": "package",
+      "path": "carouselview.formsplugin/4.4.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "carouselview.formsplugin.4.4.2.nupkg.sha512",
+        "carouselview.formsplugin.nuspec",
+        "lib/MonoAndroid/CarouselView.FormsPlugin.Abstractions.dll",
+        "lib/MonoAndroid/CarouselView.FormsPlugin.Android.dll",
+        "lib/UAP10/CarouselView.FormsPlugin.Abstractions.dll",
+        "lib/UAP10/CarouselView.FormsPlugin.UWP.dll",
+        "lib/UAP10/CarouselView.FormsPlugin.UWP.pdb",
+        "lib/UAP10/CarouselView.FormsPlugin.UWP.pri",
+        "lib/UAP10/CarouselView.FormsPlugin.UWP/CarouselView.FormsPlugin.UWP.xr.xml",
+        "lib/UAP10/FlipViewControl.xbf",
+        "lib/UAP10/VerticalFlipViewControl.xbf",
+        "lib/Xamarin.iOS10/CarouselView.FormsPlugin.Abstractions.dll",
+        "lib/Xamarin.iOS10/CarouselView.FormsPlugin.iOS.dll",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid10+Xamarin.iOS10/CarouselView.FormsPlugin.Abstractions.dll"
+      ]
+    },
     "Microsoft.AppCenter/2.0.0": {
       "sha512": "aotwBhk12zF2g4jz6Ruouqe0fEM2EJMzxFVvNK7XQkGZFpAjmHohlGkBBiA2hYyhVSylsxVHTkCiPfwf8Z/abg==",
       "type": "package",
@@ -2950,6 +3085,42 @@
         "xamarin.ffimageloading.svg.forms.nuspec"
       ]
     },
+    "Xamarin.FFImageLoading.Transformations/2.4.11.982": {
+      "sha512": "cNG6zhiEBTENAGgIc9lY54YMJ0tg2dJ9+tj8tYgrOEQT8gxlj3OUzzNWZgaQWpcx28y5iIt/qM+Bd6jUwtAn1Q==",
+      "type": "package",
+      "path": "xamarin.ffimageloading.transformations/2.4.11.982",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/FFImageLoading.Transformations.dll",
+        "lib/MonoAndroid10/FFImageLoading.Transformations.pdb",
+        "lib/MonoAndroid10/FFImageLoading.Transformations.xml",
+        "lib/Xamarin.Mac20/FFImageLoading.Transformations.dll",
+        "lib/Xamarin.Mac20/FFImageLoading.Transformations.pdb",
+        "lib/Xamarin.Mac20/FFImageLoading.Transformations.xml",
+        "lib/Xamarin.iOS10/FFImageLoading.Transformations.dll",
+        "lib/Xamarin.iOS10/FFImageLoading.Transformations.pdb",
+        "lib/Xamarin.iOS10/FFImageLoading.Transformations.xml",
+        "lib/netstandard1.0/FFImageLoading.Transformations.dll",
+        "lib/netstandard1.0/FFImageLoading.Transformations.xml",
+        "lib/portable-win+net45+wp80+win81+wpa81/FFImageLoading.Transformations.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/FFImageLoading.Transformations.xml",
+        "lib/tizen40/FFImageLoading.Transformations.dll",
+        "lib/tizen40/FFImageLoading.Transformations.pdb",
+        "lib/tizen40/FFImageLoading.Transformations.xml",
+        "lib/uap/FFImageLoading.Transformations.dll",
+        "lib/uap/FFImageLoading.Transformations.pdb",
+        "lib/uap/FFImageLoading.Transformations.xml",
+        "lib/win81/FFImageLoading.Transformations.dll",
+        "lib/win81/FFImageLoading.Transformations.pdb",
+        "lib/win81/FFImageLoading.Transformations.xml",
+        "lib/wpa81/FFImageLoading.Transformations.dll",
+        "lib/wpa81/FFImageLoading.Transformations.pdb",
+        "lib/wpa81/FFImageLoading.Transformations.xml",
+        "xamarin.ffimageloading.transformations.2.4.11.982.nupkg.sha512",
+        "xamarin.ffimageloading.transformations.nuspec"
+      ]
+    },
     "Xamarin.Forms/4.0.0.497661": {
       "sha512": "j2dTUhcgdqb3TwFaSWnkbKwD8rgSQtEoYiW/e+sKRV24BTxMdYp24oEKIXDBvLXjlkv8Lr+DNKBrycu1gfkI2Q==",
       "type": "package",
@@ -3203,6 +3374,7 @@
   },
   "projectFileDependencyGroups": {
     "Xamarin.iOS,Version=v1.0": [
+      "CarouselView.FormsPlugin >= 4.4.2",
       "EssentialUIKit >= 1.0.0",
       "Syncfusion.Xamarin.Buttons >= 17.2.0.35",
       "Syncfusion.Xamarin.Cards >= 17.2.0.35",
@@ -3220,6 +3392,7 @@
       "Syncfusion.Xamarin.SfRotator >= 17.2.0.35",
       "Xamarin.FFImageLoading.Forms >= 2.4.11.982",
       "Xamarin.FFImageLoading.Svg.Forms >= 2.4.11.982",
+      "Xamarin.FFImageLoading.Transformations >= 2.4.11.982",
       "Xamarin.Forms >= 4.0.0.497661"
     ]
   },
@@ -3269,6 +3442,10 @@
     "frameworks": {
       "xamarinios10": {
         "dependencies": {
+          "CarouselView.FormsPlugin": {
+            "target": "Package",
+            "version": "[4.4.2, )"
+          },
           "Syncfusion.Xamarin.Buttons": {
             "target": "Package",
             "version": "[17.2.0.35, )"
@@ -3330,6 +3507,10 @@
             "version": "[2.4.11.982, )"
           },
           "Xamarin.FFImageLoading.Svg.Forms": {
+            "target": "Package",
+            "version": "[2.4.11.982, )"
+          },
+          "Xamarin.FFImageLoading.Transformations": {
             "target": "Package",
             "version": "[2.4.11.982, )"
           },

@@ -111,6 +111,8 @@ class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
 		/* We need to ensure that "EssentialUIKit.Android.dll" comes first in this list. */
 		"EssentialUIKit.Android.dll",
+		"CarouselView.FormsPlugin.Abstractions.dll",
+		"CarouselView.FormsPlugin.Android.dll",
 		"EssentialUIKit.dll",
 		"FFImageLoading.dll",
 		"FFImageLoading.Forms.dll",
@@ -118,6 +120,7 @@ class MonoPackageManager_Resources {
 		"FFImageLoading.Platform.dll",
 		"FFImageLoading.Svg.Forms.dll",
 		"FFImageLoading.Svg.Platform.dll",
+		"FFImageLoading.Transformations.dll",
 		"FormsViewGroup.dll",
 		"Microsoft.AppCenter.Analytics.Android.Bindings.dll",
 		"Microsoft.AppCenter.Analytics.dll",
