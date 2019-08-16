@@ -30,6 +30,10 @@ namespace EssentialUIKit.ViewModels.Login
             this.SignUpCommand = new Command(this.SignUpClicked);
             this.ForgotPasswordCommand = new Command(this.ForgotPasswordClicked);
             this.SocialMediaLoginCommand = new Command(this.SocialLoggedIn);
+
+            Statistics = new ObservableCollection<Stats>();
+            Statistics.Add(new Stats { Title = "Examen", Label1 = "Agosto-Base de Datos", Label2 = "Agosto-Redes 2", Value1 = "24", Value2 = "27" });
+            Statistics.Add(new Stats { Title = "Promedio Actual", Label1 = "Total", Label2 = "Semestre", Value1 = "4.5", Value2 = "5" });
         }
 
         #endregion

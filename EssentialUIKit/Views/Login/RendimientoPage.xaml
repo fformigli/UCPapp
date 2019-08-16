@@ -150,14 +150,7 @@
                         </Label>
                     </StackLayout>
                 </StackLayout>
-                <Button HeightRequest="50" BackgroundColor="#ffb636" BorderRadius="0" TextColor="#ffffff" Text="Destacados" Margin="0">
-                    <Button.FontSize>
-                        <OnPlatform x:TypeArguments="x:Double">
-                            <On Platform="iOS" Value="18" />
-                            <On Platform="Android" Value="16" />
-                        </OnPlatform>
-                    </Button.FontSize>
-                </Button>
+                
               <carousel:CarouselViewControl HeightRequest="150" Orientation="Horizontal" InterPageSpacing="10" BackgroundColor="#ffffff"
                     Position="0" ItemsSource="{Binding Statistics}" ShowIndicators="true" IndicatorsTintColor="#ffedcd" 
                     CurrentPageIndicatorTintColor="#ffb636" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
