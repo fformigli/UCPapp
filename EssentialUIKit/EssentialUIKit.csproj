@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>EssentialUIKit</AssemblyName>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -17,9 +18,11 @@
 
   <ItemGroup>
     <PackageReference Include="CarouselView.FormsPlugin" Version="4.4.2" />
+    <PackageReference Include="Microsoft.Net.Http" Version="2.2.29" />
     <PackageReference Include="NETStandard.Library" Version="2.0.3" />
     <PackageReference Include="Microsoft.AppCenter.Analytics" Version="2.0.0" />
     <PackageReference Include="Microsoft.AppCenter.Crashes" Version="2.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
     <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="17.2.0.35" />
     <PackageReference Include="Syncfusion.Xamarin.Cards" Version="17.2.0.35" />
     <PackageReference Include="Syncfusion.Xamarin.Core" Version="17.2.0.35" />
@@ -99,6 +102,12 @@
   <ItemGroup>
     <Compile Update="Views\Chat\RecentChatPage.xaml.cs">
       <DependentUpon>RecentChatPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ECommerce\CheckoutPage.xaml.cs">
+      <DependentUpon>CheckoutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ECommerce\CheckoutOriginalPage.xaml.cs">
+      <DependentUpon>CheckoutOriginalPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\ErrorAndEmpty\Styles.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
@@ -194,6 +203,9 @@
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ECommerce\CheckoutPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ECommerce\CheckoutOriginalPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ECommerce\DeliveryPage.xaml">
@@ -562,10 +574,6 @@
     <None Update="Views\OnBoarding\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Models\Rendimiento\" />
   </ItemGroup>
 
   <Import Project="..\..\build\tools\Syncfusion.CodeAnalysis.FxCop\tools\FxCop.MsBuild.targets" Condition="Exists('..\..\build\tools\Syncfusion.CodeAnalysis.FxCop\tools\FxCop.MsBuild.targets')" />

@@ -184,6 +184,7 @@ C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\Views\OnBoarding\Styles.xaml.g.c
 C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\EssentialUIKit.csproj.CoreCompileInputs.cache
 C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\EssentialUIKit.AssemblyInfoInputs.cache
 C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\EssentialUIKit.AssemblyInfo.cs
-C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\XamlC.stamp
 C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\EssentialUIKit.dll
 C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\EssentialUIKit.pdb
+C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\Views\ECommerce\CheckoutOriginalPage.xaml.g.cs
+C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\XamlC.stamp

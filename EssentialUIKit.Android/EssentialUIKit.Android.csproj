@@ -52,6 +52,12 @@
     <PackageReference Include="CarouselView.FormsPlugin">
       <Version>4.4.2</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.Net.Http">
+      <Version>2.2.29</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.2</Version>
+    </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="17.2.0.35" />
     <PackageReference Include="Syncfusion.Xamarin.Cards" Version="17.2.0.35" />
     <PackageReference Include="Syncfusion.Xamarin.Core" Version="17.2.0.35" />

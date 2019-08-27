@@ -3,6 +3,9 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using EssentialUIKit.Models.Rendimiento;
+using System;
+using EssentialUIKit.Data;
+using System.Collections.Generic;
 
 namespace EssentialUIKit.ViewModels.Login
 {
@@ -15,6 +18,7 @@ namespace EssentialUIKit.ViewModels.Login
         #region Fields
 
         private string password;
+        IRestService restService;
 
 
         #endregion
@@ -34,6 +38,21 @@ namespace EssentialUIKit.ViewModels.Login
             Statistics = new ObservableCollection<Stats>();
             Statistics.Add(new Stats { Title = "Examen", Label1 = "Agosto-Base de Datos", Label2 = "Agosto-Redes 2", Value1 = "24", Value2 = "27" });
             Statistics.Add(new Stats { Title = "Promedio Actual", Label1 = "Total", Label2 = "Semestre", Value1 = "4.5", Value2 = "5" });
+            restService = new RestService();
+            Task<AsistenciaResult>  lista = GetMateriaAsistenciaAlumnoAsync("6948405");
+              System.Diagnostics.Debug.WriteLine("lista: "+lista);
+            RestAPI2 rest = new RestAPI2();
+
+             rest.demo();
+          
+
+        }
+
+        private Task<AsistenciaResult> GetMateriaAsistenciaAlumnoAsync(String nroDoc)
+        {
+            
+            return restService.GetMateriaAsistenciaAlumnoAsync(nroDoc);;
+
         }
 
         #endregion
@@ -71,6 +90,7 @@ namespace EssentialUIKit.ViewModels.Login
         /// </summary>
         public Command LoginCommand { get; set; }
         public ObservableCollection<Stats> Statistics { get; set; }
+        public List<MateriaAsistenciaAlumno> ItemsMateriaAsistenciaAlumno { get; private set; }
 
         /// <summary>
         /// Gets or sets the command that is executed when the Sign Up button is clicked.

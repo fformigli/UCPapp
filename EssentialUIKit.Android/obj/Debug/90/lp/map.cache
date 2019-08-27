@@ -15,6 +15,7 @@ Microsoft.AppCenter.Android.Bindings
 Microsoft.AppCenter.Crashes.Android.Bindings
 Microsoft.AppCenter.Crashes
 Microsoft.AppCenter
+Newtonsoft.Json
 SkiaSharp
 Syncfusion.Buttons.XForms.Android
 Syncfusion.Buttons.XForms
@@ -46,6 +47,8 @@ Syncfusion.SfRating.XForms
 Syncfusion.SfRotator.Android
 Syncfusion.SfRotator.XForms.Android
 Syncfusion.SfRotator.XForms
+System.Net.Http.Extensions
+System.Net.Http.Primitives
 System.Runtime
 Xamarin.Android.Arch.Core.Common
 Xamarin.Android.Arch.Core.Runtime
