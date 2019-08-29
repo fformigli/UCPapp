@@ -5,6 +5,10 @@ using System.Xml;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using EssentialUIKit.AppLayout.Models;
+using EssentialUIKit.Data;
+using System;
+using System.Globalization;
+using System.Threading;
 
 namespace EssentialUIKit.AppLayout.ViewModels
 {
@@ -41,7 +45,49 @@ namespace EssentialUIKit.AppLayout.ViewModels
             Templates = new List<Category>();
 
             PopulateList();
-            userLogged = "Diego Mendez Franco";
+              
+
+            /**/
+
+            string descAlumno;
+                RestAPI api = new RestAPI();
+                api.PerfilDS_response("6948405").ContinueWith((antecedent) => {
+                    userLogged = api.perfilDS_response.nombres + " " + api.perfilDS_response.apellidos;
+                    descAlumno = api.perfilDS_response.nombres + " " + api.perfilDS_response.apellidos;
+
+                    CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
+                    TextInfo textInfo = cultureInfo.TextInfo;
+                    userLogged = textInfo.ToTitleCase(userLogged.ToLower());
+                    descAlumno = textInfo.ToTitleCase(descAlumno.ToLower());
+
+                    if (api.perfilDS_response.sexo.Contains("M"))
+                    {
+                        descAlumno += " futuro";
+                    }
+                    else
+                    {
+                        descAlumno += " futura";
+                    }
+                    descAlumno += " profesional de ";
+                    string carrera = "";
+                    for (int i = 0; i < api.perfilDS_response.carreras.Count; i++)
+                    {
+                        if (i == 0) {
+                            carrera += api.perfilDS_response.carreras[i].carrera;
+                        }else if (i == api.perfilDS_response.carreras.Count - 1)
+                        {
+                            carrera += " y " + api.perfilDS_response.carreras[i].carrera;
+                        }
+                        else if (i > 0)
+                        {
+                            carrera += ", " + api.perfilDS_response.carreras[i].carrera;
+                        }
+                       
+                    }
+                    descAlumno += carrera+ ". En este portal encontrará toda la información sobre su estadía en la Universidad";                  
+                    Application.Current.Resources["Description"] = descAlumno;
+                    Application.Current.Resources["userLogged"] = userLogged;
+                });
         }
 
         private void PopulateList()

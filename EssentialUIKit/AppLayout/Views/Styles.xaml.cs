@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms.Internals;
+﻿ 
+using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
 namespace EssentialUIKit.AppLayout.Views
@@ -13,9 +14,12 @@ namespace EssentialUIKit.AppLayout.Views
         /// <summary>
         /// Initializes a new instance of the <see cref="Styles" /> class.
         /// </summary>
+       
         public Styles()
         {
             this.InitializeComponent();
+           
+
         }
     }
 }

@@ -131,7 +131,7 @@
                             Grid.Column="1"
                             FontSize="Micro"
                             HorizontalOptions="StartAndExpand"
-                            Text="{Binding userLogged}"
+                            Text="{DynamicResource userLogged}"
                             FontFamily="{StaticResource Montserrat-Regular}"
                             TextColor="White"
                             />
@@ -164,7 +164,7 @@
                             HorizontalOptions="CenterAndExpand"
                             HorizontalTextAlignment="Center"
                             VerticalOptions="EndAndExpand"
-                            Text="{StaticResource Description}" />                       
+                            Text="{DynamicResource Description}" />                       
 
                     </Grid>
 

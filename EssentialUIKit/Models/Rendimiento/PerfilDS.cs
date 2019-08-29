@@ -17,5 +17,6 @@ namespace EssentialUIKit.Models.Rendimiento.Perfil
         public string apellidos { get; set; }
         public List<Carrera> carreras { get; set; }
         public string nombres { get; set; }
+        public string sexo { get; set; }
     }
 }

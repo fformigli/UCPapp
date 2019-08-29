@@ -36,25 +36,25 @@ namespace EssentialUIKit.Data
             Debug.WriteLine(@"DIEGO MENDEZ - EXAMENES ADENTRO TRUE {0}", this.examenesDS_response.materia.Count);
 
         }
-        async public void CalificacionesDS_response(String nroCedula)
+        async public Task CalificacionesDS_response(String nroCedula)
         {
-            calificacionesDS_response = await RestUtility.CallServiceAsync<CalificacionesResult>(string.Format(calificacionesService_Get, nroCedula), string.Empty, null, "GET",
+            this.calificacionesDS_response = await RestUtility.CallServiceAsync<CalificacionesResult>(string.Format(calificacionesService_Get, nroCedula), string.Empty, null, "GET",
                string.Empty, string.Empty) as CalificacionesResult;
         }
-        async public void FinancieroDS_response(String nroCedula)
+        async public Task FinancieroDS_response(String nroCedula)
         {
-            financieroDS_response = await RestUtility.CallServiceAsync<FinancieroResult>(string.Format(financieroService_Get, nroCedula), string.Empty, null, "GET",
+            this.financieroDS_response = await RestUtility.CallServiceAsync<FinancieroResult>(string.Format(financieroService_Get, nroCedula), string.Empty, null, "GET",
                string.Empty, string.Empty) as FinancieroResult;
         }
-        async public void AsistenciaDS_response(String nroCedula)
+        async public Task AsistenciaDS_response(String nroCedula)
         {
-           
-            asistenciaDS_response = await RestUtility.CallServiceAsync<AsistenciaResult>(string.Format(asistenciaService_Get, nroCedula), string.Empty, null, "GET",
+
+            this.asistenciaDS_response = await RestUtility.CallServiceAsync<AsistenciaResult>(string.Format(asistenciaService_Get, nroCedula), string.Empty, null, "GET",
                string.Empty, string.Empty) as AsistenciaResult;
         }
-        async public void PerfilDS_response(String nroCedula)
+        async public Task PerfilDS_response(String nroCedula)
         {
-            perfilDS_response = await RestUtility.CallServiceAsync<PerfilResult>(string.Format(perfilService_Get, nroCedula), string.Empty, null, "GET",
+            this.perfilDS_response = await RestUtility.CallServiceAsync<PerfilResult>(string.Format(perfilService_Get, nroCedula), string.Empty, null, "GET",
                string.Empty, string.Empty) as PerfilResult;
         }
 

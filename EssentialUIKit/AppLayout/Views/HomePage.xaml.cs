@@ -4,6 +4,7 @@ using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 using EssentialUIKit.AppLayout.Controls;
 using EssentialUIKit.AppLayout.Models;
+using EssentialUIKit.Data;
 
 namespace EssentialUIKit.AppLayout.Views
 {
@@ -33,6 +34,7 @@ namespace EssentialUIKit.AppLayout.Views
         private double width;
 
         private double height;
+        public string descAlumno { set; get; }
 
         #endregion
 
@@ -43,6 +45,7 @@ namespace EssentialUIKit.AppLayout.Views
         /// </summary>
         public HomePage()
         {
+        
             this.InitializeComponent();
         }
 
