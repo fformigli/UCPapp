@@ -109,6 +109,9 @@
     <Compile Update="Views\ECommerce\CheckoutOriginalPage.xaml.cs">
       <DependentUpon>CheckoutOriginalPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\ECommerce\HorariosView.xaml.cs">
+      <DependentUpon>HorariosView.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\ErrorAndEmpty\Styles.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
@@ -209,6 +212,9 @@
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ECommerce\DeliveryPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ECommerce\HorariosView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ECommerce\DeliveryView.xaml">

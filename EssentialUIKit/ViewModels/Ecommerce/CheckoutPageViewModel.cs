@@ -4,6 +4,9 @@ using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using EssentialUIKit.Models.ECommerce;
+using EssentialUIKit.Data;
+using EssentialUIKit.Models.Rendimiento.Horarios;
+using System;
 
 namespace EssentialUIKit.ViewModels.ECommerce
 {
@@ -14,18 +17,10 @@ namespace EssentialUIKit.ViewModels.ECommerce
     public class CheckoutPageViewModel : INotifyPropertyChanged
     {
         #region Fields
-
-        private ObservableCollection<Customer> deliveryAddress;
-
-        private ObservableCollection<Payment> paymentModes;
-
-        private ObservableCollection<Product> cartDetails;
-
-        private double totalPrice;
-
-        private double discountPrice;
-
-        private double discountPercent;
+         
+        private ObservableCollection<Materia> materias;   
+         
+ 
 
         #endregion
 
@@ -36,67 +31,38 @@ namespace EssentialUIKit.ViewModels.ECommerce
         /// </summary>
         public CheckoutPageViewModel()
         {
-            this.DeliveryAddress = new ObservableCollection<Customer>
-            {
-                new Customer
+            Console.WriteLine("Nueva VERISION");
+            RestAPI api = new RestAPI();
+            api.HoraraiosDS2_ServiceResponse("3593109");
+                //.ContinueWith((antecedent) => {
+            this.materias = new ObservableCollection<Materia>();
+                for (int i = 0; i < api.horariosDS_response.materia.Count; i++)
                 {
-                    CustomerId = 1, CustomerName = "John Doe", AddressType = "Home", Address = "410 Terry Ave N, USA",
-                    MobileNumber = "+1-202-555-0101"
-                },
-                new Customer
-                {
-                    CustomerId = 1, CustomerName = "John Doe", AddressType = "Office",
-                    Address = "388 Fort Worth, Texas, United States", MobileNumber = "+1-356-636-8572"
-                },
-            };
+                    this.Materias.Add(new Materia
+                    {
+                        curso = api.horariosDS_response.materia[i].curso,
+                        horario = api.horariosDS_response.materia[i].horario,
+                        nombreCarrera = api.horariosDS_response.materia[i].nombreCarrera,
+                        seccion = api.horariosDS_response.materia[i].seccion,
+                        semestre = api.horariosDS_response.materia[i].semestre,
+                        nombreMateria = api.horariosDS_response.materia[i].nombreMateria,
+                        turno = api.horariosDS_response.materia[i].turno
 
-            this.PaymentModes = new ObservableCollection<Payment>
-            {
-                new Payment
-                {
-                    PaymentMode = "Goldman Sachs Bank Credit Card", CardNumber = "48** **** **** 9876",
-                    CardTypeIcon = "Card.png"
-                },
-                new Payment {PaymentMode = "Wells Fargo Bank Credit Card"},
-                new Payment {PaymentMode = "Debit / Credit Card"},
-                new Payment {PaymentMode = "NetBanking"},
-                new Payment {PaymentMode = "Cash on Delivery"},
-                new Payment {PaymentMode = "Wallet"},
-            };
+                    });
 
-            this.CartDetails = new ObservableCollection<Product>
-            {
-                new Product
-                {
-                    PreviewImage = App.BaseImageUrl + "Image1.png", Name = "Full-Length Skirt",
-                    Summary =
-                        "This plaid, cotton skirt will keep you warm in the air-conditioned office or outside on cooler days.",
-                    Seller = "New Fashion Company", ActualPrice = 245, DiscountPercent = 30, TotalQuantity = 1
-                },
-                new Product
-                {
-                    PreviewImage = App.BaseImageUrl + "Image2.png", Name = "Peasant Blouse",
-                    Summary =
-                        "Look your best this fall in this V-neck, pleated peasant blouse with full sleeves. Comes in white, chocolate, forest green, and more.",
-                    Seller = "New Fashion Company", ActualPrice = 245, DiscountPercent = 30, TotalQuantity = 1
                 }
-            };
+              
+         //   });
 
-            double percent = 0;
-            foreach (var item in this.CartDetails)
-            {
-                this.TotalPrice += (item.ActualPrice * item.TotalQuantity);
-                this.DiscountPrice += (item.DiscountPrice * item.TotalQuantity);
-                percent += item.DiscountPercent;
-            }
+        
 
-            this.DiscountPercent = percent > 0 ? percent / this.CartDetails.Count : 0;
-
+          
             this.EditCommand = new Command(this.EditClicked);
             this.AddAddressCommand = new Command(this.AddAddressClicked);
             this.PlaceOrderCommand = new Command(this.PlaceOrderClicked);
             this.PaymentOptionCommand = new Command(PaymentOptionClicked);
             this.ApplyCouponCommand = new Command(this.ApplyCouponClicked);
+
         }
 
         #endregion
@@ -112,119 +78,32 @@ namespace EssentialUIKit.ViewModels.ECommerce
 
         #region Public properties
 
-        /// <summary>
-        /// Gets or sets the property that has been bound with SfListView, which displays the delivery address.
-        /// </summary>
-        public ObservableCollection<Customer> DeliveryAddress
+         
+
+        public ObservableCollection<Materia> Materias
         {
-            get { return this.deliveryAddress; }
+            get { return this.materias; }
 
             set
             {
-                if (this.deliveryAddress == value)
+                if (this.materias == value)
                 {
                     return;
                 }
 
-                this.deliveryAddress = value;
+                this.materias = value;
                 this.NotifyPropertyChanged();
             }
         }
 
-        /// <summary>
-        /// Gets or sets the property that has been bound with SfListView, which displays the payment modes.
-        /// </summary>
-        public ObservableCollection<Payment> PaymentModes
-        {
-            get { return this.paymentModes; }
+        
 
-            set
-            {
-                if (this.paymentModes == value)
-                {
-                    return;
-                }
+      
 
-                this.paymentModes = value;
-                this.NotifyPropertyChanged();
-            }
-        }
+       
+ 
 
-        /// <summary>
-        /// Gets or sets the property that has been bound with a list view, which displays the cart details.
-        /// </summary>
-        public ObservableCollection<Product> CartDetails
-        {
-            get { return this.cartDetails; }
-
-            set
-            {
-                if (this.cartDetails == value)
-                {
-                    return;
-                }
-
-                this.cartDetails = value;
-                this.NotifyPropertyChanged();
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the property that has been bound with a label, which displays total price.
-        /// </summary>
-        public double TotalPrice
-        {
-            get { return this.totalPrice; }
-
-            set
-            {
-                if (this.totalPrice == value)
-                {
-                    return;
-                }
-
-                this.totalPrice = value;
-                this.NotifyPropertyChanged();
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the property that has been bound with a label, which displays total discount price.
-        /// </summary>
-        public double DiscountPrice
-        {
-            get { return this.discountPrice; }
-
-            set
-            {
-                if (this.discountPrice == value)
-                {
-                    return;
-                }
-
-                this.discountPrice = value;
-                this.NotifyPropertyChanged();
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the property that has been bound with a label, which displays discount.
-        /// </summary>
-        public double DiscountPercent
-        {
-            get { return this.discountPercent; }
-
-            set
-            {
-                if (this.discountPercent == value)
-                {
-                    return;
-                }
-
-                this.discountPercent = value;
-                this.NotifyPropertyChanged();
-            }
-        }
+        
 
         #endregion
 

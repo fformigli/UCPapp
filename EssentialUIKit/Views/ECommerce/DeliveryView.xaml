@@ -83,6 +83,7 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="*" />
                             <RowDefinition Height="Auto" />
+                        
                             <RowDefinition Height="1" />
                         </Grid.RowDefinitions>
 
@@ -90,6 +91,7 @@
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="{OnIdiom Default=*, Phone=0}" />
+                          
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
 
@@ -165,6 +167,7 @@
                             Style="{StaticResource LabelStyle}"
                             Text="{Binding Address}"
                             TextColor="{DynamicResource Gray-94}" />
+                        
 
                         <!--  Mobile Number  -->
                         <Label
@@ -183,6 +186,7 @@
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
+
 
                         <!--  Separator  -->
                         <BoxView

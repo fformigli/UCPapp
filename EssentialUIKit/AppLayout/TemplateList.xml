@@ -38,7 +38,7 @@
     <Page Name="Catalog List Page" Description="View all product catalog as a list" PageName="Views.ECommerce.CatalogListPage"/>
     <Page Name="Detail Page" Description="View detailed information regarding your orders" PageName="Views.ECommerce.DetailPage"/>
     <Page Name="Cart Page" Description="View items in your cart for purchase" PageName="Views.ECommerce.CartPage"/>
-    <Page Name="Checkout Page" Description="Purchase items in your cart" PageName="Views.ECommerce.CheckoutOriginalPage"/>
+    <Page Name="Checkout Page" Description="Purchase items in your cart" PageName="Views.ECommerce.CheckoutPage"/>
     <Page Name="Delivery Page" Description="View delivery information like address and price details" PageName="Views.ECommerce.DeliveryPage" Platform="UWP"/>
     <Page Name="Payment Page" Description="View card and payment details" PageName="Views.ECommerce.PaymentPage" Platform="UWP"/>
   </Category>

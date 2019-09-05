@@ -49,6 +49,8 @@ namespace EssentialUIKit.AppLayout.Views
             this.InitializeComponent();
         }
 
+       
+
         #endregion
 
         #region Methods

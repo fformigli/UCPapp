@@ -464,6 +464,7 @@ C:\app2\EssentialUIKit.Android\bin\Debug\Mono.Android.pdb
 C:\app2\EssentialUIKit.Android\bin\Debug\mscorlib.pdb
 C:\app2\EssentialUIKit.Android\bin\Debug\System.Core.pdb
 C:\app2\EssentialUIKit.Android\bin\Debug\System.pdb
+C:\app2\EssentialUIKit.Android\bin\Debug\System.Net.Http.pdb
 C:\app2\EssentialUIKit.Android\bin\Debug\System.Xml.pdb
 C:\app2\EssentialUIKit.Android\bin\Debug\System.Xml.Linq.pdb
 C:\app2\EssentialUIKit.Android\bin\Debug\Xamarin.Forms.Core.pdb
@@ -475,7 +476,6 @@ C:\app2\EssentialUIKit.Android\bin\Debug\System.Numerics.pdb
 C:\app2\EssentialUIKit.Android\bin\Debug\System.Transactions.pdb
 C:\app2\EssentialUIKit.Android\bin\Debug\System.IO.Compression.pdb
 C:\app2\EssentialUIKit.Android\bin\Debug\System.IO.Compression.FileSystem.pdb
-C:\app2\EssentialUIKit.Android\bin\Debug\System.Net.Http.pdb
 C:\app2\EssentialUIKit.Android\bin\Debug\System.Runtime.Serialization.pdb
 C:\app2\EssentialUIKit.Android\bin\Debug\System.ServiceModel.Internals.pdb
 C:\app2\EssentialUIKit.Android\bin\Debug\System.Web.Services.pdb
@@ -611,6 +611,7 @@ C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\Microsoft.AppCenter.Crashes.
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\Microsoft.AppCenter.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\Mono.Android.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\mscorlib.dll
+C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\Newtonsoft.Json.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\SkiaSharp.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\Syncfusion.Buttons.XForms.Android.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\Syncfusion.Buttons.XForms.dll
@@ -644,6 +645,9 @@ C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\Syncfusion.SfRotator.XForms.
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\Syncfusion.SfRotator.XForms.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.Core.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.dll
+C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.Net.Http.dll
+C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.Net.Http.Extensions.dll
+C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.Net.Http.Primitives.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.Xml.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.Xml.Linq.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\Xamarin.Android.Arch.Core.Common.dll
@@ -699,7 +703,6 @@ C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.Numerics.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.Transactions.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.IO.Compression.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.IO.Compression.FileSystem.dll
-C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.Net.Http.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.Runtime.Serialization.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.ServiceModel.Internals.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.Web.Services.dll
@@ -722,6 +725,7 @@ C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\Microsoft.CSharp.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.Linq.Queryable.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.ComponentModel.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\Mono.Security.dll
+C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.Runtime.InteropServices.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\EssentialUIKit.Android.pdb
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\FFImageLoading.pdb
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\FFImageLoading.Forms.pdb
@@ -735,6 +739,7 @@ C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\Mono.Android.pdb
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\mscorlib.pdb
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.Core.pdb
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.pdb
+C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.Net.Http.pdb
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.Xml.pdb
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.Xml.Linq.pdb
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\Xamarin.Forms.Core.pdb
@@ -746,7 +751,6 @@ C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.Numerics.pdb
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.Transactions.pdb
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.IO.Compression.pdb
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.IO.Compression.FileSystem.pdb
-C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.Net.Http.pdb
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.Runtime.Serialization.pdb
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.ServiceModel.Internals.pdb
 C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.Web.Services.pdb
@@ -792,6 +796,7 @@ C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\Mono.Security.pdb
 C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\mscorlib.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\mscorlib.pdb
 C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\netstandard.dll
+C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\Newtonsoft.Json.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\SkiaSharp.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\Syncfusion.Buttons.XForms.Android.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\Syncfusion.Buttons.XForms.dll
@@ -844,7 +849,9 @@ C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\System.Linq.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\System.Linq.Expressions.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\System.Linq.Queryable.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\System.Net.Http.dll
+C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\System.Net.Http.Extensions.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\System.Net.Http.pdb
+C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\System.Net.Http.Primitives.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\System.Net.Primitives.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\System.Numerics.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\System.Numerics.pdb
@@ -855,6 +862,7 @@ C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\System.Reflection.Ext
 C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\System.Resources.ResourceManager.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\System.Runtime.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\System.Runtime.Extensions.dll
+C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\System.Runtime.InteropServices.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\System.Runtime.Serialization.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\System.Runtime.Serialization.pdb
 C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\System.ServiceModel.Internals.dll
@@ -923,14 +931,6 @@ C:\app2\EssentialUIKit.Android\obj\Debug\90\stamp\_CopyIntermediateAssemblies.st
 C:\app2\EssentialUIKit.Android\obj\Debug\90\stamp\_CopyMdbFiles.stamp
 C:\app2\EssentialUIKit.Android\obj\Debug\90\stamp\_CopyPdbFiles.stamp
 C:\app2\EssentialUIKit.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
-C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\Newtonsoft.Json.dll
-C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.Net.Http.Extensions.dll
-C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.Net.Http.Primitives.dll
-C:\app2\EssentialUIKit.Android\obj\Debug\90\linksrc\System.Runtime.InteropServices.dll
-C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\Newtonsoft.Json.dll
-C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\System.Net.Http.Extensions.dll
-C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\System.Net.Http.Primitives.dll
-C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\System.Runtime.InteropServices.dll
 C:\app2\EssentialUIKit.Android\obj\Debug\90\android\assets\machine.config
 C:\app2\EssentialUIKit.Android\obj\Debug\90\stamp\_CompileToDalvik.stamp
 C:\app2\EssentialUIKit.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp

@@ -6,6 +6,8 @@ using Xamarin.Forms.Internals;
 using EssentialUIKit.Models.ECommerce;
 using System.Runtime.Serialization;
 using EssentialUIKit.DataService;
+using EssentialUIKit.Data;
+using EssentialUIKit.Models.Rendimiento.Horarios;
 
 namespace EssentialUIKit.ViewModels.ECommerce
 {
@@ -21,6 +23,7 @@ namespace EssentialUIKit.ViewModels.ECommerce
         private ECommerceDataService dataService = ECommerceDataService.Instance;
 
         private ObservableCollection<Product> cartDetails;
+        private ObservableCollection<Materia> materias;
 
         private double totalPrice;
 
@@ -82,6 +85,23 @@ namespace EssentialUIKit.ViewModels.ECommerce
                 this.NotifyPropertyChanged();
             }
         }
+
+        public ObservableCollection<Materia> Materias
+        {
+            get { return this.materias; }
+
+            set
+            {
+                if (this.materias == value)
+                {
+                    return;
+                }
+
+                this.materias = value;
+                this.NotifyPropertyChanged();
+            }
+        }
+
 
         /// <summary>
         /// Gets or sets the property that has been bound with label, which displays the total price.
@@ -333,6 +353,27 @@ namespace EssentialUIKit.ViewModels.ECommerce
         private void GetProducts(ObservableCollection<Product> Products)
         {
             this.CartDetails = new ObservableCollection<Product>();
+
+            RestAPI api = new RestAPI();
+            api.HoraraiosDS2_ServiceResponse("3593109");
+            //.ContinueWith((antecedent) => {
+            this.materias = new ObservableCollection<Materia>();
+            for (int i = 0; i < api.horariosDS_response.materia.Count; i++)
+            {
+                this.Materias.Add(new Materia
+                {
+                    curso = api.horariosDS_response.materia[i].curso,
+                    horario = api.horariosDS_response.materia[i].horario,
+                    nombreCarrera = api.horariosDS_response.materia[i].nombreCarrera,
+                    seccion = api.horariosDS_response.materia[i].seccion,
+                    semestre = api.horariosDS_response.materia[i].semestre,
+                    nombreMateria = api.horariosDS_response.materia[i].nombreMateria,
+                    turno = api.horariosDS_response.materia[i].turno
+
+                });
+
+            }
+
             if (Products != null && Products.Count > 0)
                 this.CartDetails = Products;
         }

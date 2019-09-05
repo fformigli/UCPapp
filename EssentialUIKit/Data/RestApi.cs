@@ -7,6 +7,8 @@ using EssentialUIKit.Models.Rendimiento.Calificaciones;
 using EssentialUIKit.Models.Rendimiento.Examenes;
 using EssentialUIKit.Models.Rendimiento.Financiero;
 using EssentialUIKit.Models.Rendimiento.Perfil;
+using EssentialUIKit.Models.Rendimiento.Horarios;
+using System.Net.Http;
 
 namespace EssentialUIKit.Data
 {
@@ -27,13 +29,20 @@ namespace EssentialUIKit.Data
         public FinancieroResult financieroDS_response { get; set; }
         public AsistenciaResult asistenciaDS_response { get; set; }
         public PerfilResult perfilDS_response { get; set; }
+        public HorariosResult horariosDS_response { get; set; }
+
+        async public Task HoraraiosDS_ServiceResponse(String nroCedula)
+        {
+            this.horariosDS_response = await RestUtility.CallServiceAsync<HorariosResult>(string.Format(horariosService_Get, nroCedula), string.Empty, null, "GET",
+              string.Empty, string.Empty) as HorariosResult;
 
 
+        }
         async public Task ExamenesDS_ServiceResponse(String nroCedula)
         {
             this.examenesDS_response = await RestUtility.CallServiceAsync<ExamenesResult>(string.Format(examenesService_Get, nroCedula), string.Empty, null, "GET",
                string.Empty, string.Empty) as ExamenesResult;
-            Debug.WriteLine(@"DIEGO MENDEZ - EXAMENES ADENTRO TRUE {0}", this.examenesDS_response.materia.Count);
+         
 
         }
         async public Task CalificacionesDS_response(String nroCedula)
@@ -52,11 +61,31 @@ namespace EssentialUIKit.Data
             this.asistenciaDS_response = await RestUtility.CallServiceAsync<AsistenciaResult>(string.Format(asistenciaService_Get, nroCedula), string.Empty, null, "GET",
                string.Empty, string.Empty) as AsistenciaResult;
         }
+
+        
         async public Task PerfilDS_response(String nroCedula)
         {
             this.perfilDS_response = await RestUtility.CallServiceAsync<PerfilResult>(string.Format(perfilService_Get, nroCedula), string.Empty, null, "GET",
                string.Empty, string.Empty) as PerfilResult;
         }
+
+         public void PerfilDS2_response(String nroCedula)
+        {
+            //6948405
+            this.perfilDS_response = RestUtility.CallServiceSync<PerfilResult>(string.Format(perfilService_Get, nroCedula), string.Empty, null, "GET",
+               string.Empty, string.Empty) as PerfilResult;
+
+            
+        }
+        public void HoraraiosDS2_ServiceResponse(String nroCedula)
+        {
+            //6948405
+            this.horariosDS_response = RestUtility.CallServiceSync<HorariosResult>(string.Format(horariosService_Get, nroCedula), string.Empty, null, "GET",
+               string.Empty, string.Empty) as HorariosResult;
+
+
+        }
+
 
 
         async public void demo()

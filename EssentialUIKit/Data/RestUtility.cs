@@ -2,6 +2,7 @@
 using System;
 using System.IO;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,7 +11,32 @@ namespace EssentialUIKit.Data
     class RestUtility
     {
 
-        public static async Task<object> CallServiceAsync<T>(string url, string operation, object requestBodyObject, string method, string username,
+        public static  object  CallServiceSync<T>(string url, string operation, object requestBodyObject, string method, string username,
+          string password) where T : class
+        {
+            try {
+                var client = new HttpClient();
+                var response = client.GetAsync(url).Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseContent = response.Content;
+
+                    // by calling .Result you are synchronously reading the result
+                    string responseString = responseContent.ReadAsStringAsync().Result;
+
+                    Console.WriteLine(responseString);
+                    return JsonConvert.DeserializeObject<T>(responseString);
+                }
+            } catch (Exception e) {
+                Console.WriteLine(e.StackTrace);
+            }
+
+            
+            return null;
+
+        }
+            public static async Task<object> CallServiceAsync<T>(string url, string operation, object requestBodyObject, string method, string username,
            string password) where T : class
         {
             // Initialize an HttpWebRequest for the current URL.

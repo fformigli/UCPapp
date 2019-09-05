@@ -27,10 +27,10 @@
 
     <ContentPage.ControlTemplate>
         <ControlTemplate>
-            <StackLayout Spacing="0">
+            <StackLayout Spacing="5">
 
                 <!--  Title View  -->
-                <controls:TitleView Title="Cart" BackgroundColor="{DynamicResource Gray-White}" />
+                <controls:TitleView Title="Horario de Clases" BackgroundColor="{DynamicResource Gray-White}" />
 
                 <ContentPresenter />
 
@@ -67,7 +67,7 @@
                     <ColumnDefinition Width="{OnIdiom Default=0, Desktop=1*}" />
                 </Grid.ColumnDefinitions>
 
-                <!--  Cart Header  -->
+                <!--  Cabecera  -->
                 <StackLayout
                     Padding="16"
                     BackgroundColor="{DynamicResource Gray-White}"
@@ -75,7 +75,7 @@
                     <Label
                         FontFamily="{StaticResource Montserrat-SemiBold}"
                         Style="{StaticResource LabelStyle}"
-                        Text="My Cart"
+                        Text="Horario de Clases"
                         TextColor="{DynamicResource Gray-56}" />
 
                     <Label
@@ -101,7 +101,7 @@
                     BackgroundColor="{OnIdiom Default={StaticResource Transparent},
                                               Desktop={StaticResource Gray-White},
                                               Converter={StaticResource DynamicResourceToColorConverter}}"
-                    BindableLayout.ItemsSource="{Binding CartDetails}"
+                    BindableLayout.ItemsSource="{Binding Materias}"
                     Spacing="16"
                     VerticalOptions="Start">
 
@@ -148,7 +148,7 @@
                                     LineBreakMode="TailTruncation"
                                     MaxLines="1"
                                     Style="{StaticResource LabelStyle}"
-                                    Text="{Binding Name}"
+                                    Text="{Binding nombreCarrera}"
                                     TextColor="{DynamicResource Gray-56}" />
 
                                 <!--  Product summary  -->
@@ -161,169 +161,39 @@
                                     LineBreakMode="TailTruncation"
                                     LineHeight="{OnPlatform Android=1.25,
                                                             Default=-1}"
-                                    MaxLines="2"
+                                    MaxLines="10"
                                     Style="{StaticResource LabelStyle}"
-                                    Text="{Binding Summary}" />
+                                    Text="{Binding descripcion}" />
 
                                 <StackLayout
                                     Grid.Row="2"
                                     Grid.Column="1"
                                     Margin="0,0,0,16"
                                     Padding="0"
-                                    Orientation="Horizontal"
+                                    Orientation="Vertical"
                                     Spacing="4">
 
-                                    <!--  Product price  -->
+                                    <!-- Profesores  -->
                                     <Label
                                         FontFamily="{StaticResource Montserrat-SemiBold}"
-                                        FontSize="20"
-                                        HorizontalOptions="Start"
-                                        Style="{StaticResource LabelStyle}"
-                                        Text="{Binding DiscountPrice, StringFormat='${0:0 }'}"
-                                        TextColor="{DynamicResource PrimaryColor}" />
-
-                                    <Label
-                                        FontFamily="{DynamicResource Montserrat-Medium}"
                                         FontSize="12"
+                                        Margin="0,0,0,8"
                                         HorizontalOptions="Start"
                                         Style="{StaticResource LabelStyle}"
-                                        Text="{Binding ActualPrice, StringFormat='${0:0.00}'}"
-                                        TextDecorations="Strikethrough"
-                                        VerticalTextAlignment="Center" />
+                                        VerticalOptions="CenterAndExpand"
+                                        TextColor="{DynamicResource PrimaryColor}" 
+                                        Text="{Binding profesores}">
 
-                                    <Label
-                                        FontFamily="{DynamicResource Montserrat-Medium}"
-                                        FontSize="12"
-                                        HorizontalOptions="Start"
-                                        Style="{StaticResource LabelStyle}"
-                                        Text="{Binding DiscountPercent, StringFormat=' ({0}% OFF)'}"
-                                        TextColor="{DynamicResource PrimaryColor}"
-                                        VerticalTextAlignment="Center" />
-
+                                    </Label>
                                 </StackLayout>
-
-                                <StackLayout
-                                    Grid.Row="3"
-                                    Grid.Column="1"
-                                    Margin="0"
-                                    Padding="0"
-                                    HorizontalOptions="Start"
-                                    Orientation="Horizontal"
-                                    Spacing="0"
-                                    VerticalOptions="Start">
-
-                                    <border:SfBorder
-                                        Margin="0"
-                                        Padding="0"
-                                        BorderColor="{DynamicResource Gray-E4}"
-                                        CornerRadius="3"
-                                        HasShadow="False"
-                                        HeightRequest="32"
-                                        HorizontalOptions="Start">
-
-                                        <!--  Product quantity dropdown  -->
-                                        <combobox:SfComboBox
-                                            x:Name="QuantityComboBox"
-                                            BorderColor="{DynamicResource Gray-E4}"
-                                            DataSource="{Binding Quantities}"
-                                            HorizontalOptions="StartAndExpand"
-                                            MaximumDropDownHeight="200"
-                                            SelectedItem="{Binding TotalQuantity, Mode=TwoWay}"
-                                            ShowBorder="False"
-                                            Style="{StaticResource CartComboBoxStyle}"
-                                            TextColor="Transparent"
-                                            WidthRequest="90">
-
-                                            <combobox:SfComboBox.CustomView>
-                                                <Label
-                                                    Margin="10,0,24,0"
-                                                    BackgroundColor="Transparent"
-                                                    FontFamily="{DynamicResource Montserrat-Regular}"
-                                                    FontSize="14"
-                                                    HorizontalTextAlignment="Center"
-                                                    Style="{StaticResource LabelStyle}"
-                                                    Text="{Binding Source={x:Reference QuantityComboBox}, Path=SelectedItem, StringFormat='QTY: {0}'}" />
-                                            </combobox:SfComboBox.CustomView>
-
-                                            <combobox:SfComboBox.DropDownButtonSettings>
-                                                <combobox:DropDownButtonSettings Width="30" Height="30">
-                                                    <combobox:DropDownButtonSettings.View>
-                                                        <Label
-                                                            Margin="0"
-                                                            FontFamily="{StaticResource FontIcons}"
-                                                            FontSize="25"
-                                                            HorizontalTextAlignment="Center"
-                                                            Text="{StaticResource DropDownButtonIcon}"
-                                                            TextColor="{DynamicResource Gray-AB}"
-                                                            VerticalTextAlignment="Center" />
-                                                    </combobox:DropDownButtonSettings.View>
-                                                </combobox:DropDownButtonSettings>
-                                            </combobox:SfComboBox.DropDownButtonSettings>
-
-                                            <combobox:SfComboBox.Behaviors>
-                                                <behaviors:DropDownBehavior Command="{Binding Source={x:Reference CartLayout}, Path=BindingContext.QuantitySelectedCommand}" />
-                                            </combobox:SfComboBox.Behaviors>
-                                        </combobox:SfComboBox>
-
-                                    </border:SfBorder>
-
-                                    <!--  Remove button  -->
-                                    <buttons:SfButton
-                                        helper:RTLHelper.Margin="{OnIdiom Default='44,0,16,0',
-                                                                          Phone='24,0,0,0'}"
-                                        Command="{Binding Path=BindingContext.RemoveCommand, Source={x:Reference CartLayout}}"
-                                        CommandParameter="{Binding .}"
-                                        CornerRadius="4"
-                                        HeightRequest="32"
-                                        HorizontalOptions="Start"
-                                        Style="{StaticResource SfButtonStyle}"
-                                        VerticalOptions="Center"
-                                        WidthRequest="92">
-                                        <buttons:SfButton.Content>
-                                            <Label
-                                                FontFamily="{StaticResource Montserrat-SemiBold}"
-                                                FontSize="14"
-                                                HorizontalOptions="Center"
-                                                HorizontalTextAlignment="Center"
-                                                Style="{StaticResource LabelStyle}"
-                                                Text="Remove"
-                                                TextColor="{DynamicResource HyperLink}" />
-                                        </buttons:SfButton.Content>
-                                    </buttons:SfButton>
-                                </StackLayout>
-
                             </Grid>
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
                 </StackLayout>
 
-                <!--  Separator  -->
-                <BoxView
-                    Grid.Row="0"
-                    Grid.RowSpan="4"
-                    Grid.Column="1"
-                    Style="{StaticResource BoxViewStyle}"
-                    VerticalOptions="Fill"
-                    WidthRequest="{OnIdiom Default=0,
-                                           Desktop=16}"
-                    Color="{DynamicResource Gray-F4}" />
+               
 
-                <!--  Price Details  -->
-                <local:PriceDetailView
-                    Grid.Row="{OnIdiom Default=3,
-                                       Desktop=0}"
-                    Grid.RowSpan="{OnIdiom Default=1,
-                                           Desktop=4}"
-                    Grid.Column="{OnIdiom Default=0,
-                                          Desktop=2}"
-                    Grid.ColumnSpan="{OnIdiom Default=3,
-                                              Desktop=1}"
-                    Margin="{OnIdiom Default='0,16,0,0',
-                                     Desktop=0}"
-                    ActionText="PLACE ORDER"
-                    BackgroundColor="{DynamicResource Gray-F4}"
-                    HorizontalOptions="{OnIdiom Default=Fill,
-                                                Desktop=End}" />
+                
 
             </Grid>
         </ScrollView>

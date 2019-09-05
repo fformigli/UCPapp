@@ -92,7 +92,6 @@ C:\Users\desaExcelsis\Source\Repos\essential-ui-kit-for-xamarin.forms\EssentialU
 C:\Users\desaExcelsis\Source\Repos\essential-ui-kit-for-xamarin.forms\EssentialUIKit\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\desaExcelsis\Source\Repos\essential-ui-kit-for-xamarin.forms\EssentialUIKit\obj\Debug\netstandard2.0\EssentialUIKit.dll
 C:\Users\desaExcelsis\Source\Repos\essential-ui-kit-for-xamarin.forms\EssentialUIKit\obj\Debug\netstandard2.0\EssentialUIKit.pdb
-C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\EssentialUIKit.csprojAssemblyReference.cache
 C:\app2\EssentialUIKit\bin\Debug\netstandard2.0\EssentialUIKit.deps.json
 C:\app2\EssentialUIKit\bin\Debug\netstandard2.0\EssentialUIKit.dll
 C:\app2\EssentialUIKit\bin\Debug\netstandard2.0\EssentialUIKit.pdb
@@ -131,6 +130,7 @@ C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\Views\ECommerce\CatalogTilePage.
 C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\Views\ECommerce\CategoryListPage.xaml.g.cs
 C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\Views\ECommerce\CategoryTilePage.xaml.g.cs
 C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\Views\ECommerce\CategoryView.xaml.g.cs
+C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\Views\ECommerce\CheckoutOriginalPage.xaml.g.cs
 C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\Views\ECommerce\CheckoutPage.xaml.g.cs
 C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\Views\ECommerce\DeliveryPage.xaml.g.cs
 C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\Views\ECommerce\DeliveryView.xaml.g.cs
@@ -184,7 +184,8 @@ C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\Views\OnBoarding\Styles.xaml.g.c
 C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\EssentialUIKit.csproj.CoreCompileInputs.cache
 C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\EssentialUIKit.AssemblyInfoInputs.cache
 C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\EssentialUIKit.AssemblyInfo.cs
+C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\XamlC.stamp
 C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\EssentialUIKit.dll
 C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\EssentialUIKit.pdb
-C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\Views\ECommerce\CheckoutOriginalPage.xaml.g.cs
-C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\XamlC.stamp
+C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\Views\ECommerce\HorariosView.xaml.g.cs
+C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\EssentialUIKit.csprojAssemblyReference.cache

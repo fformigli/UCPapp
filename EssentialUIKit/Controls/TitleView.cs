@@ -234,7 +234,8 @@ namespace EssentialUIKit.Controls
                     HorizontalTextAlignment = TextAlignment.Center,
                     VerticalTextAlignment = TextAlignment.Center,
                     VerticalOptions = LayoutOptions.Center,
-                    HorizontalOptions = LayoutOptions.Center,
+                    HorizontalOptions = LayoutOptions.FillAndExpand
+                   
                 };
 
                 if (Device.RuntimePlatform == Device.Android)

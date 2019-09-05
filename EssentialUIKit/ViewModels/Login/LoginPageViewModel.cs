@@ -1,6 +1,12 @@
-﻿using System.Threading.Tasks;
+﻿
+using EssentialUIKit.AppLayout.Controls;
+using EssentialUIKit.AppLayout.Views;
+using System;
+using System.Reflection;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
+ 
 
 namespace EssentialUIKit.ViewModels.Login
 {
@@ -13,6 +19,7 @@ namespace EssentialUIKit.ViewModels.Login
         #region Fields
 
         private string password;
+        
 
         #endregion
 
@@ -89,9 +96,11 @@ namespace EssentialUIKit.ViewModels.Login
         /// <param name="obj">The Object</param>
         private void LoginClicked(object obj)
         {
-            // Do something
+            Console.WriteLine(obj);
+            App.Current.MainPage = new NavigationPage(new HomePage());
+          
         }
-
+        
         /// <summary>
         /// Invoked when the Sign Up button is clicked.
         /// </summary>
