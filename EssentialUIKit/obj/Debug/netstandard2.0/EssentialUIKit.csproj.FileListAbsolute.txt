@@ -138,6 +138,7 @@ C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\Views\ECommerce\DetailPage.xaml.
 C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\Views\ECommerce\FeedbackView.xaml.g.cs
 C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\Views\ECommerce\FilterPage.xaml.g.cs
 C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\Views\ECommerce\FilterView.xaml.g.cs
+C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\Views\ECommerce\HorariosView.xaml.g.cs
 C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\Views\ECommerce\PaymentPage.xaml.g.cs
 C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\Views\ECommerce\PaymentView.xaml.g.cs
 C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\Views\ECommerce\PriceDetailView.xaml.g.cs
@@ -187,5 +188,4 @@ C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\EssentialUIKit.AssemblyInfo.cs
 C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\XamlC.stamp
 C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\EssentialUIKit.dll
 C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\EssentialUIKit.pdb
-C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\Views\ECommerce\HorariosView.xaml.g.cs
 C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\EssentialUIKit.csprojAssemblyReference.cache

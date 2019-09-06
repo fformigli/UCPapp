@@ -34,6 +34,7 @@
                         x:Name="Email"
                         Placeholder="Email"
                         Style="{StaticResource EntryStyle}"
+                       
                         Text="{Binding Email}" />
 
                     <Label
@@ -59,7 +60,7 @@
                 Source={x:Reference Email}, 
                 Converter={StaticResource StringToBooleanConverter}, 
                 ConverterParameter={x:Reference Email}}"
-                Text="Please enter the valid e-mail"
+                Text="Por favor,carge un correo válido"
                 TextColor="{DynamicResource Red}"
                 VerticalOptions="FillAndExpand" />
 

@@ -54,7 +54,7 @@
                 <DataTemplate>
                     <ViewCell>
                         <!--The image at the left will be rendered with some space.-->
-                        <Grid RowSpacing="8" Margin="0,16,16,8">
+                        <Grid RowSpacing="8" Margin="3,16,16,8">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
@@ -69,8 +69,8 @@
                             <Image
                                 Grid.RowSpan="3"
                                 Grid.Column="0"
-                                HeightRequest="80"
-                                WidthRequest="80"
+                                HeightRequest="50"
+                                WidthRequest="50"
                                 Aspect="AspectFit"
                                 Style="{StaticResource ItemImageStyle}"/>
 
@@ -82,10 +82,10 @@
                             <Label
                                 Grid.Row="1" Grid.Column="1"
                                 Style="{StaticResource ItemDescriptionStyle}"/>
-
+                        <!--   
                             <Label Grid.Row="2" Grid.Column="1"
                                    Style="{StaticResource ItemCountLabelStyle}"/>
-
+                        -->
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
