@@ -77,13 +77,13 @@
                     VerticalTextAlignment="Center" />
             </StackLayout>
 
-            <!--  Try again button  -->
+            <!--  Try again button  
             <button:SfButton
                 Grid.Row="1"
                 Command="{Binding TryAgainCommand}"
                 Style="{StaticResource SfGradientButtonStyle}"
                 Text="TRY AGAIN" />
-
+-->
         </Grid>
 
     </ContentPage.Content>

@@ -3,27 +3,25 @@
 
   <Category  Icon="feedback.png" Name="Rendimiento" Description="Un solo panel, toda la información sobre tu desempeño">
     <Page   Name="Rendimiento" Description="Un solo panel, toda la información sobre tu desempeño" PageName="Views.Login.RendimientoPage"/>
-   
   </Category>
   <Category Icon="about-us.png" Name="Horarios" Description="Un atajo para conocer tus horarios de clase">
-    <Page Name="Cart Page" Description="View items in your cart for purchase" PageName="Views.ECommerce.CartPage"/>
-   
+    <Page Name="Horarios" Description="Un atajo para conocer tus horarios de clase. Igual lo podes ver en la ficha de Rendimientos" PageName="Views.ECommerce.CartPage"/>   
   </Category>
 
   <Category Icon="chat.png" Name="Evaluación Docente" Description="Mejoremos la calidad de la educación. Aquí puede hacerlo">
-    <Page Name="En Desarrollo" Description="Prestación en desarrollo" PageName="Views.ErrorAndEmpty.NoInternetConnectionPage"/>
+    <Page Name="Evaluación Docente" Description="Mejoremos la calidad de la educación. Aquí puede hacerlo" PageName="Views.ErrorAndEmpty.NoInternetConnectionPage"/>
   </Category>
   
-  <Category Icon="log-in.png" Name="Caja" Description="Relice sus pagos aquí">
-    <Page Name="No Internet Connection Page" Description="Page presented to users who do not have an internet connection." PageName="Views.ErrorAndEmpty.NoInternetConnectionPage"/>
+  <Category Icon="log-in.png" Name="Caja" Description="Relice sus pagos aquí, de manera segura y cómoda">
+    <Page Name="Caja" Description="Relice sus pagos aquí, de manera segura y cómoda." PageName="Views.ErrorAndEmpty.NoInternetConnectionPage"/>
   </Category>
 
   <Category Icon="ecommerce.png" Name="Inscripciones" Description="Punto de parada para las inscripciones de la Universidad">
-    <Page Name="No Internet Connection Page" Description="Page presented to users who do not have an internet connection." PageName="Views.ErrorAndEmpty.NoInternetConnectionPage"/>
+    <Page Name="Inscripciones" Description="Punto de parada para las inscripciones de la Universidad" PageName="Views.ErrorAndEmpty.NoInternetConnectionPage"/>
   </Category>
 
-  <Category Icon="article.png" Name="Ayuda" Description="Instrucciones paso a paso de la aplicación">
-    <Page Name="Walkthrough Page" Description="Guide users through a setup process on color gradient pages" PageName="Views.OnBoarding.OnBoardingGradientPage"/>
+  <Category Icon="article.png" Name="Ayuda" Description="Instrucciones paso a paso para disfutar de la aplicación">
+    <Page Name="Ayuda" Description="Instrucciones paso a paso para disfutar de la aplicación" PageName="Views.OnBoarding.OnBoardingGradientPage"/>
   </Category>
   <!--   
  <Category Icon="log-in.png" Name="Login" Description="Prompt users for their credentials so they can log in to an app.">

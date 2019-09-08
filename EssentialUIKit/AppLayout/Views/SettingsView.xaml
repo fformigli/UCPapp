@@ -46,7 +46,7 @@
                 HasShadow="False" />
 
             <Label
-                Text="Pick Your Color"
+                Text="Elige Tú Color"
                 TextColor="#333942"
                 FontSize="16"
                 FontFamily="{StaticResource Montserrat-SemiBold}"
@@ -87,7 +87,7 @@
 
             <!--TODO:Apply gradient color-->
             <buttons:SfButton
-                Text="APPLY"
+                Text="APLICAR"
                 Clicked="ApplySettings"
                 Grid.Row="2"
                 Style="{StaticResource SfGradientButtonStyle}"/>

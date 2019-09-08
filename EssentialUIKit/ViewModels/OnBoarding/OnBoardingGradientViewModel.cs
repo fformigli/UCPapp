@@ -18,7 +18,7 @@ namespace EssentialUIKit.ViewModels.OnBoarding
 
         private ObservableCollection<Boarding> boardings;
 
-        private string nextButtonText = "NEXT";
+        private string nextButtonText = "SIGUIENTE";
 
         private bool isSkipButtonVisible = true;
 
@@ -38,20 +38,20 @@ namespace EssentialUIKit.ViewModels.OnBoarding
                 new Boarding
                 {
                     ImagePath = "ChooseGradient.svg",
-                    Header = "CHOOSE",
-                    Content = "Pick the item that is right for you"
+                    Header = "ELIGE",
+                    Content = "Selecciona la opción de tu interés en el menú principal"
                 },
                 new Boarding
                 {
                     ImagePath = "ConfirmGradient.svg",
-                    Header = "ORDER CONFIRMED",
-                    Content = "Your order is confirmed and will be on its way soon"
+                    Header = "LOREM IPSUM",
+                    Content = "Aliquam luctus turpis a enim malesuada commodo. Aliquam ac sodales enim"
                 },
                 new Boarding
                 {
                     ImagePath = "DeliverGradient.svg",
-                    Header = "DELIVERY",
-                    Content = "Your item will arrive soon. Email us if you have any issues"
+                    Header = "LOREM IPSUM",
+                    Content = "Etiam quis mi rhoncus, auctor ligula et, vehicula mi. Integer auctor ipsum sed justo vehicula"
                 }
             };
 
@@ -178,11 +178,11 @@ namespace EssentialUIKit.ViewModels.OnBoarding
             if (this.selectedIndex < this.Boardings.Count - 1)
             {
                 this.IsSkipButtonVisible = true;
-                this.NextButtonText = "NEXT";
+                this.NextButtonText = "SIGUIENTE";
             }
             else
             {
-                this.NextButtonText = "DONE";
+                this.NextButtonText = "HECHO";
                 this.IsSkipButtonVisible = false;
             }
         }

@@ -30,8 +30,8 @@ namespace EssentialUIKit.ViewModels.ErrorAndEmpty
         public NoInternetConnectionPageViewModel()
         {
             this.ImagePath = "NoInternet.svg";
-            this.Header = "EN PROCESO";
-            this.Content = "El equipo de trabajo está trabajando en esta prestación. Disculpe las molestias del caso";
+            this.Header = "¡UPS!";
+            this.Content = "Parece que nuestro equipo se quedó sin ideas ¿Nos echas una mano? ¡Ayúdanos a sacar esta pantalla!. Estamos buscando algo cool y novedoso";
             this.TryAgainCommand = new Command(this.TryAgain);
         }
 

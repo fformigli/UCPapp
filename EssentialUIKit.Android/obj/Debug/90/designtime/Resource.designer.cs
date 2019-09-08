@@ -7817,41 +7817,44 @@ namespace EssentialUIKit.Droid
 			// aapt resource value: 0x7F010002
 			public const int About = 2130771970;
 			
+			// aapt resource value: 0x7F010030
+			public const int astronauta = 2130772016;
+			
 			// aapt resource value: 0x7F090055
 			public const int avd_hide_password = 2131296341;
 			
 			// aapt resource value: 0x7F090056
 			public const int avd_show_password = 2131296342;
 			
-			// aapt resource value: 0x7F010050
-			public const int btn_checkbox = 2130772048;
-			
-			// aapt resource value: 0x7F010051
-			public const int btn_checkbox_checked = 2130772049;
-			
-			// aapt resource value: 0x7F010052
-			public const int btn_checkbox_checked_to_indeterminate_animation = 2130772050;
-			
 			// aapt resource value: 0x7F010053
-			public const int btn_checkbox_checked_to_unchecked_animation = 2130772051;
+			public const int btn_checkbox = 2130772051;
 			
 			// aapt resource value: 0x7F010054
-			public const int btn_checkbox_indeterminate = 2130772052;
+			public const int btn_checkbox_checked = 2130772052;
 			
 			// aapt resource value: 0x7F010055
-			public const int btn_checkbox_indeterminate_to_checked_animation = 2130772053;
+			public const int btn_checkbox_checked_to_indeterminate_animation = 2130772053;
 			
 			// aapt resource value: 0x7F010056
-			public const int btn_checkbox_indeterminate_to_unchecked_animation = 2130772054;
+			public const int btn_checkbox_checked_to_unchecked_animation = 2130772054;
 			
 			// aapt resource value: 0x7F010057
-			public const int btn_checkbox_unchecked = 2130772055;
+			public const int btn_checkbox_indeterminate = 2130772055;
 			
 			// aapt resource value: 0x7F010058
-			public const int btn_checkbox_unchecked_to_checked_animation = 2130772056;
+			public const int btn_checkbox_indeterminate_to_checked_animation = 2130772056;
 			
 			// aapt resource value: 0x7F010059
-			public const int btn_checkbox_unchecked_to_indeterminate_animation = 2130772057;
+			public const int btn_checkbox_indeterminate_to_unchecked_animation = 2130772057;
+			
+			// aapt resource value: 0x7F010060
+			public const int btn_checkbox_unchecked = 2130772064;
+			
+			// aapt resource value: 0x7F010061
+			public const int btn_checkbox_unchecked_to_checked_animation = 2130772065;
+			
+			// aapt resource value: 0x7F010062
+			public const int btn_checkbox_unchecked_to_indeterminate_animation = 2130772066;
 			
 			// aapt resource value: 0x7F010003
 			public const int Card = 2130771971;
@@ -7889,14 +7892,14 @@ namespace EssentialUIKit.Droid
 			// aapt resource value: 0x7F09005C
 			public const int design_snackbar_background = 2131296348;
 			
-			// aapt resource value: 0x7F010063
-			public const int dropdownbuttonimage = 2130772067;
+			// aapt resource value: 0x7F010066
+			public const int dropdownbuttonimage = 2130772070;
 			
 			// aapt resource value: 0x7F010009
 			public const int EmptyCart = 2130771977;
 			
-			// aapt resource value: 0x7F010030
-			public const int graph = 2130772016;
+			// aapt resource value: 0x7F010031
+			public const int graph = 2130772017;
 			
 			// aapt resource value: 0x7F010010
 			public const int HeaderIcon = 2130771984;
@@ -7907,47 +7910,47 @@ namespace EssentialUIKit.Droid
 			// aapt resource value: 0x7F010012
 			public const int Icon = 2130771986;
 			
-			// aapt resource value: 0x7F010031
-			public const int icon_add = 2130772017;
-			
 			// aapt resource value: 0x7F010032
-			public const int icon_badge1 = 2130772018;
+			public const int icon_add = 2130772018;
 			
 			// aapt resource value: 0x7F010033
-			public const int icon_badge2 = 2130772019;
+			public const int icon_badge1 = 2130772019;
 			
 			// aapt resource value: 0x7F010034
-			public const int icon_badge3 = 2130772020;
+			public const int icon_badge2 = 2130772020;
 			
 			// aapt resource value: 0x7F010035
-			public const int icon_caret = 2130772021;
+			public const int icon_badge3 = 2130772021;
 			
 			// aapt resource value: 0x7F010036
-			public const int icon_clipboard = 2130772022;
+			public const int icon_caret = 2130772022;
 			
 			// aapt resource value: 0x7F010037
-			public const int icon_comments = 2130772023;
+			public const int icon_clipboard = 2130772023;
 			
 			// aapt resource value: 0x7F010038
-			public const int icon_graph = 2130772024;
+			public const int icon_comments = 2130772024;
 			
 			// aapt resource value: 0x7F010039
-			public const int icon_headphones = 2130772025;
+			public const int icon_graph = 2130772025;
 			
 			// aapt resource value: 0x7F010040
-			public const int icon_list = 2130772032;
+			public const int icon_headphones = 2130772032;
 			
 			// aapt resource value: 0x7F010041
-			public const int icon_settings = 2130772033;
+			public const int icon_list = 2130772033;
 			
 			// aapt resource value: 0x7F010042
-			public const int icon_shoe = 2130772034;
+			public const int icon_settings = 2130772034;
 			
 			// aapt resource value: 0x7F010043
-			public const int icon_speaker = 2130772035;
+			public const int icon_shoe = 2130772035;
 			
 			// aapt resource value: 0x7F010044
-			public const int icon_usersettings = 2130772036;
+			public const int icon_speaker = 2130772036;
+			
+			// aapt resource value: 0x7F010045
+			public const int icon_usersettings = 2130772037;
 			
 			// aapt resource value: 0x7F090055
 			public const int ic_audiotrack_dark = 2131296341;
@@ -8057,8 +8060,8 @@ namespace EssentialUIKit.Droid
 			// aapt resource value: 0x7F090078
 			public const int ic_group_expand_15 = 2131296376;
 			
-			// aapt resource value: 0x7F010064
-			public const int ic_launcher = 2130772068;
+			// aapt resource value: 0x7F010067
+			public const int ic_launcher = 2130772071;
 			
 			// aapt resource value: 0x7F090079
 			public const int ic_media_pause_dark = 2131296377;
@@ -8492,14 +8495,14 @@ namespace EssentialUIKit.Droid
 			// aapt resource value: 0x7F090105
 			public const int ic_vol_type_tv_light = 2131296517;
 			
-			// aapt resource value: 0x7F010060
-			public const int inputlayout_togglecollapseicon = 2130772064;
+			// aapt resource value: 0x7F010063
+			public const int inputlayout_togglecollapseicon = 2130772067;
 			
-			// aapt resource value: 0x7F010061
-			public const int inputlayout_togglevisibleicon = 2130772065;
+			// aapt resource value: 0x7F010064
+			public const int inputlayout_togglevisibleicon = 2130772068;
 			
-			// aapt resource value: 0x7F010062
-			public const int input_layout_drop_down_icon = 2130772066;
+			// aapt resource value: 0x7F010065
+			public const int input_layout_drop_down_icon = 2130772069;
 			
 			// aapt resource value: 0x7F010013
 			public const int InvertedTriangle = 2130771987;
@@ -8510,17 +8513,20 @@ namespace EssentialUIKit.Droid
 			// aapt resource value: 0x7F010015
 			public const int LoginBackground = 2130771989;
 			
-			// aapt resource value: 0x7F010045
-			public const int LoginBackground2 = 2130772037;
-			
 			// aapt resource value: 0x7F010046
-			public const int logo = 2130772038;
+			public const int LoginBackground2 = 2130772038;
 			
 			// aapt resource value: 0x7F010047
-			public const int me = 2130772039;
+			public const int logo = 2130772039;
 			
 			// aapt resource value: 0x7F010048
-			public const int me_photo = 2130772040;
+			public const int me = 2130772040;
+			
+			// aapt resource value: 0x7F010049
+			public const int me_photo = 2130772041;
+			
+			// aapt resource value: 0x7F010050
+			public const int me_photo2 = 2130772048;
 			
 			// aapt resource value: 0x7F090106
 			public const int mr_button_connected_dark = 2131296518;
@@ -8663,17 +8669,17 @@ namespace EssentialUIKit.Droid
 			// aapt resource value: 0x7F010027
 			public const int PlaceHolderRectangle = 2130772007;
 			
-			// aapt resource value: 0x7F010065
-			public const int popup_forms_android_close_icon = 2130772069;
-			
-			// aapt resource value: 0x7F010066
-			public const int popup_forms_android_shadow = 2130772070;
-			
-			// aapt resource value: 0x7F010067
-			public const int popup_forms_dark_theme_close_icon = 2130772071;
-			
 			// aapt resource value: 0x7F010068
-			public const int popup_forms_light_theme_close_icon = 2130772072;
+			public const int popup_forms_android_close_icon = 2130772072;
+			
+			// aapt resource value: 0x7F010069
+			public const int popup_forms_android_shadow = 2130772073;
+			
+			// aapt resource value: 0x7F010070
+			public const int popup_forms_dark_theme_close_icon = 2130772080;
+			
+			// aapt resource value: 0x7F010071
+			public const int popup_forms_light_theme_close_icon = 2130772081;
 			
 			// aapt resource value: 0x7F010028
 			public const int SomethingWentWrong = 2130772008;
@@ -8681,14 +8687,17 @@ namespace EssentialUIKit.Droid
 			// aapt resource value: 0x7F010029
 			public const int SplashScreen = 2130772009;
 			
-			// aapt resource value: 0x7F010049
-			public const int start = 2130772041;
+			// aapt resource value: 0x7F010051
+			public const int start = 2130772049;
 			
 			// aapt resource value: 0x7F09006F
 			public const int tooltip_frame_dark = 2131296367;
 			
 			// aapt resource value: 0x7F090070
 			public const int tooltip_frame_light = 2131296368;
+			
+			// aapt resource value: 0x7F010052
+			public const int vision = 2130772050;
 			
 			static Drawable()
 			{

@@ -51,7 +51,7 @@
                 HeightRequest="40"
                 HorizontalOptions="End"
                 Opacity="{Binding IsSkipButtonVisible}"
-                Text="Skip"
+                Text="Pasar"
                 TextColor="{x:StaticResource Gray-White}"
                 VerticalOptions="StartAndExpand"
                 WidthRequest="80" />

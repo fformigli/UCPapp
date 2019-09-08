@@ -586,6 +586,8 @@ C:\app2\EssentialUIKit.Android\obj\Debug\90\res\drawable-hdpi\logo.png
 C:\app2\EssentialUIKit.Android\obj\Debug\90\res\drawable-hdpi\me.png
 C:\app2\EssentialUIKit.Android\obj\Debug\90\res\drawable-hdpi\me_photo.jpg
 C:\app2\EssentialUIKit.Android\obj\Debug\90\res\drawable-hdpi\start.png
+C:\app2\EssentialUIKit.Android\obj\Debug\90\res\drawable-hdpi\vision.png
+C:\app2\EssentialUIKit.Android\obj\Debug\90\res\drawable-hdpi\astronauta.png
 C:\app2\EssentialUIKit.Android\obj\Debug\90\R.cs.flag
 C:\app2\EssentialUIKit.Android\obj\Debug\90\R.txt
 C:\app2\EssentialUIKit.Android\obj\Debug\90\uploadflags.txt

@@ -188,4 +188,3 @@ C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\EssentialUIKit.AssemblyInfo.cs
 C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\XamlC.stamp
 C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\EssentialUIKit.dll
 C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\EssentialUIKit.pdb
-C:\app2\EssentialUIKit\obj\Debug\netstandard2.0\EssentialUIKit.csprojAssemblyReference.cache

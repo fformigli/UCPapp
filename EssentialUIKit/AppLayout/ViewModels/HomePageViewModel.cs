@@ -95,7 +95,7 @@ namespace EssentialUIKit.AppLayout.ViewModels
                 }
 
             }
-            descAlumno += carrera + ". En este portal encontrará toda la información sobre su estadía en la Universidad";
+            descAlumno += carrera + ". En este portal encontrarás toda la información sobre tu estadía en la Universidad";
             Application.Current.Resources["Description"] = descAlumno;
             Application.Current.Resources["userLogged"] = userLogged;
             Console.Out.WriteLine(userLogged);

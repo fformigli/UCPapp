@@ -58,8 +58,8 @@
                         </Button.IsVisible>
                     </Button>
                     <StackLayout Grid.Column="1">
-                        <ffimageloading:CachedImage VerticalOptions="Start" DownsampleToViewSize="true"
-                            Aspect="AspectFit" HeightRequest="110" WidthRequest="110" Source="me_photo.jpg">
+                        <ffimageloading:CachedImage VerticalOptions="Start" DownsampleToViewSize="false"
+                            Aspect="AspectFit" HeightRequest="110" WidthRequest="110" Source="astronauta.png">
                             <ffimageloading:CachedImage.Transformations>
                                 <fftransformations:CircleTransformation BorderHexColor="#FFFFFF">
                                     <fftransformations:CircleTransformation.BorderSize>
@@ -71,8 +71,8 @@
                                 </fftransformations:CircleTransformation>
                             </ffimageloading:CachedImage.Transformations>
                         </ffimageloading:CachedImage>
-                        <Label Text="Diego Méndez" Margin="0,5,0,0" TextColor="White" FontSize="16" HorizontalTextAlignment="Center" />
-                        <Label Text="Ingeniería Informática" TextColor="White" FontSize="12" HorizontalTextAlignment="Center">
+                        <Label Text="Jessica Denisse Pereira Gimenez" Margin="0,5,0,0" TextColor="White" FontSize="16" HorizontalTextAlignment="Center" />
+                        <Label Text="Turismo y Hotelería" TextColor="White" FontSize="12" HorizontalTextAlignment="Center">
                             <Label.IsVisible>
                                 <OnPlatform x:TypeArguments="x:Boolean">
                                     <On Platform="iOS" Value="false" />
