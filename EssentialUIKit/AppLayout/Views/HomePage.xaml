@@ -120,43 +120,34 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="10*" />
                         </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="45*"/>
-                            <ColumnDefinition Width="55*"/>
-                        </Grid.ColumnDefinitions>
+
+                        <Image
+                            x:Name="HeaderImage"
+                            Grid.Row="1"
+                            Style="{StaticResource HeaderIconStyle}"/>
 
                         <Label
                             x:Name="BrandName"
-                            Grid.Row="1"
-                            Grid.Column="1"
-                            FontSize="Micro"
-                            HorizontalOptions="StartAndExpand"
+                            Grid.Row="2"
+                            FontSize="Large"
+                            HorizontalOptions="CenterAndExpand"
                             Text="{DynamicResource userLogged}"
                             FontFamily="{StaticResource Montserrat-Regular}"
                             TextColor="White"
                             />
 
-                        <Image
-                            x:Name="HeaderImage"
-                            Grid.Row="1"
-                            Grid.RowSpan="2"
-                            Grid.Column="0"
-                            Style="{StaticResource HeaderIconStyle}"/>
-
                         <Label
                             x:Name="HeaderText"
-                            Grid.Row="2"
-                            Grid.Column="1"
+                            Grid.Row="3"
                             FontSize="16"
                             TextColor="White"
                             FontFamily="{StaticResource Montserrat-Regular}"
-                            HorizontalOptions="StartAndExpand"
+                            HorizontalOptions="CenterAndExpand"
                             Text="{StaticResource HomePageBienvenido}" />
 
                         <Label
                             x:Name="Description"
                             Grid.Row="4"
-                            Grid.ColumnSpan="2"
                             Margin="10,0,10,0"
                             FontSize="15"
                             FontFamily="{StaticResource Montserrat-Regular}"
@@ -208,7 +199,7 @@
             x:Name="ActionBar"
             Padding="0,0,0,20"
             IsClippedToBounds="True"
-            IsVisible="false"
+            IsVisible="true"
             RowSpacing="0">
 
             <Grid.RowDefinitions>

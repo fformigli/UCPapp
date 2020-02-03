@@ -24,7 +24,7 @@ namespace EssentialUIKit.Models.Chat
         /// Gets or sets the message sent/received time.
         /// </summary>
         public string Time { get; set; }
-        
+
         /// <summary>
         /// Gets or sets the message.
         /// </summary>

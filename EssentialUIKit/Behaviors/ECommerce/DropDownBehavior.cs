@@ -1,7 +1,7 @@
-﻿using System;
-using System.Windows.Input;
-using EssentialUIKit.Models.ECommerce;
+﻿using EssentialUIKit.Models.ECommerce;
 using Syncfusion.XForms.ComboBox;
+using System;
+using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 

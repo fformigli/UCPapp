@@ -1,7 +1,7 @@
-﻿using System.Collections.ObjectModel;
+﻿using EssentialUIKit.Models.Navigation;
+using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
-using EssentialUIKit.Models.Navigation;
 
 namespace EssentialUIKit.ViewModels.Navigation
 {

@@ -1,10 +1,10 @@
-﻿using System.Collections.ObjectModel;
+﻿using EssentialUIKit.Models.OnBoarding;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
-using EssentialUIKit.Models.OnBoarding;
 
 namespace EssentialUIKit.ViewModels.OnBoarding
 {

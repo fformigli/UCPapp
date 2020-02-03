@@ -1,8 +1,8 @@
-﻿using System;
+﻿using EssentialUIKit.Controls;
+using System;
 using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
-using EssentialUIKit.Controls;
 
 namespace EssentialUIKit.Behaviors.ECommerce
 {

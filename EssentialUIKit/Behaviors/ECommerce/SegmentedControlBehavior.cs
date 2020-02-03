@@ -1,6 +1,6 @@
+using Syncfusion.XForms.Buttons;
 using System;
 using System.Windows.Input;
-using Syncfusion.XForms.Buttons;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
@@ -31,7 +31,7 @@ namespace EssentialUIKit.Behaviors.ECommerce
         /// </summary>
         public ICommand Command
         {
-            get { return (ICommand) GetValue(CommandProperty); }
+            get { return (ICommand)GetValue(CommandProperty); }
             set { this.SetValue(CommandProperty, value); }
         }
 

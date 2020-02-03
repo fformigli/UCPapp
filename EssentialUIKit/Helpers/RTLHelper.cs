@@ -1,6 +1,6 @@
-﻿using System.ComponentModel;
-using Syncfusion.XForms.Border;
+﻿using Syncfusion.XForms.Border;
 using Syncfusion.XForms.Cards;
+using System.ComponentModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
@@ -52,7 +52,7 @@ namespace EssentialUIKit.Helpers
         /// <returns>Returns the margin</returns>
         public static Thickness GetMargin(BindableObject bindable)
         {
-            return (Thickness) bindable.GetValue(MarginProperty);
+            return (Thickness)bindable.GetValue(MarginProperty);
         }
 
         /// <summary>
@@ -136,8 +136,8 @@ namespace EssentialUIKit.Helpers
         {
             if (!(bindable is View view)) return;
 
-            var previousMargin = (Thickness) oldValue;
-            var currentMargin = (Thickness) newValue;
+            var previousMargin = (Thickness)oldValue;
+            var currentMargin = (Thickness)newValue;
 
             UpdateMargin(view);
 
@@ -216,7 +216,7 @@ namespace EssentialUIKit.Helpers
         /// <param name="view">The view</param>
         private static void UpdateMargin(VisualElement view)
         {
-            var controller = (IVisualElementController) view;
+            var controller = (IVisualElementController)view;
             var margin = GetMargin(view);
 
             if (margin != ZeroThickness)
@@ -258,7 +258,7 @@ namespace EssentialUIKit.Helpers
             }
         }
 
-        
+
         /// <summary>
         /// Updates the value of the corner radius when flow direction is changed.
         /// </summary>
@@ -298,7 +298,7 @@ namespace EssentialUIKit.Helpers
             }
         }
 
-       
+
         /// <summary>
         /// Updates the margin when flow direction is changed .
         /// </summary>

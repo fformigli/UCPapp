@@ -1,10 +1,9 @@
+using EssentialUIKit.AppLayout.Controls;
+using EssentialUIKit.AppLayout.Models;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
-using EssentialUIKit.AppLayout.Controls;
-using EssentialUIKit.AppLayout.Models;
-using EssentialUIKit.Data;
 
 namespace EssentialUIKit.AppLayout.Views
 {
@@ -45,11 +44,10 @@ namespace EssentialUIKit.AppLayout.Views
         /// </summary>
         public HomePage()
         {
-        
             this.InitializeComponent();
         }
 
-       
+
 
         #endregion
 
@@ -139,7 +137,6 @@ namespace EssentialUIKit.AppLayout.Views
         {
             SettingsView.Show();
         }
-
         #endregion
     }
 }

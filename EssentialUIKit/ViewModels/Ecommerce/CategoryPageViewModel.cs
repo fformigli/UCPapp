@@ -1,3 +1,4 @@
+using EssentialUIKit.Models.ECommerce;
 using Syncfusion.ListView.XForms;
 using Syncfusion.ListView.XForms.Control.Helpers;
 using System.Collections.Generic;
@@ -8,7 +9,6 @@ using System.Runtime.Serialization;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
-using EssentialUIKit.Models.ECommerce;
 
 namespace EssentialUIKit.ViewModels.ECommerce
 {
@@ -153,7 +153,7 @@ namespace EssentialUIKit.ViewModels.ECommerce
             }
 
             var scrollRow = listView.GetVisualContainer()?.ScrollRows;
-            var firstVisibleIndex = (int) scrollRow?.ScrollLineIndex;
+            var firstVisibleIndex = (int)scrollRow?.ScrollLineIndex;
             var totalItemsCount = listView.DataSource.DisplayItems.Count;
 
             int scrollToIndex;
@@ -182,7 +182,7 @@ namespace EssentialUIKit.ViewModels.ECommerce
             }
 
             var scrollRow = listView.GetVisualContainer()?.ScrollRows;
-            var lastVisibleIndex = (int) scrollRow?.LastBodyVisibleLineIndex;
+            var lastVisibleIndex = (int)scrollRow?.LastBodyVisibleLineIndex;
             var totalItemsCount = listView.DataSource.DisplayItems.Count;
 
             int scrollToIndex;
@@ -206,11 +206,11 @@ namespace EssentialUIKit.ViewModels.ECommerce
         private static async void CategorySelected(object obj)
         {
             Application.Current.Resources.TryGetValue("Gray-F0", out var retVal);
-            ((Frame) obj).BackgroundColor = (Color) retVal;
+            ((Frame)obj).BackgroundColor = (Color)retVal;
 
             await Task.Delay(100);
 
-            ((Frame) obj).BackgroundColor = Color.Transparent;
+            ((Frame)obj).BackgroundColor = Color.Transparent;
         }
 
         /// <summary>

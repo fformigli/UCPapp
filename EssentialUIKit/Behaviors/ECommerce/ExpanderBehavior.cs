@@ -1,6 +1,6 @@
+using Syncfusion.XForms.Expander;
 using System;
 using System.Windows.Input;
-using Syncfusion.XForms.Expander;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 

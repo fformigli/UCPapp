@@ -1,11 +1,11 @@
-﻿using System.ComponentModel;
+﻿using EssentialUIKit.AppLayout.Models;
+using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Web;
 using System.Xml.Serialization;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
-using EssentialUIKit.AppLayout.Models;
 
 namespace EssentialUIKit.AppLayout.ViewModels
 {

@@ -1,12 +1,11 @@
-﻿using System.Collections.ObjectModel;
+﻿using EssentialUIKit.Data;
+using EssentialUIKit.Models.Rendimiento.Horarios;
+using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
-using EssentialUIKit.Models.ECommerce;
-using EssentialUIKit.Data;
-using EssentialUIKit.Models.Rendimiento.Horarios;
-using System;
 
 namespace EssentialUIKit.ViewModels.ECommerce
 {
@@ -17,10 +16,10 @@ namespace EssentialUIKit.ViewModels.ECommerce
     public class CheckoutPageViewModel : INotifyPropertyChanged
     {
         #region Fields
-         
-        private ObservableCollection<Materia> materias;   
-         
- 
+
+        private ObservableCollection<Materia> materias;
+
+
 
         #endregion
 
@@ -34,29 +33,29 @@ namespace EssentialUIKit.ViewModels.ECommerce
             Console.WriteLine("Nueva VERISION");
             RestAPI api = new RestAPI();
             api.HoraraiosDS2_ServiceResponse("3593109");
-                //.ContinueWith((antecedent) => {
+            //.ContinueWith((antecedent) => {
             this.materias = new ObservableCollection<Materia>();
-                for (int i = 0; i < api.horariosDS_response.materia.Count; i++)
+            for (int i = 0; i < api.horariosDS_response.materia.Count; i++)
+            {
+                this.Materias.Add(new Materia
                 {
-                    this.Materias.Add(new Materia
-                    {
-                        curso = api.horariosDS_response.materia[i].curso,
-                        horario = api.horariosDS_response.materia[i].horario,
-                        nombreCarrera = api.horariosDS_response.materia[i].nombreCarrera,
-                        seccion = api.horariosDS_response.materia[i].seccion,
-                        semestre = api.horariosDS_response.materia[i].semestre,
-                        nombreMateria = api.horariosDS_response.materia[i].nombreMateria,
-                        turno = api.horariosDS_response.materia[i].turno
+                    curso = api.horariosDS_response.materia[i].curso,
+                    horario = api.horariosDS_response.materia[i].horario,
+                    nombreCarrera = api.horariosDS_response.materia[i].nombreCarrera,
+                    seccion = api.horariosDS_response.materia[i].seccion,
+                    semestre = api.horariosDS_response.materia[i].semestre,
+                    nombreMateria = api.horariosDS_response.materia[i].nombreMateria,
+                    turno = api.horariosDS_response.materia[i].turno
 
-                    });
+                });
 
-                }
-              
-         //   });
+            }
 
-        
+            //   });
 
-          
+
+
+
             this.EditCommand = new Command(this.EditClicked);
             this.AddAddressCommand = new Command(this.AddAddressClicked);
             this.PlaceOrderCommand = new Command(this.PlaceOrderClicked);
@@ -78,7 +77,7 @@ namespace EssentialUIKit.ViewModels.ECommerce
 
         #region Public properties
 
-         
+
 
         public ObservableCollection<Materia> Materias
         {
@@ -96,14 +95,14 @@ namespace EssentialUIKit.ViewModels.ECommerce
             }
         }
 
-        
 
-      
 
-       
- 
 
-        
+
+
+
+
+
 
         #endregion
 

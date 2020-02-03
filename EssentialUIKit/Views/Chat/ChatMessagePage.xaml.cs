@@ -1,7 +1,7 @@
+using EssentialUIKit.Models.Chat;
 using Syncfusion.DataSource;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
-using EssentialUIKit.Models.Chat;
 
 namespace EssentialUIKit.Views.Chat
 {

@@ -3,11 +3,10 @@ using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 #endif
+using EssentialUIKit.AppLayout.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
-using EssentialUIKit.AppLayout.Views;
-using EssentialUIKit.Views.Login;
 
 namespace EssentialUIKit
 {
@@ -25,18 +24,16 @@ namespace EssentialUIKit
         /// </summary>
         public App()
         {
-#if EnableAppCenterAnalytics
+            #if EnableAppCenterAnalytics
             // AppCenter.Start(
             //    $"ios={AppSettings.IOSSecretCode};android={AppSettings.AndroidSecretCode};uwp={AppSettings.UWPSecretCode}",
             //    typeof(Analytics),
             //    typeof(Crashes));
-#endif
+            #endif
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTMxMjE5QDMxMzcyZTMyMmUzMFZvdUt0ckx2UmRDYVVBMHFXeklaM0FlYXZWa3J3dkFFbTJmZG1OWnpqTVE9");
             this.InitializeComponent();
 
-            // this.MainPage = new AppShell();
-            //this.MainPage = new NavigationPage(new HomePage());
-            this.MainPage = new NavigationPage(new LoginPage());
+            this.MainPage = new NavigationPage(new HomePage());
         }
 
         #endregion
@@ -72,7 +69,6 @@ namespace EssentialUIKit
         {
             // Handle when your app resumes
         }
-
         #endregion
     }
 }

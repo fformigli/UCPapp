@@ -1,5 +1,4 @@
-﻿using System;
-namespace EssentialUIKit.Models.Rendimiento
+﻿namespace EssentialUIKit.Models.Rendimiento
 {
     public class Stats
     {

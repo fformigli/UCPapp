@@ -1,7 +1,7 @@
-﻿using System.Linq;
+﻿using EssentialUIKit.Themes;
+using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
-using EssentialUIKit.Themes;
 
 namespace EssentialUIKit.AppLayout
 {

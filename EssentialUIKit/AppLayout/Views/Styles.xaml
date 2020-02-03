@@ -113,8 +113,8 @@
 
     <!--Common style for header icon-->
     <Style x:Key="HeaderIconStyle" TargetType="Image">
-        <Setter Property="HorizontalOptions" Value="EndAndExpand"/>
-        <Setter Property="HeightRequest" Value="35"/>
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="HeightRequest" Value="90"/>
         <Setter Property="Margin" Value="0,0,8,0"/>
         <Setter Property="Aspect" Value="AspectFit"/>
         <Setter Property="Source" Value="HeaderIcon.png"/>

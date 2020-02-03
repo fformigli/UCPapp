@@ -1,7 +1,7 @@
-﻿using System.Reflection;
+﻿using EssentialUIKit.ViewModels.ECommerce;
+using System.Reflection;
 using System.Runtime.Serialization.Json;
 using Xamarin.Forms.Internals;
-using EssentialUIKit.ViewModels.ECommerce;
 
 namespace EssentialUIKit.DataService
 {

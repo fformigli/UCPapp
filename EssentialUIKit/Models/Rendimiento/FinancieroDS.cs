@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace EssentialUIKit.Models.Rendimiento. Financiero
+namespace EssentialUIKit.Models.Rendimiento.Financiero
 {
     public class DetalleFinancieroAlumno
     {

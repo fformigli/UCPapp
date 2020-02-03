@@ -25,7 +25,7 @@ namespace EssentialUIKit.ViewModels.Chat
         #endregion
 
         #region Command
-        
+
         /// <summary>
         /// Gets or sets the command that is executed when the edit button is clicked.
         /// </summary>

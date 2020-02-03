@@ -1,12 +1,12 @@
-﻿using System;
+﻿using EssentialUIKit.Models.ContactUs;
+using Syncfusion.SfMaps.XForms;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
-using Syncfusion.SfMaps.XForms;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
-using EssentialUIKit.Models.ContactUs;
 
 namespace EssentialUIKit.ViewModels.ContactUs
 {
@@ -50,7 +50,7 @@ namespace EssentialUIKit.ViewModels.ContactUs
             foreach (var marker in this.CustomMarkers)
             {
                 this.GeoCoordinate = new Point(Convert.ToDouble(marker.Latitude), Convert.ToDouble(marker.Longitude));
-            }            
+            }
         }
 
         #endregion   
@@ -110,7 +110,7 @@ namespace EssentialUIKit.ViewModels.ContactUs
         }
 
         #endregion
-                     
+
         #region Methods
 
         /// <summary>

@@ -27,24 +27,24 @@ namespace EssentialUIKit.Converters
 
             switch (parameter.ToString())
             {
-                case "0" when (bool) value:
+                case "0" when (bool)value:
                     return Color.FromRgba(255, 255, 255, 0.6);
-                case "1" when (bool) value:
+                case "1" when (bool)value:
                     return Color.FromHex("#FF4A4A");
-                case "2" when (bool) value:
+                case "2" when (bool)value:
                     return Color.FromHex("#FF4A4A");
                 case "2":
                     return Color.FromHex("#ced2d9");
-                case "3" when (bool) value:
+                case "3" when (bool)value:
                     return Color.FromHex("#959eac");
                 case "3":
                     return Color.FromHex("#ced2d9");
-                case "4" when (bool) value:
+                case "4" when (bool)value:
                     Application.Current.Resources.TryGetValue("PrimaryColor", out var retVal);
-                    return (Color) retVal;
+                    return (Color)retVal;
                 case "4":
                     Application.Current.Resources.TryGetValue("Gray-AB", out var outVal);
-                    return (Color) outVal;
+                    return (Color)outVal;
                 default:
                     return Color.Transparent;
             }

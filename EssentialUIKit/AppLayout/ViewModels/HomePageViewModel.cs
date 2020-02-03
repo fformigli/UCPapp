@@ -1,16 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using EssentialUIKit.AppLayout.Models;
+using EssentialUIKit.Data;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Reflection;
+using System.Threading;
 using System.Xml;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
-using EssentialUIKit.AppLayout.Models;
-using EssentialUIKit.Data;
-using System;
-using System.Globalization;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Net.Http;
 
 namespace EssentialUIKit.AppLayout.ViewModels
 {
@@ -48,19 +46,16 @@ namespace EssentialUIKit.AppLayout.ViewModels
 
             PopulateList();
 
-
-            initPerfil();
-
-
-
+            InitPerfil();
         }
-        private void initPerfil() {
-            
+        private void InitPerfil()
+        {
+
 
             string descAlumno;
             RestAPI api = new RestAPI();
             api.PerfilDS2_response("6948405");
-      
+
             userLogged = api.perfilDS_response.nombres + " " + api.perfilDS_response.apellidos;
             descAlumno = api.perfilDS_response.nombres + " " + api.perfilDS_response.apellidos;
 
@@ -99,8 +94,8 @@ namespace EssentialUIKit.AppLayout.ViewModels
             Application.Current.Resources["Description"] = descAlumno;
             Application.Current.Resources["userLogged"] = userLogged;
             Console.Out.WriteLine(userLogged);
-            
         }
+
         private void PopulateList()
         {
             Templates.Clear();
@@ -121,50 +116,50 @@ namespace EssentialUIKit.AppLayout.ViewModels
                     switch (xmlReader.Name)
                     {
                         case "Category" when xmlReader.IsStartElement() && xmlReader.HasAttributes:
-                        {
-                            if (!hasAdded && category != null)
                             {
-                                Templates.Add(category);
-                                category = null;
-                                hasAdded = true;
+                                if (!hasAdded && category != null)
+                                {
+                                    Templates.Add(category);
+                                    category = null;
+                                    hasAdded = true;
+                                }
+
+                                var platform = GetDataFromXmlReader(xmlReader, "Platform");
+                                if (string.IsNullOrEmpty(platform) || platform.ToLower().Contains(runtimePlatform))
+                                {
+                                    var categoryName = GetDataFromXmlReader(xmlReader, "Name");
+                                    var description = GetDataFromXmlReader(xmlReader, "Description");
+                                    var icon =
+                                        $"EssentialUIKit.AppLayout.Icons.{GetDataFromXmlReader(xmlReader, "Icon")}";
+
+                                    category = new Category(categoryName, icon, description);
+                                }
+
+                                break;
                             }
-
-                            var platform = GetDataFromXmlReader(xmlReader, "Platform");
-                            if (string.IsNullOrEmpty(platform) || platform.ToLower().Contains(runtimePlatform))
-                            {
-                                var categoryName = GetDataFromXmlReader(xmlReader, "Name");
-                                var description = GetDataFromXmlReader(xmlReader, "Description");
-                                var icon =
-                                    $"EssentialUIKit.AppLayout.Icons.{GetDataFromXmlReader(xmlReader, "Icon")}";
-
-                                category = new Category(categoryName, icon, description);
-                            }
-
-                            break;
-                        }
 
                         case "Page" when xmlReader.IsStartElement() && xmlReader.HasAttributes && category != null:
-                        {
-                            var platform = GetDataFromXmlReader(xmlReader, "Platform");
-
-                            if (string.IsNullOrEmpty(platform) || platform.ToLower().Contains(runtimePlatform))
                             {
-                                var templateName = GetDataFromXmlReader(xmlReader, "Name");
-                                var description = GetDataFromXmlReader(xmlReader, "Description");
-                                var pageName = GetDataFromXmlReader(xmlReader, "PageName");
-                                bool.TryParse(GetDataFromXmlReader(xmlReader, "LayoutFullscreen"),
-                                    out var layoutFullScreen);
+                                var platform = GetDataFromXmlReader(xmlReader, "Platform");
 
-                                var template = new Template(templateName, description, pageName, layoutFullScreen);
-                                Routing.RegisterRoute(templateName,
-                                    assembly.GetType($"EssentialUIKit.{pageName}"));
+                                if (string.IsNullOrEmpty(platform) || platform.ToLower().Contains(runtimePlatform))
+                                {
+                                    var templateName = GetDataFromXmlReader(xmlReader, "Name");
+                                    var description = GetDataFromXmlReader(xmlReader, "Description");
+                                    var pageName = GetDataFromXmlReader(xmlReader, "PageName");
+                                    bool.TryParse(GetDataFromXmlReader(xmlReader, "LayoutFullscreen"),
+                                        out var layoutFullScreen);
 
-                                category.Pages.Add(template);
-                                hasAdded = false;
+                                    var template = new Template(templateName, description, pageName, layoutFullScreen);
+                                    Routing.RegisterRoute(templateName,
+                                        assembly.GetType($"EssentialUIKit.{pageName}"));
+
+                                    category.Pages.Add(template);
+                                    hasAdded = false;
+                                }
+
+                                break;
                             }
-
-                            break;
-                        }
                     }
 
                     xmlReader.Read();

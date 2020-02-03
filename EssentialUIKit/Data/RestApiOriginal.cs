@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using EssentialUIKit.Models.Rendimiento;
+using Newtonsoft.Json;
+using System;
 using System.Diagnostics;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
-using EssentialUIKit.Models.Rendimiento;
-using Newtonsoft.Json;
 
 
 namespace EssentialUIKit.Data
@@ -21,11 +19,11 @@ namespace EssentialUIKit.Data
             _client = new HttpClient();
         }
 
-          async Task<AsistenciaResult> IRestService.GetMateriaAsistenciaAlumnoAsync(String nroDoc)
+        async Task<AsistenciaResult> IRestService.GetMateriaAsistenciaAlumnoAsync(String nroDoc)
         {
             ItemsMateriaAsistenciaAlumno = new AsistenciaResult();
 
-           var uri = new Uri(string.Format(Constants.AsistenciaAlumno, nroDoc));
+            var uri = new Uri(string.Format(Constants.AsistenciaAlumno, nroDoc));
             try
             {
                 var response = await _client.GetAsync(uri);
@@ -39,7 +37,8 @@ namespace EssentialUIKit.Data
             catch (Exception ex)
             {
                 Debug.WriteLine(@"\tERROR {0}", ex);
-                AppDomain.CurrentDomain.UnhandledException += (sender, args) => {
+                AppDomain.CurrentDomain.UnhandledException += (sender, args) =>
+                {
                     System.Exception ex2 = (System.Exception)args.ExceptionObject;
                     Console.WriteLine(ex2);
                 };
@@ -49,7 +48,7 @@ namespace EssentialUIKit.Data
             return ItemsMateriaAsistenciaAlumno;
         }
 
-        
+
 
         /*
        public async Task SaveTodoItemAsync(TodoItem item, bool isNewItem = false)
@@ -103,5 +102,5 @@ namespace EssentialUIKit.Data
            }
        }*/
     }
-    
+
 }

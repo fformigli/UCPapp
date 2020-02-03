@@ -1,6 +1,6 @@
+using EssentialUIKit.DataService;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
-using EssentialUIKit.DataService;
 
 namespace EssentialUIKit.Views.ECommerce
 {
@@ -18,6 +18,6 @@ namespace EssentialUIKit.Views.ECommerce
         {
             this.InitializeComponent();
             this.BindingContext = ECommerceDataService.Instance.CatalogPageViewModel;
-        }        
+        }
     }
 }

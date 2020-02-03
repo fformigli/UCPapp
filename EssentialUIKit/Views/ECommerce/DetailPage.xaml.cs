@@ -32,11 +32,11 @@ namespace EssentialUIKit.Views.ECommerce
 
             if (width > height)
             {
-                Rotator.ItemTemplate = (DataTemplate) this.Resources["LandscapeTemplate"];
+                Rotator.ItemTemplate = (DataTemplate)this.Resources["LandscapeTemplate"];
             }
             else
             {
-                Rotator.ItemTemplate = (DataTemplate) this.Resources["PortraitTemplate"];
+                Rotator.ItemTemplate = (DataTemplate)this.Resources["PortraitTemplate"];
             }
         }
     }

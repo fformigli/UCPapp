@@ -1,10 +1,10 @@
-﻿using System;
+﻿using EssentialUIKit.AppLayout.Models;
+using EssentialUIKit.AppLayout.ViewModels;
+using System;
 using System.Reflection;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
-using EssentialUIKit.AppLayout.Models;
-using EssentialUIKit.AppLayout.ViewModels;
 
 namespace EssentialUIKit.AppLayout.Views
 {

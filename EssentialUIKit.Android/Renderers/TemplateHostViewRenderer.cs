@@ -1,9 +1,9 @@
 ﻿using Android.Content;
 using Android.Widget;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.Android;
 using EssentialUIKit.AppLayout.Controls;
 using EssentialUIKit.Droid.Renderers;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.Android;
 using View = Android.Views.View;
 
 [assembly: ExportRenderer(typeof(TemplateHostView), typeof(TemplateHostViewRenderer))]

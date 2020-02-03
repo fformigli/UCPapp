@@ -1,11 +1,11 @@
-﻿using System.Collections.ObjectModel;
+﻿using EssentialUIKit.Models.Chat;
+using Syncfusion.XForms.Border;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using Syncfusion.XForms.Border;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
-using EssentialUIKit.Models.Chat;
 
 namespace EssentialUIKit.ViewModels.Chat
 {
@@ -16,7 +16,7 @@ namespace EssentialUIKit.ViewModels.Chat
     public class ContactProfileViewModel : INotifyPropertyChanged
     {
         #region Field
-        
+
         private ObservableCollection<ContactProfile> profileInfo;
 
         #endregion

@@ -1,11 +1,11 @@
-﻿using System;
+﻿using EssentialUIKit.Models.ECommerce;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
-using EssentialUIKit.Models.ECommerce;
 
 namespace EssentialUIKit.ViewModels.ECommerce
 {
@@ -96,7 +96,7 @@ namespace EssentialUIKit.ViewModels.ECommerce
                 }
             }
 
-            if(this.productRating > 0)
+            if (this.productRating > 0)
                 this.ProductDetail.OverallRating = this.productRating / this.ProductDetail.Reviews.Count;
 
             this.Categories = new ObservableCollection<Category>

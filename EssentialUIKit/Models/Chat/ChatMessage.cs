@@ -88,7 +88,7 @@ namespace EssentialUIKit.Models.Chat
         public bool IsReceived { get; set; }
 
         #endregion
-        
+
         #region Methods
 
         /// <summary>

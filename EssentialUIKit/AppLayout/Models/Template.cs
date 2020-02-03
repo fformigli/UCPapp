@@ -8,7 +8,7 @@ namespace EssentialUIKit.AppLayout.Models
         #region Constructor
 
         public Template()
-        {            
+        {
         }
 
         public Template(string name, string description, string pageName, bool layoutFullScreen)

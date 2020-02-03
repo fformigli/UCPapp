@@ -136,7 +136,7 @@ namespace EssentialUIKit.Models.ECommerce
         /// Gets or sets the property that has been bound with SfCombobox, which displays the product variants.
         /// </summary>
         [DataMember(Name = "sizevariants")]
-        public List<string> SizeVariants { get; set; } = new List<string> {"XS", "S", "M", "L", "XL"};
+        public List<string> SizeVariants { get; set; } = new List<string> { "XS", "S", "M", "L", "XL" };
 
         /// <summary>
         /// Gets or sets the property that has been bound with button, which displays the isfavorite.

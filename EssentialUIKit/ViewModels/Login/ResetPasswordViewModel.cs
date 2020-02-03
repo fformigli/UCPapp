@@ -102,9 +102,9 @@ namespace EssentialUIKit.ViewModels.Login
         }
 
         #endregion
-        
+
         #region Methods
-        
+
         /// <summary>
         /// The PropertyChanged event occurs when changing the value of property.
         /// </summary>
@@ -113,7 +113,7 @@ namespace EssentialUIKit.ViewModels.Login
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        
+
         /// <summary>
         /// Invoked when the Submit button is clicked.
         /// </summary>

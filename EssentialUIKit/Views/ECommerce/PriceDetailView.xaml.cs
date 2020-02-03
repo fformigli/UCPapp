@@ -36,7 +36,7 @@ namespace EssentialUIKit.Views.ECommerce
         /// </summary>
         public string ActionText
         {
-            get { return (string) GetValue(ActionTextProperty); }
+            get { return (string)GetValue(ActionTextProperty); }
             set { this.SetValue(ActionTextProperty, value); }
         }
 

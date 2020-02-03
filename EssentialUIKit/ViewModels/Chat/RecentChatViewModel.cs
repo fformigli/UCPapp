@@ -1,9 +1,9 @@
-﻿using System.Collections.ObjectModel;
+﻿using EssentialUIKit.Models.Chat;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
-using EssentialUIKit.Models.Chat;
 
 namespace EssentialUIKit.ViewModels.Chat
 {
@@ -216,7 +216,7 @@ namespace EssentialUIKit.ViewModels.Chat
                 this.NotifyPropertyChanged();
             }
         }
-        
+
         /// <summary>
         /// Gets or sets the property that has been bound with a list view, which displays the profile items.
         /// </summary>
@@ -256,7 +256,7 @@ namespace EssentialUIKit.ViewModels.Chat
         /// Gets or sets the command that is executed when the settings button is clicked.
         /// </summary>
         public Command ShowSettingsCommand { get; set; }
-                
+
         /// <summary>
         /// Gets or sets the command that is executed when the menu button is clicked.
         /// </summary>
@@ -330,7 +330,7 @@ namespace EssentialUIKit.ViewModels.Chat
         {
             // Do something
         }
-        
+
         /// <summary>
         /// Invoked when the menu button is clicked.
         /// </summary>

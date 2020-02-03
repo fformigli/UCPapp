@@ -1,12 +1,12 @@
+using EssentialUIKit.Models.ECommerce;
+using Syncfusion.ListView.XForms;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
-using Syncfusion.ListView.XForms;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
-using EssentialUIKit.Models.ECommerce;
 
 namespace EssentialUIKit.ViewModels.ECommerce
 {
@@ -156,7 +156,7 @@ namespace EssentialUIKit.ViewModels.ECommerce
         /// <summary>
         /// Gets or sets the property that has been bound with a list view, which displays the item details in tile.
         /// </summary>
-        [DataMember(Name="products")]
+        [DataMember(Name = "products")]
         public ObservableCollection<Product> Products
         {
             get; set;

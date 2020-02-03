@@ -1,9 +1,9 @@
-﻿using System.Collections.ObjectModel;
+﻿using EssentialUIKit.Models.ECommerce;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
-using EssentialUIKit.Models.ECommerce;
 
 namespace EssentialUIKit.ViewModels.ECommerce
 {

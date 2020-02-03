@@ -1,10 +1,10 @@
+using EssentialUIKit.Models.Chat;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
-using EssentialUIKit.Models.Chat;
 
 namespace EssentialUIKit.ViewModels.Chat
 {
@@ -35,7 +35,7 @@ namespace EssentialUIKit.ViewModels.Chat
             "\n" + " * Memory: 8GB DDR RAM with Intel UHD 620 Graphics" +
             "\n" + " * Battery: Lithium battery",
             "How much battery life does it have with wifi and without?",
-            "Approximately 5 hours with wifi. About 7 hours without.",  
+            "Approximately 5 hours with wifi. About 7 hours without.",
         };
         #endregion
 
@@ -182,7 +182,7 @@ namespace EssentialUIKit.ViewModels.Chat
         public Command BackCommand { get; set; }
 
         #endregion
-        
+
         #region Methods
 
         /// <summary>
@@ -215,7 +215,7 @@ namespace EssentialUIKit.ViewModels.Chat
                 },
                 new ChatMessage
                 {
-                    ImagePath = App.BaseImageUrl + "Electronics.png",                    
+                    ImagePath = App.BaseImageUrl + "Electronics.png",
                     Time = currentTime.AddMinutes(-2405),
                 },
                 new ChatMessage
@@ -230,7 +230,7 @@ namespace EssentialUIKit.ViewModels.Chat
                     Time = currentTime.AddMinutes(-1006),
                 },
             };
-        }   
+        }
 
         /// <summary>
         /// Invoked when the voice call button is clicked.

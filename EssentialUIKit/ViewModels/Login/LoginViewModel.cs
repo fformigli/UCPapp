@@ -17,7 +17,7 @@ namespace EssentialUIKit.ViewModels.Login
         private bool isInvalidEmail;
 
         #endregion
-        
+
         #region Event
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace EssentialUIKit.ViewModels.Login
         }
 
         #endregion
-        
+
         #region Method
 
         /// <summary>

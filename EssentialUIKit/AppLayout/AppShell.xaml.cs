@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using Microsoft.AppCenter.Analytics;
 #endif
+using EssentialUIKit.AppLayout.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
-using EssentialUIKit.AppLayout.Views;
 
 namespace EssentialUIKit.AppLayout
 {

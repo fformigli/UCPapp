@@ -104,7 +104,7 @@ namespace EssentialUIKit.ViewModels.Article
                     Author = "John Doe",
                     Date = "Apr 16",
                     AverageReadingTime = "5 mins read"
-                },               
+                },
             };
 
             this.MenuCommand = new Command(this.MenuClicked);
@@ -203,7 +203,7 @@ namespace EssentialUIKit.ViewModels.Article
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-               
+
         /// <summary>
         /// Invoked when the menu button is clicked.
         /// </summary>
@@ -212,7 +212,7 @@ namespace EssentialUIKit.ViewModels.Article
         {
             // Do something
         }
-        
+
         /// <summary>
         /// Invoked when the bookmark button is clicked.
         /// </summary>

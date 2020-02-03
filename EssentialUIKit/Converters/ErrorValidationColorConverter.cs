@@ -1,10 +1,10 @@
-﻿using System;
+﻿using EssentialUIKit.Controls;
+using EssentialUIKit.ViewModels.Login;
+using System;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
-using EssentialUIKit.Controls;
-using EssentialUIKit.ViewModels.Login;
 
 namespace EssentialUIKit.Converters
 {

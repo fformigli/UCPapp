@@ -1,13 +1,13 @@
-﻿using System.Collections.ObjectModel;
+﻿using EssentialUIKit.Data;
+using EssentialUIKit.DataService;
+using EssentialUIKit.Models.ECommerce;
+using EssentialUIKit.Models.Rendimiento.Horarios;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
-using EssentialUIKit.Models.ECommerce;
-using System.Runtime.Serialization;
-using EssentialUIKit.DataService;
-using EssentialUIKit.Data;
-using EssentialUIKit.Models.Rendimiento.Horarios;
 
 namespace EssentialUIKit.ViewModels.ECommerce
 {
@@ -32,23 +32,23 @@ namespace EssentialUIKit.ViewModels.ECommerce
         private double discountPercent;
 
         private double percent;
-        
+
         private ObservableCollection<Product> produts;
-        
+
         private Command placeOrderCommand;
-        
+
         private Command notificationCommand;
-        
+
         private Command addToCartCommand;
-        
+
         private Command saveForLaterCommand;
-        
+
         private Command removeCommand;
-        
+
         private Command quantitySelectedCommand;
-        
+
         private Command variantSelectedCommand;
-        
+
         private Command applyCouponCommand;
 
         #endregion
@@ -156,7 +156,7 @@ namespace EssentialUIKit.ViewModels.ECommerce
             {
                 return this.discountPercent;
             }
-        
+
             set
             {
                 if (this.discountPercent == value)

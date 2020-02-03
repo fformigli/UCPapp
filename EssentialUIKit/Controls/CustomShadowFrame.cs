@@ -32,14 +32,14 @@ namespace EssentialUIKit.Controls
         {
             get { return (float)GetValue(RadiusProperty); }
             set { this.SetValue(RadiusProperty, value); }
-        }       
+        }
 
         // Gets or sets the border color of the Frame.
         public Color CustomBorderColor
         {
             get { return (Color)GetValue(CustomBorderColorProperty); }
             set { this.SetValue(CustomBorderColorProperty, value); }
-        }        
+        }
 
         // Gets or sets the border width of the Frame.
         public int BorderWidth

@@ -8,7 +8,7 @@ namespace EssentialUIKit.Controls
     /// </summary>
     [Preserve(AllMembers = true)]
     public class TitleView : Grid
-    {    
+    {
         #region Bindable Properties
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace EssentialUIKit.Controls
                 new RowDefinition {Height = 1}
             };
 
-            var boxView = new BoxView {Color = (Color) Application.Current.Resources["Gray-F0"]};
+            var boxView = new BoxView { Color = (Color)Application.Current.Resources["Gray-F0"] };
 
             Children.Add(this.LeadingView, 1, 0);
             Children.Add(this.Content, 2, 0);
@@ -225,7 +225,7 @@ namespace EssentialUIKit.Controls
                     Text = newText,
                     TextColor = (Color)Application.Current.Resources["Gray-56"],
                     FontSize = 16,
-                    Margin = new Thickness(0,8),
+                    Margin = new Thickness(0, 8),
                     FontFamily = Device.RuntimePlatform == Device.Android
                             ? "Montserrat-Medium.ttf#Montserrat-Medium"
                             : Device.RuntimePlatform == Device.iOS
@@ -235,7 +235,7 @@ namespace EssentialUIKit.Controls
                     VerticalTextAlignment = TextAlignment.Center,
                     VerticalOptions = LayoutOptions.Center,
                     HorizontalOptions = LayoutOptions.FillAndExpand
-                   
+
                 };
 
                 if (Device.RuntimePlatform == Device.Android)

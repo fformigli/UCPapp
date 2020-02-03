@@ -46,7 +46,7 @@ namespace EssentialUIKit.ViewModels.Feedback
         #endregion
 
         #region Properties
-        
+
         /// <summary>
         /// Gets or sets the value for images.
         /// </summary>

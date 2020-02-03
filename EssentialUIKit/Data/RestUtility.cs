@@ -11,10 +11,11 @@ namespace EssentialUIKit.Data
     class RestUtility
     {
 
-        public static  object  CallServiceSync<T>(string url, string operation, object requestBodyObject, string method, string username,
+        public static object CallServiceSync<T>(string url, string operation, object requestBodyObject, string method, string username,
           string password) where T : class
         {
-            try {
+            try
+            {
                 var client = new HttpClient();
                 var response = client.GetAsync(url).Result;
 
@@ -28,16 +29,19 @@ namespace EssentialUIKit.Data
                     Console.WriteLine(responseString);
                     return JsonConvert.DeserializeObject<T>(responseString);
                 }
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
                 Console.WriteLine(e.StackTrace);
             }
 
-            
+
             return null;
 
         }
-            public static async Task<object> CallServiceAsync<T>(string url, string operation, object requestBodyObject, string method, string username,
-           string password) where T : class
+        public static async Task<object> CallServiceAsync<T>(string url, string operation, object requestBodyObject, string method, string username,
+       string password) where T : class
         {
             // Initialize an HttpWebRequest for the current URL.
             var webReq = (HttpWebRequest)WebRequest.Create(url);

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace EssentialUIKit.Models.Rendimiento.Horarios
@@ -34,48 +32,58 @@ namespace EssentialUIKit.Models.Rendimiento.Horarios
         public string seccion { get; set; }
         public string semestre { get; set; }
         public string turno { get; set; }
-        public string descripcion { get {
+        public string descripcion
+        {
+            get
+            {
                 string respuesta = "";
-                for (int i = 0; i < this.horario.Count; i++) {
+                for (int i = 0; i < this.horario.Count; i++)
+                {
                     Horario horario = this.horario[i];
-                    respuesta += "Materia: "+nombreMateria+", Aula: " + horario.nombre_aula + ", Piso: " + horario.piso_aula + ", Edificio: " + horario.edificio + ", Día: " + horario.dia + ". De " + horario.horaInicio.Substring(0,5) + " a " + horario.horaFin.Substring(0, 5) + " Horas.\n";
+                    respuesta += "Materia: " + nombreMateria + ", Aula: " + horario.nombre_aula + ", Piso: " + horario.piso_aula + ", Edificio: " + horario.edificio + ", Día: " + horario.dia + ". De " + horario.horaInicio.Substring(0, 5) + " a " + horario.horaFin.Substring(0, 5) + " Horas.\n";
                 }
                 return respuesta;
 
-            }  }
+            }
+        }
 
-        public string profesores { get {
+        public string profesores
+        {
+            get
+            {
                 string respuesta = "";
                 int cantTeacher = 0;
                 for (int i = 0; i < this.horario.Count; i++)
                 {
                     Horario horario = this.horario[i];
-                    if (!respuesta.Contains(horario.profesorApellidosYNombres)) {
+                    if (!respuesta.Contains(horario.profesorApellidosYNombres))
+                    {
                         cantTeacher++;
-                        respuesta += horario.profesorApellidosYNombres+". ";
+                        respuesta += horario.profesorApellidosYNombres + ". ";
                     }
-                   
+
                 }
                 var regex = new Regex(Regex.Escape(","));
                 respuesta = regex.Replace(respuesta, "", 1);
 
                 if (cantTeacher >= 2)
-                {              
-                
+                {
+
                     respuesta = respuesta.Remove(respuesta.LastIndexOf(","), 1).Insert(respuesta.LastIndexOf(","), " y");
-                    
+
                 }
 
                 if (cantTeacher > 1)
                 {
-                    respuesta = "Profesores: "+respuesta;
+                    respuesta = "Profesores: " + respuesta;
                 }
                 else
                 {
-                    respuesta = "Profesor: "+respuesta;
+                    respuesta = "Profesor: " + respuesta;
                 }
                 return respuesta;
-            } }
+            }
+        }
     }
 
     public class HorariosResult

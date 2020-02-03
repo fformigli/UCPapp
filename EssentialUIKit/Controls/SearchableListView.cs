@@ -1,8 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿using EssentialUIKit.Models.Chat;
 using Syncfusion.ListView.XForms;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
-using EssentialUIKit.Models.Chat;
 
 namespace EssentialUIKit.Controls
 {
@@ -17,7 +17,7 @@ namespace EssentialUIKit.Controls
         /// <summary>
         /// Gets or sets the text value used to search.
         /// </summary>
-        public static readonly BindableProperty SearchTextProperty = 
+        public static readonly BindableProperty SearchTextProperty =
             BindableProperty.Create("SearchText", typeof(string), typeof(SearchableListView), null, BindingMode.Default, null, OnSearchTextChanged);
 
         /// <summary>

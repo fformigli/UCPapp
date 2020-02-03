@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Syncfusion.XForms.Border;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using Syncfusion.XForms.Border;
 using Xamarin.Forms.Internals;
+using Xamarin.Forms.Xaml;
 
 namespace EssentialUIKit.AppLayout.Views
 {
@@ -16,7 +16,7 @@ namespace EssentialUIKit.AppLayout.Views
         {
             InitializeComponent();
             BindingContext = AppSettings.Instance;
-            
+
             var colors = new List<Color>
             {
                 Color.FromHex("#f54e5e"),
@@ -50,7 +50,7 @@ namespace EssentialUIKit.AppLayout.Views
                 PrimaryColorsView.SelectionIndicatorSettings.Color = colors[e.Index];
             };
         }
-        
+
         public void Show()
         {
             IsVisible = true;
@@ -74,7 +74,7 @@ namespace EssentialUIKit.AppLayout.Views
             AppSettings.Instance.SelectedPrimaryColor = PrimaryColorsView.SelectedIndex;
             this.Hide();
         }
-        
+
         private void Button_OnClicked(object sender, EventArgs e)
         {
             this.Hide();

@@ -1,9 +1,9 @@
-﻿using System;
+﻿using EssentialUIKit.Controls;
+using System;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
-using EssentialUIKit.Controls;
 
 namespace EssentialUIKit.Converters
 {
@@ -28,7 +28,7 @@ namespace EssentialUIKit.Converters
                 return false;
             }
 
-            var isFocused = (bool) value;
+            var isFocused = (bool)value;
             var isInvalidEmail = !isFocused && !CheckValidEmail(email.Text);
 
             return !isFocused && isInvalidEmail;
