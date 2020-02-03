@@ -1,0 +1,5 @@
+.vs
+EssentialUIKit/obj
+EssentialUIKit.Android/obj
+EssentialUIKit.IOS/obj
+EssentialUIKit/EssentialUIKit.csproj.user
