@@ -2,15 +2,16 @@
 <ResourceDictionary 
     xmlns="http://xamarin.com/schemas/2014/forms"  
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
     xmlns:controls="clr-namespace:EssentialUIKit.AppLayout.Controls;assembly=EssentialUIKit"
+    xmlns:converters="clr-namespace:EssentialUIKit.Converters;assembly=EssentialUIKit"
+    xmlns:gradient="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
     xmlns:graphics="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
     xmlns:iOsSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-    xmlns:converters="clr-namespace:EssentialUIKit.Converters;assembly=EssentialUIKit"
-    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
     x:Class="EssentialUIKit.AppLayout.Views.Styles">
 
     <converters:StringToImageResourceConverter x:Key="ImageResourceConverter"/>
-
+    
     <x:String x:Key="HomePageTitle">Universidad Columbia del Paraguay</x:String>
     <x:String x:Key="HomePageBienvenido">Bienvenido</x:String>
 
@@ -136,4 +137,20 @@
         <Setter Property="VerticalOptions" Value="FillAndExpand"/>
     </Style>
 
+    <!--  Common style for gradient view  -->
+    <Style x:Key="SfGradientViewStyle" TargetType="gradient:SfGradientView">
+        <!--<Setter Property="Opacity" Value="0.46" />-->
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="BackgroundBrush">
+            <Setter.Value>
+                <graphics:SfLinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <graphics:SfLinearGradientBrush.GradientStops>
+                        <graphics:SfGradientStop Offset="0.0" Color="{StaticResource GradientEndColor}" />
+                        <graphics:SfGradientStop Offset="1.0" Color="{StaticResource GradientStartColor}" />
+                    </graphics:SfLinearGradientBrush.GradientStops>
+                </graphics:SfLinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

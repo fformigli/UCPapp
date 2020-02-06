@@ -24,15 +24,15 @@ namespace EssentialUIKit.AppLayout.Views
         /// <summary>
         /// Initializes a new instance of the <see cref="TemplateHostPage" /> class.
         /// </summary>
-        public TemplateHostPage(Template selectedTemplate)
+        public TemplateHostPage(Category category)
         {
             InitializeComponent();
             TemplateHostView.HeightRequest = HostViewContainer.HeightRequest = Application.Current.MainPage.Height - 55;
             TemplateHostView.WidthRequest = HostViewContainer.WidthRequest = Application.Current.MainPage.Width;
 
-            Title.Text = selectedTemplate.Name;
+            Title.Text = category.Name;
 
-            this.LoadPage(selectedTemplate.PageName);
+            this.LoadPage(category.PageName);
         }
 
         #endregion

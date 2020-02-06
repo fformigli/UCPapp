@@ -20,7 +20,6 @@ namespace EssentialUIKit.AppLayout
 
             this.Navigating += this.AppShell_Navigating;
 
-            Routing.RegisterRoute("templatepage", typeof(TemplatePage));
             Routing.RegisterRoute("templatehostpage", typeof(TemplateHostPage));
         }
 

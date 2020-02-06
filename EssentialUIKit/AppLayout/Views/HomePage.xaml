@@ -8,25 +8,15 @@
     xmlns:controls="clr-namespace:EssentialUIKit.AppLayout.Controls;assembly=EssentialUIKit"
     xmlns:views="clr-namespace:EssentialUIKit.AppLayout.Views;assembly=EssentialUIKit"
     Style="{StaticResource ContentPageStyle}"
-    Title="{StaticResource HomePageTitle}">
+    Title="{StaticResource HomePageTitle}"
+    BackgroundColor="Green"
+    >
 
     <ContentPage.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <Style TargetType="gradient:SfGradientView" >
-                <Setter Property="BackgroundBrush">
-                    <Setter.Value>
-                        <gradient:SfLinearGradientBrush>
-                            <gradient:SfLinearGradientBrush.GradientStops>
-                                <gradient:SfGradientStop Offset="0" Color="{DynamicResource PrimaryColor}"/>
-                                <gradient:SfGradientStop Offset="1" Color="{DynamicResource PrimaryGradient}"/>
-                            </gradient:SfLinearGradientBrush.GradientStops>
-                        </gradient:SfLinearGradientBrush>
-                    </Setter.Value>
-                </Setter>
-            </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -103,8 +93,6 @@
                         <RowDefinition Height="20" />
                     </Grid.RowDefinitions>
 
-                    <gradient:SfGradientView Grid.RowSpan="3" />
-
                     <Grid 
                         Opacity="0.9" 
                         Grid.Row="1" 
@@ -120,7 +108,21 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="10*" />
                         </Grid.RowDefinitions>
+                        
+                        
+                        <Image
+                                x:Name="HeaderBackground"
+                                Source="@drawable/HomeBackground"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand"
+                                Aspect="AspectFill"
+                                Grid.RowSpan="6" />
 
+                        <gradient:SfGradientView 
+                            Grid.RowSpan="6"
+                            Opacity="0.45"
+                            Style="{StaticResource SfGradientViewStyle}" />
+                        
                         <Image
                             x:Name="HeaderImage"
                             Grid.Row="1"
@@ -208,7 +210,8 @@
                 <RowDefinition Height="20" />
             </Grid.RowDefinitions>
 
-            <gradient:SfGradientView Grid.RowSpan="3" />
+            <gradient:SfGradientView Grid.RowSpan="3" 
+                                     Style="{StaticResource SfGradientViewStyle}"/>
 
             <Label
                 Style="{StaticResource ActionBarLabelStyle}"

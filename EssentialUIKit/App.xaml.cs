@@ -4,6 +4,7 @@ using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 #endif
 using EssentialUIKit.AppLayout.Views;
+using EssentialUIKit.Views.Login;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
@@ -33,7 +34,7 @@ namespace EssentialUIKit
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTMxMjE5QDMxMzcyZTMyMmUzMFZvdUt0ckx2UmRDYVVBMHFXeklaM0FlYXZWa3J3dkFFbTJmZG1OWnpqTVE9");
             this.InitializeComponent();
 
-            this.MainPage = new NavigationPage(new HomePage());
+            this.MainPage = new NavigationPage(new LoginPage());
         }
 
         #endregion

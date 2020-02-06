@@ -1,25 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\app2\\EssentialUIKit.iOS\\EssentialUIKit.iOS.csproj": {}
+    "E:\\work\\UCPapp\\EssentialUIKit.iOS\\EssentialUIKit.iOS.csproj": {}
   },
   "projects": {
-    "C:\\app2\\EssentialUIKit.iOS\\EssentialUIKit.iOS.csproj": {
+    "E:\\work\\UCPapp\\EssentialUIKit.iOS\\EssentialUIKit.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\app2\\EssentialUIKit.iOS\\EssentialUIKit.iOS.csproj",
+        "projectUniqueName": "E:\\work\\UCPapp\\EssentialUIKit.iOS\\EssentialUIKit.iOS.csproj",
         "projectName": "EssentialUIKit.iOS",
-        "projectPath": "C:\\app2\\EssentialUIKit.iOS\\EssentialUIKit.iOS.csproj",
-        "packagesPath": "C:\\Users\\desaExcelsis\\.nuget\\packages\\",
-        "outputPath": "C:\\app2\\EssentialUIKit.iOS\\obj\\",
+        "projectPath": "E:\\work\\UCPapp\\EssentialUIKit.iOS\\EssentialUIKit.iOS.csproj",
+        "packagesPath": "C:\\Users\\Fernando Formigli\\.nuget\\packages\\",
+        "outputPath": "E:\\work\\UCPapp\\EssentialUIKit.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
-          "C:\\ProgramData\\Xamarin\\NuGet\\"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\app2\\NuGet.Config",
-          "C:\\Users\\desaExcelsis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "E:\\work\\UCPapp\\NuGet.Config",
+          "C:\\Users\\Fernando Formigli\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -28,15 +28,13 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.syncfusion.com/nuget_xamarin/nuget/getsyncfusionpackages/xamarin": {},
-          "https://www.nuget.org/packages/Xamarin.Forms.PancakeView": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "C:\\app2\\EssentialUIKit\\EssentialUIKit.csproj": {
-                "projectPath": "C:\\app2\\EssentialUIKit\\EssentialUIKit.csproj"
+              "E:\\work\\UCPapp\\EssentialUIKit\\EssentialUIKit.csproj": {
+                "projectPath": "E:\\work\\UCPapp\\EssentialUIKit\\EssentialUIKit.csproj"
               }
             }
           }
@@ -127,7 +125,7 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.0.0.497661, )"
+              "version": "[4.4.0.991537, )"
             }
           }
         }
@@ -144,22 +142,21 @@
         }
       }
     },
-    "C:\\app2\\EssentialUIKit\\EssentialUIKit.csproj": {
+    "E:\\work\\UCPapp\\EssentialUIKit\\EssentialUIKit.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\app2\\EssentialUIKit\\EssentialUIKit.csproj",
+        "projectUniqueName": "E:\\work\\UCPapp\\EssentialUIKit\\EssentialUIKit.csproj",
         "projectName": "EssentialUIKit",
-        "projectPath": "C:\\app2\\EssentialUIKit\\EssentialUIKit.csproj",
-        "packagesPath": "C:\\Users\\desaExcelsis\\.nuget\\packages\\",
-        "outputPath": "C:\\app2\\EssentialUIKit\\obj\\",
+        "projectPath": "E:\\work\\UCPapp\\EssentialUIKit\\EssentialUIKit.csproj",
+        "packagesPath": "C:\\Users\\Fernando Formigli\\.nuget\\packages\\",
+        "outputPath": "E:\\work\\UCPapp\\EssentialUIKit\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\ProgramData\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\app2\\NuGet.Config",
-          "C:\\Users\\desaExcelsis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "E:\\work\\UCPapp\\NuGet.Config",
+          "C:\\Users\\Fernando Formigli\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -168,9 +165,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.syncfusion.com/nuget_xamarin/nuget/getsyncfusionpackages/xamarin": {},
-          "https://www.nuget.org/packages/Xamarin.Forms.PancakeView": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {
@@ -280,14 +275,20 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.0.0.497661, )"
+              "version": "[4.4.0.991537, )"
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

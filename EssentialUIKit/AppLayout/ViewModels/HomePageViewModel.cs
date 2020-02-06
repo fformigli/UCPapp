@@ -17,7 +17,7 @@ namespace EssentialUIKit.AppLayout.ViewModels
     {
         public string userLogged { get; set; }
 
-        private const string sampleListFile = "EssentialUIKit.AppLayout.TemplateList.xml";
+        private const string functionalitiesList = "EssentialUIKit.AppLayout.Functionalities.xml";
 
         public List<Category> Templates { get; set; }
 
@@ -101,7 +101,7 @@ namespace EssentialUIKit.AppLayout.ViewModels
             Templates.Clear();
 
             var assembly = typeof(App).GetTypeInfo().Assembly;
-            var stream = assembly.GetManifestResourceStream(sampleListFile);
+            var stream = assembly.GetManifestResourceStream(functionalitiesList);
 
             using (var reader = new StreamReader(stream))
             {
@@ -113,61 +113,32 @@ namespace EssentialUIKit.AppLayout.ViewModels
 
                 while (!xmlReader.EOF)
                 {
+                    Console.WriteLine("iterating: "+ xmlReader.Name +" "+ xmlReader.IsStartElement()+" "+ xmlReader.HasAttributes);
                     switch (xmlReader.Name)
                     {
-                        case "Category" when xmlReader.IsStartElement() && xmlReader.HasAttributes:
+                        case "Category" when xmlReader.IsStartElement():
                             {
-                                if (!hasAdded && category != null)
-                                {
-                                    Templates.Add(category);
-                                    category = null;
-                                    hasAdded = true;
-                                }
 
                                 var platform = GetDataFromXmlReader(xmlReader, "Platform");
                                 if (string.IsNullOrEmpty(platform) || platform.ToLower().Contains(runtimePlatform))
                                 {
                                     var categoryName = GetDataFromXmlReader(xmlReader, "Name");
                                     var description = GetDataFromXmlReader(xmlReader, "Description");
-                                    var icon =
-                                        $"EssentialUIKit.AppLayout.Icons.{GetDataFromXmlReader(xmlReader, "Icon")}";
-
-                                    category = new Category(categoryName, icon, description);
-                                }
-
-                                break;
-                            }
-
-                        case "Page" when xmlReader.IsStartElement() && xmlReader.HasAttributes && category != null:
-                            {
-                                var platform = GetDataFromXmlReader(xmlReader, "Platform");
-
-                                if (string.IsNullOrEmpty(platform) || platform.ToLower().Contains(runtimePlatform))
-                                {
-                                    var templateName = GetDataFromXmlReader(xmlReader, "Name");
-                                    var description = GetDataFromXmlReader(xmlReader, "Description");
                                     var pageName = GetDataFromXmlReader(xmlReader, "PageName");
-                                    bool.TryParse(GetDataFromXmlReader(xmlReader, "LayoutFullscreen"),
-                                        out var layoutFullScreen);
+                                    var icon = $"EssentialUIKit.AppLayout.Icons.{GetDataFromXmlReader(xmlReader, "Icon")}";
 
-                                    var template = new Template(templateName, description, pageName, layoutFullScreen);
-                                    Routing.RegisterRoute(templateName,
+                                    category = new Category(categoryName, icon, description, pageName);
+
+                                    Routing.RegisterRoute(categoryName,
                                         assembly.GetType($"EssentialUIKit.{pageName}"));
-
-                                    category.Pages.Add(template);
-                                    hasAdded = false;
                                 }
+                                Templates.Add(category);
 
                                 break;
                             }
                     }
 
                     xmlReader.Read();
-                }
-
-                if (!hasAdded)
-                {
-                    Templates.Add(category);
                 }
             }
         }

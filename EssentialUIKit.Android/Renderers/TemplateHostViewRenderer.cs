@@ -43,7 +43,7 @@ namespace EssentialUIKit.Droid.Renderers
             if (this.Control != null && this.Control.Handle != System.IntPtr.Zero)
             {
                 var supportFragmentManager = (this.Control.Context as Android.Support.V4.App.FragmentActivity).SupportFragmentManager;
-                supportFragmentManager?.BeginTransaction().Remove(supportFragmentManager.Fragments[2]).Commit();
+                supportFragmentManager?.BeginTransaction().Remove(supportFragmentManager.Fragments[1]).Commit();
 
                 this.Control?.RemoveFromParent();
             }

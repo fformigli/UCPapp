@@ -8,13 +8,12 @@ namespace EssentialUIKit.AppLayout.Models
     {
         #region Constructor
 
-        public Category(string name, string icon, string description)
+        public Category(string name, string icon, string description, string pageName)
         {
-            this.Pages = new List<Template>();
-
             this.Name = name;
             this.Icon = icon;
             this.Description = description;
+            this.PageName = pageName;
         }
 
         #endregion
@@ -27,15 +26,7 @@ namespace EssentialUIKit.AppLayout.Models
 
         public string Description { get; set; }
 
-        public List<Template> Pages { get; set; }
-
-        public string TemplateCount
-        {
-            get
-            {
-                return this.Pages.Count > 1 ? $"{this.Pages.Count.ToString()} Templates" : $"{this.Pages.Count.ToString()} Template";
-            }
-        }
+        public string PageName { get; set; }
 
         #endregion
     }

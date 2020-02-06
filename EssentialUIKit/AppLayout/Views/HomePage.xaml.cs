@@ -1,6 +1,7 @@
 using EssentialUIKit.AppLayout.Controls;
 using EssentialUIKit.AppLayout.Models;
 using System;
+using System.Reflection;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
@@ -117,9 +118,9 @@ namespace EssentialUIKit.AppLayout.Views
             else if (scrollValue > -215)
             {
                 Description.Opacity = factor;
+                HeaderBackground.Opacity = factor;
                 HeaderImage.Opacity = factor;
-                HeaderText.TranslationX = this.headerDeltaX * (factor - 1);
-                HeaderText.TranslationY = -1 * scrollValue + this.headerDeltaY * (factor - 1);
+                HeaderText.Opacity = factor;
                 BrandName.Opacity = (scrollValue + 75) / 75;
                 ActionBar.IsVisible = false;
                 SettingsIcon.TranslationY = scrollValue * -1;
@@ -130,7 +131,16 @@ namespace EssentialUIKit.AppLayout.Views
         {
             if (e.SelectedItem == null || this.isNavigationInQueue) return;
             this.isNavigationInQueue = true;
-            Navigation.PushAsync(new TemplatePage(e.SelectedItem as Category));
+            
+
+            if (Device.RuntimePlatform == "UWP")
+            {
+                var assembly = typeof(App).GetTypeInfo().Assembly;
+                Navigation.PushAsync((Page)Activator.CreateInstance(
+                    assembly.GetType($"EssentialUIKit.{((Category)e.SelectedItem).PageName}")));
+            }
+            else
+                Navigation.PushAsync(new TemplateHostPage(e.SelectedItem as Category));
         }
 
         private void ShowSettings(object sender, EventArgs e)
