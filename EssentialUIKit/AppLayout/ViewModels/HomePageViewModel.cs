@@ -17,7 +17,7 @@ namespace EssentialUIKit.AppLayout.ViewModels
     {
         public string userLogged { get; set; }
 
-        private const string functionalitiesList = "EssentialUIKit.AppLayout.Functionalities.xml";
+        private const string functionalitiesList = "EssentialUIKit.AppLayout.Menu.xml";
 
         public List<Category> Templates { get; set; }
 
@@ -26,17 +26,6 @@ namespace EssentialUIKit.AppLayout.ViewModels
             set
             {
                 if (value == null) return;
-
-                //XmlSerializer xmlSerializer = new XmlSerializer(typeof(Category));
-
-                //using (StringWriter textWriter = new StringWriter())
-                //{
-                //    xmlSerializer.Serialize(textWriter, value);
-
-                //    var url = HttpUtility.UrlEncode(textWriter.ToString());
-
-                //    Shell.Current.GoToAsync($@"templatepage?data1={url}", true);
-                //}
             }
         }
 
@@ -108,7 +97,6 @@ namespace EssentialUIKit.AppLayout.ViewModels
                 var xmlReader = XmlReader.Create(reader);
                 xmlReader.Read();
                 Category category = null;
-                var hasAdded = false;
                 var runtimePlatform = Device.RuntimePlatform.ToLower();
 
                 while (!xmlReader.EOF)

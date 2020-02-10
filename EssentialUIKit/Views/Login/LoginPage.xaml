@@ -122,7 +122,7 @@
                             Margin="0,16"
                             Command="{Binding LoginCommand}"
                             Style="{StaticResource SfButtonStyle}"
-                            Text="LOG IN" />
+                            Text="Iniciar Sesión" />
 
                         <!--
                         <Label
@@ -175,15 +175,15 @@
                             HorizontalOptions="CenterAndExpand"
                             HorizontalTextAlignment="Center"
                             Style="{StaticResource LabelStyle}"
-                            Text="¿No tienes una cuenta?"
+                            Text="Version 1.0"
                             VerticalTextAlignment="Center" />
 
-                        <!--  Sign-up button  -->
+                        <!--  Sign-up button  --><!--
                         <buttons:SfButton
                             Command="{Binding SignUpCommand}"
                             CornerRadius="4"
                             Style="{StaticResource SfFlatButtonStyle}"
-                            Text="Regístrate" />
+                            Text="Regístrate" />-->
 
                     </StackLayout>
 

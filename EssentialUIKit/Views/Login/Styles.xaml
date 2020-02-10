@@ -11,8 +11,6 @@
 
     <Color x:Key="EntryPlaceholderColor">#A0FFFFFF</Color>
     <Color x:Key="BorderBackgroundColor">#20FFFFFF</Color>
-    <Color x:Key="GradientStartColor">#01BE8B</Color>
-    <Color x:Key="GradientEndColor">#ffBB40</Color>
 
     <!--  Common style for content pages  -->
     <Style x:Key="ContentPageStyle" TargetType="ContentPage">
@@ -83,7 +81,7 @@
 
     <!--  Common style for gradient view  -->
     <Style x:Key="SfGradientViewStyle" TargetType="gradient:SfGradientView">
-        <Setter Property="Opacity" Value="0.82" />
+        <Setter Property="Opacity" Value="0.46" />
         <Setter Property="VerticalOptions" Value="FillAndExpand" />
         <Setter Property="HorizontalOptions" Value="FillAndExpand" />
         <Setter Property="BackgroundBrush">
