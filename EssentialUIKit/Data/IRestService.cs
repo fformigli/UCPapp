@@ -2,7 +2,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace EssentialUIKit.Data
+namespace EssentialUIKit.DataService
 {
     public interface IRestService
     {

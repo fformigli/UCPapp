@@ -6,7 +6,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 
 
-namespace EssentialUIKit.Data
+namespace EssentialUIKit.DataService
 {
     public class RestService : IRestService
     {

@@ -85,8 +85,18 @@
                             Style="{StaticResource LabelStyle}"
                             Text="La primera, la mejor" />
 
-                        <!--  Entry to get email ID from user  -->
-                        <local:EmailEntry Grid.Row="2" Padding="0,24" />
+                        <!--  username  -->
+                        <border:SfBorder
+                            Grid.Row="2"
+                            BorderColor="{Binding Source={x:Reference UsernameEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=0}"
+                            Style="{StaticResource SfBorderStyle}">
+                            <control:BorderlessEntry
+                                x:Name="UsernameEntry"
+                                IsPassword="True"
+                                Placeholder="Nombre de Usuario"
+                                Style="{StaticResource EntryStyle}"
+                                Text="{Binding Username}" />
+                        </border:SfBorder>
 
                         <!--  Entry to get password from user  -->
                         <border:SfBorder
@@ -96,13 +106,13 @@
                             <control:BorderlessEntry
                                 x:Name="PasswordEntry"
                                 IsPassword="True"
-                                Placeholder="Password"
+                                Placeholder="Contraseña"
                                 Style="{StaticResource EntryStyle}"
                                 Text="{Binding Password}" />
                         </border:SfBorder>
 
                         <!--  Forgot password link  -->
-                        <Label
+                        <!--<Label
                             x:Name="ForgotPasswordLabel"
                             Grid.Row="4"
                             Margin="0,16"
@@ -114,7 +124,7 @@
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}" CommandParameter="{x:Reference ForgotPasswordLabel}" />
                             </Label.GestureRecognizers>
-                        </Label>
+                        </Label>-->
 
                         <!--  Login button  -->
                         <buttons:SfButton
@@ -123,43 +133,6 @@
                             Command="{Binding LoginCommand}"
                             Style="{StaticResource SfButtonStyle}"
                             Text="Iniciar Sesión" />
-
-                        <!--
-                        <Label
-                            Grid.Row="6"
-                            FontFamily="{StaticResource Montserrat-Medium}"
-                            HorizontalTextAlignment="Center"
-                            Style="{StaticResource LabelStyle}"
-                            Text="Or create an account using social media" />
-
-                         Login through facebook account  
-                        <buttons:SfButton
-                            Grid.Row="7"
-                            Margin="0,16,0,16"
-                            BackgroundColor="{DynamicResource FacebookBlue}"
-                            Command="{Binding SocialMediaLoginCommand}"
-                            CornerRadius="20"
-                            HeightRequest="40">
-                            <buttons:SfButton.Content>
-                                <StackLayout
-                                    HorizontalOptions="CenterAndExpand"
-                                    Orientation="Horizontal"
-                                    VerticalOptions="Center">
-                                    <Label
-                                        FontFamily="{StaticResource FontIcons}"
-                                        FontSize="18"
-                                        Text="&#xe735;"
-                                        TextColor="{DynamicResource Gray-White}"
-                                        VerticalTextAlignment="Center" />
-                                    <Label
-                                        FontFamily="{StaticResource Montserrat-Medium}"
-                                        FontSize="16"
-                                        Text="Login with Facebook"
-                                        TextColor="{DynamicResource Gray-White}" />
-                                </StackLayout>
-                            </buttons:SfButton.Content>
-                        </buttons:SfButton>
-                        -->
 
                     </Grid>
 
@@ -173,10 +146,10 @@
                         <Label
                             FontFamily="{StaticResource Montserrat-Medium}"
                             HorizontalOptions="CenterAndExpand"
-                            HorizontalTextAlignment="Center"
+                            HorizontalTextAlignment="Start"
                             Style="{StaticResource LabelStyle}"
                             Text="Version 1.0"
-                            VerticalTextAlignment="Center" />
+                            VerticalTextAlignment="End" />
 
                         <!--  Sign-up button  --><!--
                         <buttons:SfButton

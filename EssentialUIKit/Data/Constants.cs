@@ -1,7 +1,7 @@
 ﻿
 using Xamarin.Forms;
 
-namespace EssentialUIKit.Data
+namespace EssentialUIKit.DataService
 {
     public static class Constants
     {

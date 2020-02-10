@@ -8,7 +8,7 @@ using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
-namespace EssentialUIKit.Data
+namespace EssentialUIKit.DataService
 {
     public class RestAPI
     {
@@ -118,6 +118,12 @@ namespace EssentialUIKit.Data
             Debug.WriteLine(@"\tDIEGO MENDEZ - RestApi {0}", lst_asistenciaDS_response.materiaAsistenciaAlumno.Count);
             Debug.WriteLine(@"\tDIEGO MENDEZ - RestApi {0}", lst_perfilDS_response.carreras.Count);
 
+        }
+
+        public bool AuthenticateLDAP(string username, string password)
+        {
+            Console.WriteLine(username + " " + password);
+            return true;
         }
     }
 }

@@ -15,6 +15,7 @@ namespace EssentialUIKit.ViewModels.Login
     {
         #region Fields
 
+        private string username;
         private string password;
 
 
@@ -58,6 +59,24 @@ namespace EssentialUIKit.ViewModels.Login
                 this.OnPropertyChanged();
             }
         }
+        public string Username
+        {
+            get
+            {
+                return this.username;
+            }
+
+            set
+            {
+                if (this.username == value)
+                {
+                    return;
+                }
+
+                this.username = value;
+                this.OnPropertyChanged();
+            }
+        }
 
         #endregion
 
@@ -94,6 +113,7 @@ namespace EssentialUIKit.ViewModels.Login
         private void LoginClicked(object obj)
         {
             Console.WriteLine(obj);
+            // autenticar
             App.Current.MainPage = new NavigationPage(new HomePage());
 
         }
