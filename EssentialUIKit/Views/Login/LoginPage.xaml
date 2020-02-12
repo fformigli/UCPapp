@@ -59,10 +59,11 @@
 
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="2*" />
+                            <RowDefinition Height="2*" />
+                            <RowDefinition Height="2*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="2*" />
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
@@ -85,22 +86,43 @@
                             Style="{StaticResource LabelStyle}"
                             Text="La primera, la mejor" />
 
+                        <Image
+                            x:Name="LoginErrorImg"
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            HeightRequest="20"
+                            WidthRequest="20"
+                            IsVisible="False"
+                            VerticalOptions="Start"
+                            HorizontalOptions="Start"
+                            Aspect="AspectFit"
+                            Source="@drawable/atention"/>
+                            
+                        <Label
+                            x:Name="LoginError"
+                            Grid.Row="2"
+                            Margin="20,-3,0,0"
+                            FontSize="Large"
+                            IsVisible="False"
+                            Text="Usuario o Contraseña incorrectos."
+                            TextColor="{DynamicResource Red}"
+                            VerticalOptions="FillAndExpand" />
+
                         <!--  username  -->
                         <border:SfBorder
-                            Grid.Row="2"
+                            Grid.Row="3"
                             BorderColor="{Binding Source={x:Reference UsernameEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=0}"
                             Style="{StaticResource SfBorderStyle}">
                             <control:BorderlessEntry
                                 x:Name="UsernameEntry"
-                                IsPassword="True"
                                 Placeholder="Nombre de Usuario"
                                 Style="{StaticResource EntryStyle}"
                                 Text="{Binding Username}" />
                         </border:SfBorder>
-
+                        
                         <!--  Entry to get password from user  -->
                         <border:SfBorder
-                            Grid.Row="3"
+                            Grid.Row="5"
                             BorderColor="{Binding Source={x:Reference PasswordEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=0}"
                             Style="{StaticResource SfBorderStyle}">
                             <control:BorderlessEntry
@@ -111,24 +133,9 @@
                                 Text="{Binding Password}" />
                         </border:SfBorder>
 
-                        <!--  Forgot password link  -->
-                        <!--<Label
-                            x:Name="ForgotPasswordLabel"
-                            Grid.Row="4"
-                            Margin="0,16"
-                            FontFamily="{StaticResource Montserrat-SemiBold}"
-                            FontSize="12"
-                            HorizontalOptions="End"
-                            Text="¿Olvidaste su contraseña?"
-                            TextColor="White">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}" CommandParameter="{x:Reference ForgotPasswordLabel}" />
-                            </Label.GestureRecognizers>
-                        </Label>-->
-
                         <!--  Login button  -->
                         <buttons:SfButton
-                            Grid.Row="5"
+                            Grid.Row="6"
                             Margin="0,16"
                             Command="{Binding LoginCommand}"
                             Style="{StaticResource SfButtonStyle}"
@@ -136,30 +143,12 @@
 
                     </Grid>
 
-                    <StackLayout
-                        HorizontalOptions="Center"
-                        Orientation="Horizontal"
-                        Spacing="1"
-                        VerticalOptions="End">
-
-
-                        <Label
-                            FontFamily="{StaticResource Montserrat-Medium}"
-                            HorizontalOptions="CenterAndExpand"
-                            HorizontalTextAlignment="Start"
-                            Style="{StaticResource LabelStyle}"
-                            Text="Version 1.0"
-                            VerticalTextAlignment="End" />
-
-                        <!--  Sign-up button  --><!--
-                        <buttons:SfButton
-                            Command="{Binding SignUpCommand}"
-                            CornerRadius="4"
-                            Style="{StaticResource SfFlatButtonStyle}"
-                            Text="Regístrate" />-->
-
-                    </StackLayout>
-
+                    <Label
+                        FontFamily="{StaticResource Montserrat-Medium}"
+                        HorizontalOptions="EndAndExpand"
+                        HorizontalTextAlignment="Start"
+                        Style="{StaticResource LabelStyle}"
+                        Text="Version 1.0"/>
                 </StackLayout>
             </ScrollView>
         </Grid>

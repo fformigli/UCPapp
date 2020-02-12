@@ -1,9 +1,10 @@
 ﻿using EssentialUIKit.AppLayout.Views;
-using System;
+using EssentialUIKit.DataService;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
-
+using System;
+using System.ComponentModel;
 
 namespace EssentialUIKit.ViewModels.Login
 {
@@ -11,7 +12,7 @@ namespace EssentialUIKit.ViewModels.Login
     /// ViewModel for login page.
     /// </summary>
     [Preserve(AllMembers = true)]
-    public class LoginPageViewModel : LoginViewModel
+    public class LoginPageViewModel : INotifyPropertyChanged
     {
         #region Fields
 
@@ -37,6 +38,9 @@ namespace EssentialUIKit.ViewModels.Login
         #endregion
 
         #region property
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
 
         /// <summary>
         /// Gets or sets the property that is bound with an entry that gets the password from user in the login page.
@@ -112,9 +116,11 @@ namespace EssentialUIKit.ViewModels.Login
         /// <param name="obj">The Object</param>
         private void LoginClicked(object obj)
         {
-            Console.WriteLine(obj);
-            // autenticar
-            App.Current.MainPage = new NavigationPage(new HomePage());
+            Console.WriteLine("testing login parameters" + username + " " + password);
+            if (RestAPI.AuthenticateLDAP(username, password))
+                App.Current.MainPage = new NavigationPage(new HomePage());
+            else
+                App.Current.MainPage.DisplayAlert("Datos Incorrectos", "Por favor, verifique su usuario y contraseña", "OK");  
 
         }
 

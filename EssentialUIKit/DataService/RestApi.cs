@@ -7,12 +7,14 @@ using EssentialUIKit.Models.Rendimiento.Perfil;
 using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using EssentialUIKit.Models;
 
 namespace EssentialUIKit.DataService
 {
     public class RestAPI
     {
         private const string UrlService = "https://www.columbia.edu.py/acadweb/phone/mobileService/";
+        private const string UrlLogin = "https://www.columbia.edu.py/ajax/loginMobile.php";
         //"http://192.168.1.137:8480/hubcolumbia/rest/mobileService/";
 
         //para test cedula = 6948405
@@ -43,8 +45,6 @@ namespace EssentialUIKit.DataService
         {
             this.examenesDS_response = await RestUtility.CallServiceAsync<ExamenesResult>(string.Format(ExamenesServiceGet, nroCedula), string.Empty, null, "GET",
                string.Empty, string.Empty) as ExamenesResult;
-
-
         }
         async public Task CalificacionesDS_response(String nroCedula)
         {
@@ -72,7 +72,6 @@ namespace EssentialUIKit.DataService
 
         public void PerfilDS2_response(String nroCedula)
         {
-            Console.WriteLine("Solicitando perfil" + nroCedula);
             //6948405
             this.perfilDS_response = RestUtility.CallServiceSync<PerfilResult>(string.Format(PerfilServiceGet, nroCedula), string.Empty, null, "GET",
                string.Empty, string.Empty) as PerfilResult;
@@ -120,10 +119,12 @@ namespace EssentialUIKit.DataService
 
         }
 
-        public bool AuthenticateLDAP(string username, string password)
+        public static bool AuthenticateLDAP(string username, string password)
         {
-            Console.WriteLine(username + " " + password);
-            return true;
+            Console.WriteLine("testing login parameters"+username + " " + password);
+            var login = RestUtility.Login(UrlLogin, username, password);
+            Console.WriteLine("login: "+login.Status + " " + login.Cedula + " " + login.Msg);
+            return login.Status.Equals("ok");
         }
     }
 }

@@ -5,6 +5,8 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
+using EssentialUIKit.Models;
 
 namespace EssentialUIKit.DataService
 {
@@ -82,6 +84,38 @@ namespace EssentialUIKit.DataService
             var responseContent = streamReader.ReadToEnd().Trim();
 
             var jsonObject = JsonConvert.DeserializeObject<T>(responseContent);
+
+            return jsonObject;
+        }
+
+        public static Login Login(string url, string username, string password)
+        {
+            var postData = "username=" + username + "&password=" + password;
+            var data = Encoding.ASCII.GetBytes(postData);
+            
+            // Initialize an HttpWebRequest for the current URL.
+            var webReq = (HttpWebRequest)WebRequest.Create(url);
+            webReq.Method = WebRequestMethods.Http.Post;
+            webReq.ContentType = "application/x-www-form-urlencoded";
+            webReq.Accept = "application/json";
+            webReq.ContentLength = data.Length;
+            Console.WriteLine(data.Length);
+            
+            //create stream
+            var requestStream = webReq.GetRequestStream();
+            requestStream.Write(data, 0 ,data.Length);
+            requestStream.Close();
+            
+            // response
+            var response = webReq.GetResponse();
+            
+            var streamReader = new StreamReader(response.GetResponseStream());
+
+            var responseContent = streamReader.ReadToEnd().Trim();
+
+            Console.WriteLine(responseContent);
+
+            var jsonObject = JsonConvert.DeserializeObject<Login>(responseContent);
 
             return jsonObject;
         }
