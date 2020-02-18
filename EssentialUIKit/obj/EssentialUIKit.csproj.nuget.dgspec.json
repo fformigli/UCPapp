@@ -14,7 +14,7 @@
         "outputPath": "E:\\work\\UCPapp\\EssentialUIKit\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "E:\\work\\UCPapp\\NuGet.Config",
@@ -60,7 +60,6 @@
               "version": "[2.2.29, )"
             },
             "NETStandard.Library": {
-              "suppressParent": "All",
               "target": "Package",
               "version": "[2.0.3, )"
             },

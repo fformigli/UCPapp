@@ -43,46 +43,31 @@ namespace EssentialUIKit.AppLayout.ViewModels
 
             string descAlumno;
             RestAPI api = new RestAPI();
-            api.PerfilDS2_response("6948405");
+            api.PerfilDS2_response(RestAPI.Cedula);
 
-            userLogged = api.perfilDS_response.nombres + " " + api.perfilDS_response.apellidos;
-            descAlumno = api.perfilDS_response.nombres + " " + api.perfilDS_response.apellidos;
+            userLogged = api.perfilDS_response.Nombres + " " + api.perfilDS_response.Apellidos;
 
             CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
             TextInfo textInfo = cultureInfo.TextInfo;
             userLogged = textInfo.ToTitleCase(userLogged.ToLower());
-            descAlumno = textInfo.ToTitleCase(descAlumno.ToLower());
-
-            if (api.perfilDS_response.sexo.Contains("M"))
-            {
-                descAlumno += " futuro";
-            }
-            else
-            {
-                descAlumno += " futura";
-            }
+            descAlumno = userLogged + " futur";
+            descAlumno += api.perfilDS_response.Sexo.Contains("M") ? "o" : "a";
             descAlumno += " profesional de ";
+
             string carrera = "";
-            for (int i = 0; i < api.perfilDS_response.carreras.Count; i++)
+            for (int i = 0; i < api.perfilDS_response.Carreras.Count; i++)
             {
                 if (i == 0)
-                {
-                    carrera += api.perfilDS_response.carreras[i].carrera;
-                }
-                else if (i == api.perfilDS_response.carreras.Count - 1)
-                {
-                    carrera += " y " + api.perfilDS_response.carreras[i].carrera;
-                }
+                    carrera += api.perfilDS_response.Carreras[i].CarreraPerfil;
+                else if (i == api.perfilDS_response.Carreras.Count - 1)
+                    carrera += " y " + api.perfilDS_response.Carreras[i].CarreraPerfil;
                 else if (i > 0)
-                {
-                    carrera += ", " + api.perfilDS_response.carreras[i].carrera;
-                }
+                    carrera += ", " + api.perfilDS_response.Carreras[i].CarreraPerfil;
 
             }
             descAlumno += carrera + ". En este portal encontrarás toda la información sobre tu estadía en la Universidad";
             Application.Current.Resources["Description"] = descAlumno;
             Application.Current.Resources["userLogged"] = userLogged;
-            Console.Out.WriteLine(userLogged);
         }
 
         private void PopulateList()

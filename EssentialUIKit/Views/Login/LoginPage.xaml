@@ -68,9 +68,14 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="8*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
 
                         <!--  Label to display the title of this page  -->
                         <Label
+                            Grid.ColumnSpan="2"
                             FontFamily="{StaticResource Montserrat-SemiBold}"
                             FontSize="20"
                             HorizontalTextAlignment="Center"
@@ -79,9 +84,11 @@
 
                         <!--  Label to display the description of this page  -->
                         <Label
+                            Grid.ColumnSpan="2"
                             Grid.Row="1"
                             Margin="0,8"
                             FontFamily="{StaticResource Montserrat-Medium}"
+                            FontSize="Medium"
                             HorizontalTextAlignment="Center"
                             Style="{StaticResource LabelStyle}"
                             Text="La primera, la mejor" />
@@ -110,6 +117,7 @@
 
                         <!--  username  -->
                         <border:SfBorder
+                            Grid.ColumnSpan="2"
                             Grid.Row="3"
                             BorderColor="{Binding Source={x:Reference UsernameEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=0}"
                             Style="{StaticResource SfBorderStyle}">
@@ -123,6 +131,7 @@
                         <!--  Entry to get password from user  -->
                         <border:SfBorder
                             Grid.Row="5"
+                            Grid.ColumnSpan="2"
                             BorderColor="{Binding Source={x:Reference PasswordEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=0}"
                             Style="{StaticResource SfBorderStyle}">
                             <control:BorderlessEntry
@@ -133,13 +142,27 @@
                                 Text="{Binding Password}" />
                         </border:SfBorder>
 
+                        <buttons:SfButton
+                            Grid.Column="1"
+                            Grid.Row="5"
+                            ShowIcon="True"
+                            ImageSource="ic_action_remove_red_eye.png"
+                            HorizontalOptions="End"
+                            BackgroundColor="Transparent"
+                            Opacity="0.7"
+                            Clicked="PasswordToggle"
+                            />
+
                         <!--  Login button  -->
                         <buttons:SfButton
+                            x:Name="LoginButton"
+                            Grid.ColumnSpan="2"
                             Grid.Row="6"
                             Margin="0,16"
                             Command="{Binding LoginCommand}"
                             Style="{StaticResource SfButtonStyle}"
-                            Text="Iniciar Sesión" />
+                            Clicked="Loading"
+                            Text="Iniciar Sesión" /> 
 
                     </Grid>
 

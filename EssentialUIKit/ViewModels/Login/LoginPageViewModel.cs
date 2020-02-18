@@ -5,6 +5,8 @@ using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using System;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
 
 namespace EssentialUIKit.ViewModels.Login
 {
@@ -16,8 +18,8 @@ namespace EssentialUIKit.ViewModels.Login
     {
         #region Fields
 
-        private string username;
-        private string password;
+        private string username = "lgvaldez";
+        private string password = "sblm";
 
 
         #endregion
@@ -116,12 +118,13 @@ namespace EssentialUIKit.ViewModels.Login
         /// <param name="obj">The Object</param>
         private void LoginClicked(object obj)
         {
-            Console.WriteLine("testing login parameters" + username + " " + password);
-            if (RestAPI.AuthenticateLDAP(username, password))
+            var status = RestAPI.AuthenticateLDAP(username, password);
+            if (status.Equals("ok"))
                 App.Current.MainPage = new NavigationPage(new HomePage());
+            else if (status.Equals("fail"))
+                App.Current.MainPage.DisplayAlert("Datos Incorrectos", "Por favor, verifique su usuario y contraseña", "OK");
             else
-                App.Current.MainPage.DisplayAlert("Datos Incorrectos", "Por favor, verifique su usuario y contraseña", "OK");  
-
+                App.Current.MainPage.DisplayAlert("Error de Servidor", "Ocurrió un error, por favor intente de nuevo mas tarde\n"+status, "OK");
         }
 
         /// <summary>
@@ -152,6 +155,11 @@ namespace EssentialUIKit.ViewModels.Login
         private void SocialLoggedIn(object obj)
         {
             // Do something
+        }
+
+                protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         #endregion

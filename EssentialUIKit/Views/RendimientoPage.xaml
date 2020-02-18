@@ -3,19 +3,14 @@
     x:Class="EssentialUIKit.Views.RendimientoPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
-    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
-    xmlns:control="clr-namespace:EssentialUIKit.Controls"
     xmlns:converter="clr-namespace:EssentialUIKit.Converters"
-    xmlns:core="clr-namespace:Syncfusion.XForms.Core;assembly=Syncfusion.Core.XForms"
-    xmlns:local="clr-namespace:EssentialUIKit.Views.Login"
-    xmlns:viewModel="clr-namespace:EssentialUIKit.ViewModels.Login"
+    xmlns:viewModel="clr-namespace:EssentialUIKit.ViewModels"
     BackgroundColor="{DynamicResource Gray-F0}"
     NavigationPage.HasNavigationBar="False"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     xmlns:carousel="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
-    Shell.NavBarIsVisible="False">
+    Shell.NavBarIsVisible="True">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -58,6 +53,7 @@
                         </Button.IsVisible>
                     </Button>
                     <StackLayout Grid.Column="1">
+                        <!--Imagen de perfil-->
                         <ffimageloading:CachedImage VerticalOptions="Start" DownsampleToViewSize="false"
                             Aspect="AspectFit" HeightRequest="110" WidthRequest="110" Source="astronauta.png">
                             <ffimageloading:CachedImage.Transformations>
@@ -71,6 +67,7 @@
                                 </fftransformations:CircleTransformation>
                             </ffimageloading:CachedImage.Transformations>
                         </ffimageloading:CachedImage>
+                        <!--Nombre del alumno y Carrera-->
                         <Label Text="Jessica Denisse Pereira Gimenez" Margin="0,5,0,0" TextColor="White" FontSize="16" HorizontalTextAlignment="Center" />
                         <Label Text="Turismo y Hotelería" TextColor="White" FontSize="12" HorizontalTextAlignment="Center">
                             <Label.IsVisible>
@@ -82,7 +79,9 @@
                         </Label>
                     </StackLayout>
                 </Grid>
-                <StackLayout Orientation="Horizontal" BackgroundColor="#24a8b3" HeightRequest="80">
+                
+                <!--Banda de iconos de badges-->                
+                <!--<StackLayout Orientation="Horizontal" BackgroundColor="#24a8b3" HeightRequest="80">
                     <StackLayout Margin="10,10,10,10" VerticalOptions="Center">
                         <Image Source="icon_badge1.png" WidthRequest="35" HorizontalOptions="Center" />
                         <Label Margin="0,-2,0,0" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="11" TextColor="#FFFFFF" Text="¡ok!">
@@ -149,7 +148,7 @@
                             </Label.FontSize>
                         </Label>
                     </StackLayout>
-                </StackLayout>
+                </StackLayout>-->
                 
               <carousel:CarouselViewControl HeightRequest="150" Orientation="Horizontal" InterPageSpacing="10" BackgroundColor="#ffffff"
                     Position="0" ItemsSource="{Binding Statistics}" ShowIndicators="true" IndicatorsTintColor="#ffedcd" 

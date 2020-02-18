@@ -13,18 +13,20 @@ namespace EssentialUIKit.DataService
 {
     public class RestAPI
     {
-        private const string UrlService = "https://www.columbia.edu.py/acadweb/phone/mobileService/";
+        //private const string UrlService = "http://192.168.1.137:8480/hubcolumbia/rest/mobileService/";
+        //private const string UrlService = "https://www.columbia.edu.py/acadweb/phone/mobileService/";
+        private const string UrlService = "http://192.168.1.180:8080/acadweb/phone/mobileService/";
         private const string UrlLogin = "https://www.columbia.edu.py/ajax/loginMobile.php";
-        //"http://192.168.1.137:8480/hubcolumbia/rest/mobileService/";
-
-        //para test cedula = 6948405
-        //para test perfil cedula = 2024952
+        
+        public static string Cedula;
+        
         private const string HorariosServiceGet = UrlService + "horarioAlumno?cedula={0}";
         private const string ExamenesServiceGet = UrlService + "examenesAlumno?cedula={0}";
         private const string CalificacionesServiceGet = UrlService + "calificacionAlumno?cedula={0}&mostrar=todas";
         private const string FinancieroServiceGet = UrlService + "financieroAlumno?cedula={0}&mostrar=todas";
         private const string AsistenciaServiceGet = UrlService + "asistenciaAlumno?cedula={0}";
         private const string PerfilServiceGet = UrlService + "perfil?cedula={0}";
+
 
 
         public ExamenesResult examenesDS_response { get; set; }
@@ -72,7 +74,6 @@ namespace EssentialUIKit.DataService
 
         public void PerfilDS2_response(String nroCedula)
         {
-            //6948405
             this.perfilDS_response = RestUtility.CallServiceSync<PerfilResult>(string.Format(PerfilServiceGet, nroCedula), string.Empty, null, "GET",
                string.Empty, string.Empty) as PerfilResult;
 
@@ -115,16 +116,16 @@ namespace EssentialUIKit.DataService
             Debug.WriteLine(@"\tDIEGO MENDEZ - RestApi {0}", lst_calificacionesDS_response.materia.Count);
             Debug.WriteLine(@"\tDIEGO MENDEZ - RestApi {0}", lst_financieroDS_response.cabeceraFinancieroAlumno.Count);
             Debug.WriteLine(@"\tDIEGO MENDEZ - RestApi {0}", lst_asistenciaDS_response.materiaAsistenciaAlumno.Count);
-            Debug.WriteLine(@"\tDIEGO MENDEZ - RestApi {0}", lst_perfilDS_response.carreras.Count);
+            Debug.WriteLine(@"\tDIEGO MENDEZ - RestApi {0}", lst_perfilDS_response.Carreras.Count);
 
         }
 
-        public static bool AuthenticateLDAP(string username, string password)
+        public static string AuthenticateLDAP(string username, string password)
         {
-            Console.WriteLine("testing login parameters"+username + " " + password);
             var login = RestUtility.Login(UrlLogin, username, password);
-            Console.WriteLine("login: "+login.Status + " " + login.Cedula + " " + login.Msg);
-            return login.Status.Equals("ok");
+            Cedula = login.Cedula.Trim();
+
+            return login.Status.Equals("error")?login.Msg:login.Status;
         }
     }
 }

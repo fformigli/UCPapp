@@ -6,15 +6,15 @@ namespace EssentialUIKit.Models.Rendimiento.Perfil
 
     public class Carrera
     {
-        public string carrera { get; set; }
-        public string estado { get; set; }
+        public string CarreraPerfil { get; set; }
+        public string Estado { get; set; }
     }
 
     public class PerfilResult
     {
-        public string apellidos { get; set; }
-        public List<Carrera> carreras { get; set; }
-        public string nombres { get; set; }
-        public string sexo { get; set; }
+        public string Apellidos { get; set; }
+        public List<Carrera> Carreras { get; set; }
+        public string Nombres { get; set; }
+        public string Sexo { get; set; }
     }
 }

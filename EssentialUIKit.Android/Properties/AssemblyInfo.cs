@@ -31,3 +31,6 @@ using System.Runtime.InteropServices;
 // Add some common permissions, these can be removed if not needed
 [assembly: UsesPermission(Android.Manifest.Permission.Internet)]
 [assembly: UsesPermission(Android.Manifest.Permission.WriteExternalStorage)]
+
+//TEMPORAL SOLO PARA PROBAR, LUEGO LOS SERVICIOS DEBERIAN ESTAR SOBRE HTTPS fformigli
+[assembly: Application(UsesCleartextTraffic = true)]

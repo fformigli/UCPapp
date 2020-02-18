@@ -105,10 +105,10 @@ namespace EssentialUIKit.DataService
             var requestStream = webReq.GetRequestStream();
             requestStream.Write(data, 0 ,data.Length);
             requestStream.Close();
-            
+
             // response
             var response = webReq.GetResponse();
-            
+
             var streamReader = new StreamReader(response.GetResponseStream());
 
             var responseContent = streamReader.ReadToEnd().Trim();

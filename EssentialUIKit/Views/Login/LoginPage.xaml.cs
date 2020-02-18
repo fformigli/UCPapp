@@ -1,5 +1,6 @@
 ﻿using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
+using System;
 
 namespace EssentialUIKit.Views.Login
 {
@@ -17,5 +18,16 @@ namespace EssentialUIKit.Views.Login
         {
             this.InitializeComponent();
         }
+
+        private void PasswordToggle(object sender, EventArgs e)
+        {
+            this.PasswordEntry.IsPassword = !this.PasswordEntry.IsPassword;
+        }
+
+        private void Loading(object sender, EventArgs e)
+        {
+            this.LoginButton.ImageSource = "@drawable/loading";
+        }
+
     }
 }
