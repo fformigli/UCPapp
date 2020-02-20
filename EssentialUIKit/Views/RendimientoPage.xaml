@@ -6,11 +6,11 @@
     xmlns:converter="clr-namespace:EssentialUIKit.Converters"
     xmlns:viewModel="clr-namespace:EssentialUIKit.ViewModels"
     BackgroundColor="{DynamicResource Gray-F0}"
-    NavigationPage.HasNavigationBar="False"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     xmlns:carousel="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
-    Shell.NavBarIsVisible="True">
+    Shell.NavBarIsVisible="False"
+    NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -68,8 +68,8 @@
                             </ffimageloading:CachedImage.Transformations>
                         </ffimageloading:CachedImage>
                         <!--Nombre del alumno y Carrera-->
-                        <Label Text="Jessica Denisse Pereira Gimenez" Margin="0,5,0,0" TextColor="White" FontSize="16" HorizontalTextAlignment="Center" />
-                        <Label Text="Turismo y Hotelería" TextColor="White" FontSize="12" HorizontalTextAlignment="Center">
+                        <Label Text="{Binding NombreAlumno}" Margin="0,5,0,0" TextColor="White" FontSize="16" HorizontalTextAlignment="Center" />
+                        <Label Text="{Binding CarreraPerfil}" TextColor="White" FontSize="12" HorizontalTextAlignment="Center">
                             <Label.IsVisible>
                                 <OnPlatform x:TypeArguments="x:Boolean">
                                     <On Platform="iOS" Value="false" />
@@ -150,9 +150,10 @@
                     </StackLayout>
                 </StackLayout>-->
                 
-              <carousel:CarouselViewControl HeightRequest="150" Orientation="Horizontal" InterPageSpacing="10" BackgroundColor="#ffffff"
-                    Position="0" ItemsSource="{Binding Statistics}" ShowIndicators="true" IndicatorsTintColor="#ffedcd" 
-                    CurrentPageIndicatorTintColor="#ffb636" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <!-- Estadistadisticas Promedio fechas proximas de examen -->
+                <carousel:CarouselViewControl HeightRequest="150" Orientation="Horizontal" InterPageSpacing="10" BackgroundColor="#ffffff"
+                                              Position="0" ItemsSource="{Binding Statistics}" ShowIndicators="true" IndicatorsTintColor="#ffedcd" 
+                                              CurrentPageIndicatorTintColor="#ffb636" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 <carousel:CarouselViewControl.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Orientation="Vertical" Padding="15,10,5,5">
@@ -209,7 +210,7 @@
                         <Label Text="0 Gs. en Mora" TextColor="#777777" Margin="0,0,5,0" FontSize="12" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" />
                     </StackLayout>
                     <StackLayout Orientation="Horizontal" Margin="0,0,0,0">
-                        <Image Source="graph.png" WidthRequest="320" HorizontalOptions="Fill">
+                        <Image Source="graph.png" HorizontalOptions="Fill">
                             <Image.WidthRequest>
                                 <OnPlatform x:TypeArguments="x:Double">
                                     <On Platform="iOS" Value="320" />

@@ -29,12 +29,20 @@ namespace EssentialUIKit.DataService
 
 
 
-        public ExamenesResult examenesDS_response { get; set; }
+        public static ExamenesResult ExamenesResponse { get; set; }
+
         public CalificacionesResult calificacionesDS_response { get; set; }
         public FinancieroResult financieroDS_response { get; set; }
         public AsistenciaResult asistenciaDS_response { get; set; }
-        public PerfilResult perfilDS_response { get; set; }
+        public static PerfilResult perfilResponse { get; set; }
         public HorariosResult horariosDS_response { get; set; }
+
+        public void ExamenesDS_ServiceResponse(String nroCedula)
+        {
+            ExamenesResponse = RestUtility.CallServiceSync<ExamenesResult>(string.Format(ExamenesServiceGet, nroCedula), string.Empty, null, "GET",
+               string.Empty, string.Empty) as ExamenesResult;
+
+        }
 
         async public Task HoraraiosDS_ServiceResponse(String nroCedula)
         {
@@ -42,11 +50,6 @@ namespace EssentialUIKit.DataService
               string.Empty, string.Empty) as HorariosResult;
 
 
-        }
-        async public Task ExamenesDS_ServiceResponse(String nroCedula)
-        {
-            this.examenesDS_response = await RestUtility.CallServiceAsync<ExamenesResult>(string.Format(ExamenesServiceGet, nroCedula), string.Empty, null, "GET",
-               string.Empty, string.Empty) as ExamenesResult;
         }
         async public Task CalificacionesDS_response(String nroCedula)
         {
@@ -68,13 +71,13 @@ namespace EssentialUIKit.DataService
 
         async public Task PerfilDS_response(String nroCedula)
         {
-            this.perfilDS_response = await RestUtility.CallServiceAsync<PerfilResult>(string.Format(PerfilServiceGet, nroCedula), string.Empty, null, "GET",
+            perfilResponse = await RestUtility.CallServiceAsync<PerfilResult>(string.Format(PerfilServiceGet, nroCedula), string.Empty, null, "GET",
                string.Empty, string.Empty) as PerfilResult;
         }
 
-        public void PerfilDS2_response(String nroCedula)
+        public void getPerfil(String nroCedula)
         {
-            this.perfilDS_response = RestUtility.CallServiceSync<PerfilResult>(string.Format(PerfilServiceGet, nroCedula), string.Empty, null, "GET",
+            perfilResponse = RestUtility.CallServiceSync<PerfilResult>(string.Format(PerfilServiceGet, nroCedula), string.Empty, null, "GET",
                string.Empty, string.Empty) as PerfilResult;
 
 

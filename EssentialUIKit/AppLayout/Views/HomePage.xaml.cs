@@ -34,7 +34,6 @@ namespace EssentialUIKit.AppLayout.Views
         private double width;
 
         private double height;
-        public string descAlumno { set; get; }
 
         #endregion
 
@@ -108,14 +107,15 @@ namespace EssentialUIKit.AppLayout.Views
             }
 
             var scrollValue = e.Position * this.scrollDensity;
+            var actionBarHeight = 180;
 
-            var factor = (scrollValue + 215) / 215;
+            var factor = (scrollValue + actionBarHeight) / actionBarHeight;
 
-            if (scrollValue <= -215)
+            if (scrollValue <= -actionBarHeight)
             {
                 ActionBar.IsVisible = true;
             }
-            else if (scrollValue > -215)
+            else if (scrollValue > -actionBarHeight)
             {
                 Description.Opacity = factor;
                 HeaderBackground.Opacity = factor;
@@ -123,7 +123,7 @@ namespace EssentialUIKit.AppLayout.Views
                 HeaderText.Opacity = factor;
                 BrandName.Opacity = (scrollValue + 75) / 75;
                 ActionBar.IsVisible = false;
-                SettingsIcon.TranslationY = scrollValue * -1;
+                //SettingsIcon.TranslationY = scrollValue * -1;
             }
         }
 

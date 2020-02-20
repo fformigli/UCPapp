@@ -8,6 +8,7 @@
     xmlns:gradient="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
     xmlns:graphics="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
     xmlns:iOsSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    
     x:Class="EssentialUIKit.AppLayout.Views.Styles">
 
     <converters:StringToImageResourceConverter x:Key="ImageResourceConverter"/>
@@ -16,7 +17,7 @@
     <x:String x:Key="HomePageBienvenido">Bienvenido</x:String>
 
 
-    <x:String x:Key="Description">"{Binding descAlumno}"</x:String>
+    <x:String x:Key="Description">"{Binding DescAlumno}"</x:String>
 
     <!--Common style for action bar icons-->
     <Style x:Key="ActionBarSettingIconStyle" TargetType="Button">
@@ -98,10 +99,9 @@
 
     <!--Common style for content page-->
     <Style x:Key="ContentPageStyle" TargetType="ContentPage">
-        <Setter Property="NavigationPage.HasNavigationBar" Value="False"/>
         <Setter Property="NavigationPage.HasBackButton" Value="False"/>
         <Setter Property="Shell.NavBarIsVisible" Value="False"/>
-        <Setter Property="iOsSpecific:Page.UseSafeArea" Value="False"/>
+        <Setter Property="iOsSpecific:Page.UseSafeArea" Value="True"/>
     </Style>
 
     <!--Common style for close icons-->

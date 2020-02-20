@@ -10,46 +10,63 @@ using Xamarin.Forms.Internals;
 
 namespace EssentialUIKit.ViewModels
 {
-    /// <summary>
-    /// ViewModel for login page.
-    /// </summary>
     [Preserve(AllMembers = true)]
     public class RendimientoPageViewModel
     {
         #region Fields
-
-        private string password;
-        IRestService restService;
-
+        
+        public string NombreAlumno { get; set; }
+        public string CarreraPerfil { get; set; }
 
         #endregion
 
         #region Constructor
 
-        /// <summary>
-        /// Initializes a new instance for the <see cref="LoginPageViewModel" /> class.
-        /// </summary>
+
         public RendimientoPageViewModel()
         {
-            Statistics = new ObservableCollection<Stats>
+            //cargar perfil
+            var api = new RestAPI();
+            NombreAlumno = RestAPI.perfilResponse.Nombres + " " + RestAPI.perfilResponse.Apellidos;
+            CarreraPerfil = "";
+            for (var i = 0; i < RestAPI.perfilResponse.Carreras.Count; i++)
+            {
+                if (i == 0)
+                    CarreraPerfil += RestAPI.perfilResponse.Carreras[i].CarreraPerfil;
+                /*else if (i == RestAPI.perfilDS_response.Carreras.Count - 1)
+                    CarreraPerfil += " y " + RestAPI.perfilDS_response.Carreras[i].CarreraPerfil;
+                else if (i > 0)
+                    CarreraPerfil += ", " + RestAPI.perfilDS_response.Carreras[i].CarreraPerfil;*/
+            }
+
+            Statistics = new ObservableCollection<Stats> { };
+
+            api.ExamenesDS_ServiceResponse(RestAPI.Cedula);
+
+            Console.WriteLine("->>>>>>>>>>>>>>>>>>>>>>>>>> salio");
+
+            for (var i = 0; i < RestAPI.ExamenesResponse.materia.Count; i++)
+            {
+                Statistics.Add(new Stats
+                {
+                    Title = "Examen",
+                    Label1 = RestAPI.ExamenesResponse.materia[i].nombreMateria,
+                    Label2 = RestAPI.ExamenesResponse.materia[i].nombreMateria,
+                    Value1 = RestAPI.ExamenesResponse.materia[i].nombreMateria,
+                    Value2 = RestAPI.ExamenesResponse.materia[i].nombreMateria
+                });
+            }
+
+            /*Statistics = new ObservableCollection<Stats>
             {
                 new Stats { Title = "Examen", Label1 = "Agosto-Base de Datos", Label2 = "Agosto-Redes 2", Value1 = "24", Value2 = "27" },
                 new Stats { Title = "Promedio Actual", Label1 = "Total", Label2 = "Semestre", Value1 = "4.5", Value2 = "5" }
             };
-            restService = new RestService();
 
-            RestAPI api = new RestAPI();
             api.ExamenesDS_ServiceResponse(RestAPI.Cedula).ContinueWith((antecedent) =>
             {
-                Debug.WriteLine(@"DIEGO MENDEZ - EXAMENES  {0}", api.examenesDS_response.materia.Count);
-            });
-
-        }
-
-        private Task<AsistenciaResult> GetMateriaAsistenciaAlumnoAsync(String nroDoc)
-        {
-
-            return restService.GetMateriaAsistenciaAlumnoAsync(nroDoc); ;
+                Debug.WriteLine(@"DIEGO MENDEZ - EXAMENES  {0}", RestAPI.ExamenesResponse.materia.Count);
+            });*/
 
         }
 
@@ -58,7 +75,6 @@ namespace EssentialUIKit.ViewModels
         #region methods
 
         public ObservableCollection<Stats> Statistics { get; set; }
-        public List<MateriaAsistenciaAlumno> ItemsMateriaAsistenciaAlumno { get; private set; }
 
         /// <summary>
         /// Invoked when the Forgot Password button is clicked.

@@ -6,4 +6,13 @@
   <Category Icon="log-in.png" Name="Caja" Description="Relice sus pagos aquí, de manera segura y cómoda" PageName="Views.ErrorAndEmpty.NoInternetConnectionPage"/>
   <Category Icon="ecommerce.png" Name="Inscripciones" Description="Punto de parada para las inscripciones de la Universidad" PageName="Views.ErrorAndEmpty.NoInternetConnectionPage"/>
   <Category Icon="article.png" Name="Ayuda" Description="Instrucciones paso a paso para disfutar de la aplicación" PageName="Views.OnBoarding.OnBoardingGradientPage"/>
+  <Category Icon="log-in.png" Name="Caja" Description="Relice sus pagos aquí, de manera segura y cómoda" PageName="Views.ErrorAndEmpty.NoInternetConnectionPage"/>
+  <Category Icon="ecommerce.png" Name="Inscripciones" Description="Punto de parada para las inscripciones de la Universidad" PageName="Views.ErrorAndEmpty.NoInternetConnectionPage"/>
+  <Category Icon="article.png" Name="Ayuda" Description="Instrucciones paso a paso para disfutar de la aplicación" PageName="Views.OnBoarding.OnBoardingGradientPage"/>
+  <Category Icon="log-in.png" Name="Caja" Description="Relice sus pagos aquí, de manera segura y cómoda" PageName="Views.ErrorAndEmpty.NoInternetConnectionPage"/>
+  <Category Icon="ecommerce.png" Name="Inscripciones" Description="Punto de parada para las inscripciones de la Universidad" PageName="Views.ErrorAndEmpty.NoInternetConnectionPage"/>
+  <Category Icon="article.png" Name="Ayuda" Description="Instrucciones paso a paso para disfutar de la aplicación" PageName="Views.OnBoarding.OnBoardingGradientPage"/>
+  <Category Icon="log-in.png" Name="Caja" Description="Relice sus pagos aquí, de manera segura y cómoda" PageName="Views.ErrorAndEmpty.NoInternetConnectionPage"/>
+  <Category Icon="ecommerce.png" Name="Inscripciones" Description="Punto de parada para las inscripciones de la Universidad" PageName="Views.ErrorAndEmpty.NoInternetConnectionPage"/>
+  <Category Icon="article.png" Name="Ayuda" Description="Instrucciones paso a paso para disfutar de la aplicación" PageName="Views.OnBoarding.OnBoardingGradientPage"/>
 </Items>

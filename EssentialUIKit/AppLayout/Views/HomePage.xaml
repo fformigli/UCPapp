@@ -7,10 +7,10 @@
     xmlns:viewModels="clr-namespace:EssentialUIKit.AppLayout.ViewModels;assembly=EssentialUIKit"
     xmlns:controls="clr-namespace:EssentialUIKit.AppLayout.Controls;assembly=EssentialUIKit"
     xmlns:views="clr-namespace:EssentialUIKit.AppLayout.Views;assembly=EssentialUIKit"
+    NavigationPage.HasNavigationBar="False"
     Style="{StaticResource ContentPageStyle}"
     Title="{StaticResource HomePageTitle}"
-    BackgroundColor="Green"
-    >
+    BackgroundColor="Green">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -26,7 +26,7 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60" x:Name="DefaultActionBar"/>
+            <RowDefinition Height="85" x:Name="DefaultActionBar"/>
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
@@ -87,7 +87,7 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="0" x:Name="iOSSafeArea"/>
                         <RowDefinition Height="265" />
-                        <RowDefinition Height="20" />
+                        <RowDefinition Height="10" />
                     </Grid.RowDefinitions>
 
                     <Grid 
@@ -182,13 +182,13 @@
                         CornerRadius="{OnPlatform 20, iOS=10}"
                         HasShadow="False" />
 
-                    <Button
+                    <!--<Button
                         x:Name="SettingsIcon"
                         Style="{StaticResource ActionBarSettingIconStyle}"
                         Grid.Row="1"
                         Clicked="ShowSettings"
                         VerticalOptions="Start"
-                        HorizontalOptions="EndAndExpand"/>
+                        HorizontalOptions="EndAndExpand"/>-->
 
                 </Grid>
             </ListView.Header>
@@ -196,15 +196,15 @@
 
         <Grid
             x:Name="ActionBar"
-            Padding="0,0,0,20"
+            Padding="0,20,0,0"
             IsClippedToBounds="True"
             IsVisible="true"
             RowSpacing="0">
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="0" x:Name="iOSSafeAreaTitle"/>
-                <RowDefinition Height="50" />
-                <RowDefinition Height="20" />
+                <RowDefinition Height="70" />
+                <RowDefinition Height="5" />
             </Grid.RowDefinitions>
 
             <gradient:SfGradientView Grid.RowSpan="3" 
@@ -212,19 +212,20 @@
 
             <Label
                 Style="{StaticResource ActionBarLabelStyle}"
-                Grid.Row="1" Margin="15,0,0,0"
+                Grid.Row="1" Margin="15,10,0,0"
                 Text="{StaticResource HomePageTitle}"
                 VerticalOptions="CenterAndExpand" />
 
-            <Button Grid.Row="1"
+            <!--<Button Grid.Row="1"
                     Style="{StaticResource ActionBarSettingIconStyle}"
                     Clicked="ShowSettings"
                     VerticalOptions="CenterAndExpand" 
-                    HorizontalOptions="EndAndExpand"/>
+                    HorizontalOptions="EndAndExpand"/>-->
 
             <Frame
                 Grid.Row="2"
-                Padding="0"
+                Margin="0,-10,0,0"
+                
                 BackgroundColor="{DynamicResource Gray-White}"
                 CornerRadius="{OnPlatform 20, iOS=10}"
                 HasShadow="False" />

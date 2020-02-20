@@ -15,9 +15,10 @@ namespace EssentialUIKit.AppLayout.ViewModels
     [Preserve(AllMembers = true)]
     public class HomePageViewModel
     {
-        public string userLogged { get; set; }
+        public string UserLogged { get; set; }
+        public string DescAlumno { get; set; }
 
-        private const string functionalitiesList = "EssentialUIKit.AppLayout.Menu.xml";
+        private const string FunctionalitiesList = "EssentialUIKit.AppLayout.Menu.xml";
 
         public List<Category> Templates { get; set; }
 
@@ -39,35 +40,33 @@ namespace EssentialUIKit.AppLayout.ViewModels
         }
         private void InitPerfil()
         {
+            var api = new RestAPI();
+            api.getPerfil(RestAPI.Cedula);
 
+            UserLogged = RestAPI.perfilResponse.Nombres + " " + RestAPI.perfilResponse.Apellidos;
 
-            string descAlumno;
-            RestAPI api = new RestAPI();
-            api.PerfilDS2_response(RestAPI.Cedula);
+            
 
-            userLogged = api.perfilDS_response.Nombres + " " + api.perfilDS_response.Apellidos;
+            var cultureInfo = Thread.CurrentThread.CurrentCulture;
+            var textInfo = cultureInfo.TextInfo;
+            UserLogged = textInfo.ToTitleCase(UserLogged.ToLower());
+            DescAlumno = UserLogged + " futur";
+            DescAlumno += RestAPI.perfilResponse.Sexo.Contains("M") ? "o" : "a";
+            DescAlumno += " profesional de ";
 
-            CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
-            TextInfo textInfo = cultureInfo.TextInfo;
-            userLogged = textInfo.ToTitleCase(userLogged.ToLower());
-            descAlumno = userLogged + " futur";
-            descAlumno += api.perfilDS_response.Sexo.Contains("M") ? "o" : "a";
-            descAlumno += " profesional de ";
-
-            string carrera = "";
-            for (int i = 0; i < api.perfilDS_response.Carreras.Count; i++)
+            var carrera = "";
+            for (var i = 0; i < RestAPI.perfilResponse.Carreras.Count; i++)
             {
                 if (i == 0)
-                    carrera += api.perfilDS_response.Carreras[i].CarreraPerfil;
-                else if (i == api.perfilDS_response.Carreras.Count - 1)
-                    carrera += " y " + api.perfilDS_response.Carreras[i].CarreraPerfil;
+                    carrera += RestAPI.perfilResponse.Carreras[i].CarreraPerfil;
+                /*else if (i == RestAPI.perfilDS_response.Carreras.Count - 1)
+                    carrera += " y " + RestAPI.perfilDS_response.Carreras[i].CarreraPerfil;
                 else if (i > 0)
-                    carrera += ", " + api.perfilDS_response.Carreras[i].CarreraPerfil;
-
+                    carrera += ", " + RestAPI.perfilDS_response.Carreras[i].CarreraPerfil;*/
             }
-            descAlumno += carrera + ". En este portal encontrarás toda la información sobre tu estadía en la Universidad";
-            Application.Current.Resources["Description"] = descAlumno;
-            Application.Current.Resources["userLogged"] = userLogged;
+            DescAlumno += carrera + ". En este portal encontrarás toda la información sobre tu estadía en la Universidad";
+
+            Application.Current.Resources["Description"] = DescAlumno;
         }
 
         private void PopulateList()
@@ -75,7 +74,7 @@ namespace EssentialUIKit.AppLayout.ViewModels
             Templates.Clear();
 
             var assembly = typeof(App).GetTypeInfo().Assembly;
-            var stream = assembly.GetManifestResourceStream(functionalitiesList);
+            var stream = assembly.GetManifestResourceStream(FunctionalitiesList);
 
             using (var reader = new StreamReader(stream))
             {
@@ -86,7 +85,6 @@ namespace EssentialUIKit.AppLayout.ViewModels
 
                 while (!xmlReader.EOF)
                 {
-                    Console.WriteLine("iterating: "+ xmlReader.Name +" "+ xmlReader.IsStartElement()+" "+ xmlReader.HasAttributes);
                     switch (xmlReader.Name)
                     {
                         case "Category" when xmlReader.IsStartElement():

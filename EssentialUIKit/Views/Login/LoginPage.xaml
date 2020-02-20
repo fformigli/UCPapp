@@ -150,6 +150,7 @@
                             HorizontalOptions="End"
                             BackgroundColor="Transparent"
                             Opacity="0.7"
+                            CornerRadius="20"
                             Clicked="PasswordToggle"
                             />
 
