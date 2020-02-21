@@ -27,47 +27,39 @@ namespace EssentialUIKit.ViewModels
         {
             //cargar perfil
             var api = new RestAPI();
-            NombreAlumno = RestAPI.perfilResponse.Nombres + " " + RestAPI.perfilResponse.Apellidos;
+            NombreAlumno = RestAPI.PerfilResponse.Nombres + " " + RestAPI.PerfilResponse.Apellidos;
             CarreraPerfil = "";
-            for (var i = 0; i < RestAPI.perfilResponse.Carreras.Count; i++)
+            for (var i = 0; i < RestAPI.PerfilResponse.Carreras.Count; i++)
             {
                 if (i == 0)
-                    CarreraPerfil += RestAPI.perfilResponse.Carreras[i].CarreraPerfil;
-                /*else if (i == RestAPI.perfilDS_response.Carreras.Count - 1)
-                    CarreraPerfil += " y " + RestAPI.perfilDS_response.Carreras[i].CarreraPerfil;
+                    CarreraPerfil += RestAPI.PerfilResponse.Carreras[i].CarreraPerfil;
+                else if (i == RestAPI.PerfilResponse.Carreras.Count - 1)
+                    CarreraPerfil += " y " + RestAPI.PerfilResponse.Carreras[i].CarreraPerfil;
                 else if (i > 0)
-                    CarreraPerfil += ", " + RestAPI.perfilDS_response.Carreras[i].CarreraPerfil;*/
+                    CarreraPerfil += ", " + RestAPI.PerfilResponse.Carreras[i].CarreraPerfil;
             }
 
             Statistics = new ObservableCollection<Stats> { };
 
-            api.ExamenesDS_ServiceResponse(RestAPI.Cedula);
-
-            Console.WriteLine("->>>>>>>>>>>>>>>>>>>>>>>>>> salio");
-
-            for (var i = 0; i < RestAPI.ExamenesResponse.materia.Count; i++)
+            api.getRendimiento(RestAPI.Cedula);
+            var  title = "Examenes Próximos";          
+            var label1 = "";         
+            var value1 = "";
+            for (var i = 0; i < RestAPI.RendimientoResponse.ExamenesProximos.Count; i++)
             {
-                Statistics.Add(new Stats
+                if ((i % 2) == 0)
                 {
-                    Title = "Examen",
-                    Label1 = RestAPI.ExamenesResponse.materia[i].nombreMateria,
-                    Label2 = RestAPI.ExamenesResponse.materia[i].nombreMateria,
-                    Value1 = RestAPI.ExamenesResponse.materia[i].nombreMateria,
-                    Value2 = RestAPI.ExamenesResponse.materia[i].nombreMateria
-                });
+                    label1 = RestAPI.RendimientoResponse.ExamenesProximos[i].Materia;
+                    value1 = RestAPI.RendimientoResponse.ExamenesProximos[i].Fecha+" "+RestAPI.RendimientoResponse.ExamenesProximos[i].Fecha;
+                }
+                else
+                {
+                    string label2 = RestAPI.RendimientoResponse.ExamenesProximos[i].Materia;
+                    string value2 = RestAPI.RendimientoResponse.ExamenesProximos[i].Fecha+" "+RestAPI.RendimientoResponse.ExamenesProximos[i].Fecha;
+
+                    Statistics.Add(new Stats { Title = title, Label1 = label1, Label2 = label2, Value1 = value1, Value2 = value2 });
+                }
             }
-
-            /*Statistics = new ObservableCollection<Stats>
-            {
-                new Stats { Title = "Examen", Label1 = "Agosto-Base de Datos", Label2 = "Agosto-Redes 2", Value1 = "24", Value2 = "27" },
-                new Stats { Title = "Promedio Actual", Label1 = "Total", Label2 = "Semestre", Value1 = "4.5", Value2 = "5" }
-            };
-
-            api.ExamenesDS_ServiceResponse(RestAPI.Cedula).ContinueWith((antecedent) =>
-            {
-                Debug.WriteLine(@"DIEGO MENDEZ - EXAMENES  {0}", RestAPI.ExamenesResponse.materia.Count);
-            });*/
-
         }
 
         #endregion

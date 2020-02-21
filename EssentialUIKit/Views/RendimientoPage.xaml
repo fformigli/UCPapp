@@ -6,6 +6,7 @@
     xmlns:converter="clr-namespace:EssentialUIKit.Converters"
     xmlns:viewModel="clr-namespace:EssentialUIKit.ViewModels"
     BackgroundColor="{DynamicResource Gray-F0}"
+    xmlns:gradient="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
     xmlns:carousel="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
@@ -30,12 +31,19 @@
         <ScrollView Orientation="Vertical">
 
             <StackLayout Spacing="0" VerticalOptions="Start">
-                <Grid Padding="0,10,0,10" Margin="0" HeightRequest="160" HorizontalOptions="FillAndExpand" VerticalOptions="Start" BackgroundColor="#2dc9d7">
+                <Grid Padding="0,10,0,10" Margin="0" HeightRequest="50" HorizontalOptions="FillAndExpand" VerticalOptions="Start">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
+                    
+                    
+                    <gradient:SfGradientView 
+                        Grid.ColumnSpan="3" 
+                        Margin="-10"
+                        Style="{StaticResource SfGradientViewStyle}" />
+                    
                     <Button Image="icon_comments.png" HeightRequest="50" Margin="0,-45,0,0" WidthRequest="50" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="#57d4df" BorderRadius="25" Grid.Column="0">
                         <Button.IsVisible>
                             <OnPlatform x:TypeArguments="x:Boolean">
@@ -54,7 +62,7 @@
                     </Button>
                     <StackLayout Grid.Column="1">
                         <!--Imagen de perfil-->
-                        <ffimageloading:CachedImage VerticalOptions="Start" DownsampleToViewSize="false"
+                        <!--<ffimageloading:CachedImage VerticalOptions="Start" DownsampleToViewSize="false"
                             Aspect="AspectFit" HeightRequest="110" WidthRequest="110" Source="astronauta.png">
                             <ffimageloading:CachedImage.Transformations>
                                 <fftransformations:CircleTransformation BorderHexColor="#FFFFFF">
@@ -66,7 +74,7 @@
                                     </fftransformations:CircleTransformation.BorderSize>
                                 </fftransformations:CircleTransformation>
                             </ffimageloading:CachedImage.Transformations>
-                        </ffimageloading:CachedImage>
+                        </ffimageloading:CachedImage>-->
                         <!--Nombre del alumno y Carrera-->
                         <Label Text="{Binding NombreAlumno}" Margin="0,5,0,0" TextColor="White" FontSize="16" HorizontalTextAlignment="Center" />
                         <Label Text="{Binding CarreraPerfil}" TextColor="White" FontSize="12" HorizontalTextAlignment="Center">

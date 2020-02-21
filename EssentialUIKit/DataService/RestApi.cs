@@ -19,7 +19,9 @@ namespace EssentialUIKit.DataService
         private const string UrlLogin = "https://www.columbia.edu.py/ajax/loginMobile.php";
         
         public static string Cedula;
-        
+
+        private const string RendimientoServiceGet = UrlService + "rendimiento?cedula={0}&cantexam=4";
+
         private const string HorariosServiceGet = UrlService + "horarioAlumno?cedula={0}";
         private const string ExamenesServiceGet = UrlService + "examenesAlumno?cedula={0}";
         private const string CalificacionesServiceGet = UrlService + "calificacionAlumno?cedula={0}&mostrar=todas";
@@ -29,13 +31,39 @@ namespace EssentialUIKit.DataService
 
 
 
+        public static PerfilResult PerfilResponse { get; set; }
+        public static RendimientoResult RendimientoResponse { get; set; }
         public static ExamenesResult ExamenesResponse { get; set; }
 
         public CalificacionesResult calificacionesDS_response { get; set; }
         public FinancieroResult financieroDS_response { get; set; }
         public AsistenciaResult asistenciaDS_response { get; set; }
-        public static PerfilResult perfilResponse { get; set; }
         public HorariosResult horariosDS_response { get; set; }
+
+
+        public static string AuthenticateLDAP(string username, string password)
+        {
+            var login = RestUtility.Login(UrlLogin, username, password);
+            Cedula = login.Cedula.Trim();
+
+            return login.Status.Equals("error")?login.Msg:login.Status;
+        }
+
+        public void getPerfil(String nroCedula)
+        {
+            PerfilResponse = RestUtility.CallServiceSync<PerfilResult>(string.Format(PerfilServiceGet, nroCedula), string.Empty, null, "GET",
+               string.Empty, string.Empty) as PerfilResult;
+        }
+
+        public void getRendimiento(String nroCedula)
+        {
+            RendimientoResponse = RestUtility.CallServiceSync<RendimientoResult>(string.Format(RendimientoServiceGet, nroCedula), string.Empty, null, "GET",
+               string.Empty, string.Empty) as RendimientoResult;
+        }
+
+
+
+
 
         public void ExamenesDS_ServiceResponse(String nroCedula)
         {
@@ -71,17 +99,10 @@ namespace EssentialUIKit.DataService
 
         async public Task PerfilDS_response(String nroCedula)
         {
-            perfilResponse = await RestUtility.CallServiceAsync<PerfilResult>(string.Format(PerfilServiceGet, nroCedula), string.Empty, null, "GET",
+            PerfilResponse = await RestUtility.CallServiceAsync<PerfilResult>(string.Format(PerfilServiceGet, nroCedula), string.Empty, null, "GET",
                string.Empty, string.Empty) as PerfilResult;
         }
 
-        public void getPerfil(String nroCedula)
-        {
-            perfilResponse = RestUtility.CallServiceSync<PerfilResult>(string.Format(PerfilServiceGet, nroCedula), string.Empty, null, "GET",
-               string.Empty, string.Empty) as PerfilResult;
-
-
-        }
         public void HoraraiosDS2_ServiceResponse(String nroCedula)
         {
             //6948405
@@ -121,14 +142,6 @@ namespace EssentialUIKit.DataService
             Debug.WriteLine(@"\tDIEGO MENDEZ - RestApi {0}", lst_asistenciaDS_response.materiaAsistenciaAlumno.Count);
             Debug.WriteLine(@"\tDIEGO MENDEZ - RestApi {0}", lst_perfilDS_response.Carreras.Count);
 
-        }
-
-        public static string AuthenticateLDAP(string username, string password)
-        {
-            var login = RestUtility.Login(UrlLogin, username, password);
-            Cedula = login.Cedula.Trim();
-
-            return login.Status.Equals("error")?login.Msg:login.Status;
         }
     }
 }

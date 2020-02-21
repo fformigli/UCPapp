@@ -43,7 +43,7 @@ namespace EssentialUIKit.AppLayout.ViewModels
             var api = new RestAPI();
             api.getPerfil(RestAPI.Cedula);
 
-            UserLogged = RestAPI.perfilResponse.Nombres + " " + RestAPI.perfilResponse.Apellidos;
+            UserLogged = RestAPI.PerfilResponse.Nombres + " " + RestAPI.PerfilResponse.Apellidos;
 
             
 
@@ -51,18 +51,18 @@ namespace EssentialUIKit.AppLayout.ViewModels
             var textInfo = cultureInfo.TextInfo;
             UserLogged = textInfo.ToTitleCase(UserLogged.ToLower());
             DescAlumno = UserLogged + " futur";
-            DescAlumno += RestAPI.perfilResponse.Sexo.Contains("M") ? "o" : "a";
+            DescAlumno += RestAPI.PerfilResponse.Sexo.Contains("M") ? "o" : "a";
             DescAlumno += " profesional de ";
 
             var carrera = "";
-            for (var i = 0; i < RestAPI.perfilResponse.Carreras.Count; i++)
+            for (var i = 0; i < RestAPI.PerfilResponse.Carreras.Count; i++)
             {
                 if (i == 0)
-                    carrera += RestAPI.perfilResponse.Carreras[i].CarreraPerfil;
-                /*else if (i == RestAPI.perfilDS_response.Carreras.Count - 1)
-                    carrera += " y " + RestAPI.perfilDS_response.Carreras[i].CarreraPerfil;
+                    carrera += RestAPI.PerfilResponse.Carreras[i].CarreraPerfil;
+                else if (i == RestAPI.PerfilResponse.Carreras.Count - 1)
+                    carrera += " y " + RestAPI.PerfilResponse.Carreras[i].CarreraPerfil;
                 else if (i > 0)
-                    carrera += ", " + RestAPI.perfilDS_response.Carreras[i].CarreraPerfil;*/
+                    carrera += ", " + RestAPI.PerfilResponse.Carreras[i].CarreraPerfil;
             }
             DescAlumno += carrera + ". En este portal encontrarás toda la información sobre tu estadía en la Universidad";
 
