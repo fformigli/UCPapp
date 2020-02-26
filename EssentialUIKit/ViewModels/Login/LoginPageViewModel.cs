@@ -118,6 +118,8 @@ namespace EssentialUIKit.ViewModels.Login
         /// <param name="obj">The Object</param>
         private void LoginClicked(object obj)
         {
+            Console.WriteLine("Login clicked -----------------------");
+
             var status = RestAPI.AuthenticateLDAP(username, password);
             if (status.Equals("ok"))
                 App.Current.MainPage = new NavigationPage(new HomePage());

@@ -19,6 +19,7 @@ namespace EssentialUIKit.ViewModels
 
         public string DeudaTotalT { get; set; }
         public string PromedioActualT { get; set; }
+        public int AsistenciaCount { get; set; }
 
 
         #endregion
@@ -45,10 +46,11 @@ namespace EssentialUIKit.ViewModels
             Statistics = new ObservableCollection<Stats> { };
 
             api.getRendimiento();
-            //TODO: api.getAsistencia();
+            api.getAsistencia();
 
             PromedioActualT = "Promedio Actual: " + RestAPI.RendimientoResponse.PromedioActual;
             DeudaTotalT = string.Format("{0:c}",RestAPI.RendimientoResponse.DeudaTotal)+ " pendiente de pago";
+            AsistenciaCount = RestAPI.AsistenciaResponse.MateriaAsistenciaAlumno.Count;
 
             var title = "Examenes Próximos";          
             var materia1 = "";

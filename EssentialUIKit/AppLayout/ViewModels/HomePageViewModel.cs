@@ -17,6 +17,7 @@ namespace EssentialUIKit.AppLayout.ViewModels
     {
         public string UserLogged { get; set; }
         public string DescAlumno { get; set; }
+        public string Wellcome { get; set; }
 
         private const string FunctionalitiesList = "EssentialUIKit.AppLayout.Menu.xml";
 
@@ -50,8 +51,9 @@ namespace EssentialUIKit.AppLayout.ViewModels
             var cultureInfo = Thread.CurrentThread.CurrentCulture;
             var textInfo = cultureInfo.TextInfo;
             UserLogged = textInfo.ToTitleCase(UserLogged.ToLower());
-            DescAlumno = UserLogged + " futur";
-            DescAlumno += RestAPI.PerfilResponse.Sexo.Contains("M") ? "o" : "a";
+            Wellcome =  RestAPI.PerfilResponse.Sexo.Contains("M") ? "Bienvenido" : "Bienvenida";
+            DescAlumno = UserLogged;
+            DescAlumno += RestAPI.PerfilResponse.Sexo.Contains("M") ? "futuro" : "futura";
             DescAlumno += " profesional de ";
 
             var carrera = "";

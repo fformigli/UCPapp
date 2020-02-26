@@ -200,8 +200,7 @@
                     <StackLayout Orientation="Horizontal" Margin="0,5,0,0">
                         <Image Source="icon_list.png" Margin="5,0,10,0" />
                         <StackLayout Orientation="Vertical">
-                            <!--TODO: cantidad materias activas-->
-                            <Label Text="5" TextColor="#212121" FontSize="17" />
+                            <Label Text="{Binding AsistenciaCount}" TextColor="#212121" FontSize="17" />
                             <Label Text="Materias activas" Margin="0,-5,0,0" TextColor="#777777" HorizontalTextAlignment="Center" FontSize="12" />
                         </StackLayout>
                         <Image Source="icon_caret.png" HorizontalOptions="EndAndExpand" />

@@ -142,7 +142,7 @@
                             TextColor="White"
                             FontFamily="{StaticResource Montserrat-Regular}"
                             HorizontalOptions="CenterAndExpand"
-                            Text="{StaticResource HomePageBienvenido}" />
+                            Text="{Binding Wellcome}" />
 
                         <Label
                             x:Name="Description"

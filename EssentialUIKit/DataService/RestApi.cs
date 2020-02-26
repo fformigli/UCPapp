@@ -1,5 +1,4 @@
-﻿using EssentialUIKit.Models.Rendimiento;
-using EssentialUIKit.Models.Rendimiento.Calificaciones;
+﻿using EssentialUIKit.Models.Rendimiento.Calificaciones;
 using EssentialUIKit.Models.Rendimiento.Examenes;
 using EssentialUIKit.Models.Rendimiento.Financiero;
 using EssentialUIKit.Models.Rendimiento.Horarios;
@@ -21,12 +20,12 @@ namespace EssentialUIKit.DataService
         public static string Cedula;
 
         private const string RendimientoServiceGet = UrlService + "rendimiento?cedula={0}&cantexam=4";
+        private const string AsistenciaServiceGet = UrlService + "asistenciaAlumno?cedula={0}";
 
         private const string HorarioServiceGet = UrlService + "horarioAlumno?cedula={0}";
         private const string ExamenesServiceGet = UrlService + "examenesAlumno?cedula={0}";
         private const string CalificacionesServiceGet = UrlService + "calificacionAlumno?cedula={0}&mostrar=todas";
         private const string FinancieroServiceGet = UrlService + "financieroAlumno?cedula={0}&mostrar=todas";
-        private const string AsistenciaServiceGet = UrlService + "asistenciaAlumno?cedula={0}";
         private const string PerfilServiceGet = UrlService + "perfil?cedula={0}";
 
 
@@ -34,11 +33,11 @@ namespace EssentialUIKit.DataService
         public static PerfilResult PerfilResponse { get; set; }
         public static RendimientoResult RendimientoResponse { get; set; }
         public static ExamenesResult ExamenesResponse { get; set; }
+        public static AsistenciaResult AsistenciaResponse { get; set; }
         public HorariosResult HorarioResponse { get; set; }
 
         public CalificacionesResult calificacionesDS_response { get; set; }
         public FinancieroResult financieroDS_response { get; set; }
-        public AsistenciaResult asistenciaDS_response { get; set; }
 
 
         public static string AuthenticateLDAP(string username, string password)
@@ -64,6 +63,16 @@ namespace EssentialUIKit.DataService
             RendimientoResponse = RestUtility.CallServiceSync<RendimientoResult>(string.Format(RendimientoServiceGet, Cedula), string.Empty, null, "GET",
                string.Empty, string.Empty) as RendimientoResult;
         }
+
+        public void getAsistencia()
+        {
+            if (AsistenciaResponse != null)
+                return;
+            AsistenciaResponse = RestUtility.CallServiceSync<AsistenciaResult>(string.Format(AsistenciaServiceGet, Cedula), string.Empty, null, "GET",
+               string.Empty, string.Empty) as AsistenciaResult;
+        }
+
+
 
         public void getHorario()
         {
@@ -98,7 +107,7 @@ namespace EssentialUIKit.DataService
             Debug.WriteLine(@"\tDIEGO MENDEZ - RestApi {0}", lst_examenesDS_response.materia.Count);
             Debug.WriteLine(@"\tDIEGO MENDEZ - RestApi {0}", lst_calificacionesDS_response.materia.Count);
             Debug.WriteLine(@"\tDIEGO MENDEZ - RestApi {0}", lst_financieroDS_response.cabeceraFinancieroAlumno.Count);
-            Debug.WriteLine(@"\tDIEGO MENDEZ - RestApi {0}", lst_asistenciaDS_response.materiaAsistenciaAlumno.Count);
+            Debug.WriteLine(@"\tDIEGO MENDEZ - RestApi {0}", lst_asistenciaDS_response.MateriaAsistenciaAlumno.Count);
             Debug.WriteLine(@"\tDIEGO MENDEZ - RestApi {0}", lst_perfilDS_response.Carreras.Count);
 
         }
