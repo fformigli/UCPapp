@@ -41,7 +41,7 @@ namespace EssentialUIKit.AppLayout.ViewModels
         private void InitPerfil()
         {
             var api = new RestAPI();
-            api.getPerfil(RestAPI.Cedula);
+            api.getPerfil();
 
             UserLogged = RestAPI.PerfilResponse.Nombres + " " + RestAPI.PerfilResponse.Apellidos;
 

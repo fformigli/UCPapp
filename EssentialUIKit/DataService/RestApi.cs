@@ -22,7 +22,7 @@ namespace EssentialUIKit.DataService
 
         private const string RendimientoServiceGet = UrlService + "rendimiento?cedula={0}&cantexam=4";
 
-        private const string HorariosServiceGet = UrlService + "horarioAlumno?cedula={0}";
+        private const string HorarioServiceGet = UrlService + "horarioAlumno?cedula={0}";
         private const string ExamenesServiceGet = UrlService + "examenesAlumno?cedula={0}";
         private const string CalificacionesServiceGet = UrlService + "calificacionAlumno?cedula={0}&mostrar=todas";
         private const string FinancieroServiceGet = UrlService + "financieroAlumno?cedula={0}&mostrar=todas";
@@ -34,11 +34,11 @@ namespace EssentialUIKit.DataService
         public static PerfilResult PerfilResponse { get; set; }
         public static RendimientoResult RendimientoResponse { get; set; }
         public static ExamenesResult ExamenesResponse { get; set; }
+        public HorariosResult HorarioResponse { get; set; }
 
         public CalificacionesResult calificacionesDS_response { get; set; }
         public FinancieroResult financieroDS_response { get; set; }
         public AsistenciaResult asistenciaDS_response { get; set; }
-        public HorariosResult horariosDS_response { get; set; }
 
 
         public static string AuthenticateLDAP(string username, string password)
@@ -49,71 +49,30 @@ namespace EssentialUIKit.DataService
             return login.Status.Equals("error")?login.Msg:login.Status;
         }
 
-        public void getPerfil(String nroCedula)
+        public void getPerfil()
         {
-            PerfilResponse = RestUtility.CallServiceSync<PerfilResult>(string.Format(PerfilServiceGet, nroCedula), string.Empty, null, "GET",
+            if (PerfilResponse != null)
+                return;
+            PerfilResponse = RestUtility.CallServiceSync<PerfilResult>(string.Format(PerfilServiceGet, Cedula), string.Empty, null, "GET",
                string.Empty, string.Empty) as PerfilResult;
         }
 
-        public void getRendimiento(String nroCedula)
+        public void getRendimiento()
         {
-            RendimientoResponse = RestUtility.CallServiceSync<RendimientoResult>(string.Format(RendimientoServiceGet, nroCedula), string.Empty, null, "GET",
+            if (RendimientoResponse != null)
+                return;
+            RendimientoResponse = RestUtility.CallServiceSync<RendimientoResult>(string.Format(RendimientoServiceGet, Cedula), string.Empty, null, "GET",
                string.Empty, string.Empty) as RendimientoResult;
         }
 
-
-
-
-
-        public void ExamenesDS_ServiceResponse(String nroCedula)
+        public void getHorario()
         {
-            ExamenesResponse = RestUtility.CallServiceSync<ExamenesResult>(string.Format(ExamenesServiceGet, nroCedula), string.Empty, null, "GET",
-               string.Empty, string.Empty) as ExamenesResult;
-
-        }
-
-        async public Task HoraraiosDS_ServiceResponse(String nroCedula)
-        {
-            this.horariosDS_response = await RestUtility.CallServiceAsync<HorariosResult>(string.Format(HorariosServiceGet, nroCedula), string.Empty, null, "GET",
-              string.Empty, string.Empty) as HorariosResult;
-
-
-        }
-        async public Task CalificacionesDS_response(String nroCedula)
-        {
-            this.calificacionesDS_response = await RestUtility.CallServiceAsync<CalificacionesResult>(string.Format(CalificacionesServiceGet, nroCedula), string.Empty, null, "GET",
-               string.Empty, string.Empty) as CalificacionesResult;
-        }
-        async public Task FinancieroDS_response(String nroCedula)
-        {
-            this.financieroDS_response = await RestUtility.CallServiceAsync<FinancieroResult>(string.Format(FinancieroServiceGet, nroCedula), string.Empty, null, "GET",
-               string.Empty, string.Empty) as FinancieroResult;
-        }
-        async public Task AsistenciaDS_response(String nroCedula)
-        {
-
-            this.asistenciaDS_response = await RestUtility.CallServiceAsync<AsistenciaResult>(string.Format(AsistenciaServiceGet, nroCedula), string.Empty, null, "GET",
-               string.Empty, string.Empty) as AsistenciaResult;
-        }
-
-
-        async public Task PerfilDS_response(String nroCedula)
-        {
-            PerfilResponse = await RestUtility.CallServiceAsync<PerfilResult>(string.Format(PerfilServiceGet, nroCedula), string.Empty, null, "GET",
-               string.Empty, string.Empty) as PerfilResult;
-        }
-
-        public void HoraraiosDS2_ServiceResponse(String nroCedula)
-        {
-            //6948405
-            this.horariosDS_response = RestUtility.CallServiceSync<HorariosResult>(string.Format(HorariosServiceGet, nroCedula), string.Empty, null, "GET",
+            if (HorarioResponse != null)
+                return;
+            HorarioResponse = RestUtility.CallServiceSync<HorariosResult>(string.Format(HorarioServiceGet, Cedula), string.Empty, null, "GET",
                string.Empty, string.Empty) as HorariosResult;
-
-
         }
-
-
-
+        
         async public void demo()
         {
 

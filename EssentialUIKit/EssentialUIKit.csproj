@@ -97,6 +97,9 @@
     <Compile Update="Views\Article\ProfilePage.xaml.cs">
       <DependentUpon>ProfilePage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\HorarioPage.xaml.cs">
+      <DependentUpon>HorarioPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Chat\ContactProfilePage.xaml.cs">
       <DependentUpon>ContactProfilePage.xaml</DependentUpon>
     </Compile>
@@ -171,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Article\ProfilePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\HorarioPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Chat\ContactProfilePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

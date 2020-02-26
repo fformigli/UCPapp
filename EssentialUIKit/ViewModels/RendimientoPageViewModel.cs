@@ -1,9 +1,7 @@
 ﻿using EssentialUIKit.DataService;
 using EssentialUIKit.Models.Rendimiento;
-using System;
-using System.Collections.Generic;
+using EssentialUIKit.Models;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
@@ -17,6 +15,11 @@ namespace EssentialUIKit.ViewModels
         
         public string NombreAlumno { get; set; }
         public string CarreraPerfil { get; set; }
+        public ObservableCollection<Stats> Statistics { get; set; }
+
+        public string DeudaTotalT { get; set; }
+        public string PromedioActualT { get; set; }
+
 
         #endregion
 
@@ -41,32 +44,41 @@ namespace EssentialUIKit.ViewModels
 
             Statistics = new ObservableCollection<Stats> { };
 
-            api.getRendimiento(RestAPI.Cedula);
-            var  title = "Examenes Próximos";          
-            var label1 = "";         
-            var value1 = "";
+            api.getRendimiento();
+            //TODO: api.getAsistencia();
+
+            PromedioActualT = "Promedio Actual: " + RestAPI.RendimientoResponse.PromedioActual;
+            DeudaTotalT = string.Format("{0:c}",RestAPI.RendimientoResponse.DeudaTotal)+ " pendiente de pago";
+
+            var title = "Examenes Próximos";          
+            var materia1 = "";
+            var fecha1 = "";
+            var examen1 = "";
             for (var i = 0; i < RestAPI.RendimientoResponse.ExamenesProximos.Count; i++)
             {
                 if ((i % 2) == 0)
                 {
-                    label1 = RestAPI.RendimientoResponse.ExamenesProximos[i].Materia;
-                    value1 = RestAPI.RendimientoResponse.ExamenesProximos[i].Fecha+" "+RestAPI.RendimientoResponse.ExamenesProximos[i].Fecha;
+                    materia1 = RestAPI.RendimientoResponse.ExamenesProximos[i].Materia;
+                    fecha1 = RestAPI.RendimientoResponse.ExamenesProximos[i].Fecha;
+                    examen1 = RestAPI.RendimientoResponse.ExamenesProximos[i].TipoExamen;
                 }
                 else
                 {
-                    string label2 = RestAPI.RendimientoResponse.ExamenesProximos[i].Materia;
-                    string value2 = RestAPI.RendimientoResponse.ExamenesProximos[i].Fecha+" "+RestAPI.RendimientoResponse.ExamenesProximos[i].Fecha;
+                    string materia2 = RestAPI.RendimientoResponse.ExamenesProximos[i].Materia;
+                    string fecha2 = RestAPI.RendimientoResponse.ExamenesProximos[i].Fecha;
+                    string examen2 = RestAPI.RendimientoResponse.ExamenesProximos[i].TipoExamen;
 
-                    Statistics.Add(new Stats { Title = title, Label1 = label1, Label2 = label2, Value1 = value1, Value2 = value2 });
+                    Statistics.Add(new Stats { Title = title, Materia1 = materia1, Materia2 = materia2, 
+                        Fecha1 = fecha1, Fecha2 = fecha2, Examen1 = examen1, Examen2 = examen2 });
                 }
             }
+
+
         }
 
         #endregion
 
         #region methods
-
-        public ObservableCollection<Stats> Statistics { get; set; }
 
         /// <summary>
         /// Invoked when the Forgot Password button is clicked.

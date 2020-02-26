@@ -1,18 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Items>
   <Category Icon="feedback.png" Name="Rendimiento" Description="Un solo panel, toda la información sobre tu desempeño" PageName="Views.RendimientoPage"/>
-  <Category Icon="about-us.png" Name="Horarios" Description="Un atajo para conocer tus horarios de clase" PageName="Views.ECommerce.CartPage"/>
-  <Category Icon="chat.png" Name="Evaluación Docente" Description="Mejoremos la calidad de la educación. Aquí puede hacerlo" PageName="Views.ErrorAndEmpty.NoInternetConnectionPage"/>
-  <Category Icon="log-in.png" Name="Caja" Description="Relice sus pagos aquí, de manera segura y cómoda" PageName="Views.ErrorAndEmpty.NoInternetConnectionPage"/>
-  <Category Icon="ecommerce.png" Name="Inscripciones" Description="Punto de parada para las inscripciones de la Universidad" PageName="Views.ErrorAndEmpty.NoInternetConnectionPage"/>
-  <Category Icon="article.png" Name="Ayuda" Description="Instrucciones paso a paso para disfutar de la aplicación" PageName="Views.OnBoarding.OnBoardingGradientPage"/>
-  <Category Icon="log-in.png" Name="Caja" Description="Relice sus pagos aquí, de manera segura y cómoda" PageName="Views.ErrorAndEmpty.NoInternetConnectionPage"/>
-  <Category Icon="ecommerce.png" Name="Inscripciones" Description="Punto de parada para las inscripciones de la Universidad" PageName="Views.ErrorAndEmpty.NoInternetConnectionPage"/>
-  <Category Icon="article.png" Name="Ayuda" Description="Instrucciones paso a paso para disfutar de la aplicación" PageName="Views.OnBoarding.OnBoardingGradientPage"/>
-  <Category Icon="log-in.png" Name="Caja" Description="Relice sus pagos aquí, de manera segura y cómoda" PageName="Views.ErrorAndEmpty.NoInternetConnectionPage"/>
-  <Category Icon="ecommerce.png" Name="Inscripciones" Description="Punto de parada para las inscripciones de la Universidad" PageName="Views.ErrorAndEmpty.NoInternetConnectionPage"/>
-  <Category Icon="article.png" Name="Ayuda" Description="Instrucciones paso a paso para disfutar de la aplicación" PageName="Views.OnBoarding.OnBoardingGradientPage"/>
-  <Category Icon="log-in.png" Name="Caja" Description="Relice sus pagos aquí, de manera segura y cómoda" PageName="Views.ErrorAndEmpty.NoInternetConnectionPage"/>
-  <Category Icon="ecommerce.png" Name="Inscripciones" Description="Punto de parada para las inscripciones de la Universidad" PageName="Views.ErrorAndEmpty.NoInternetConnectionPage"/>
+  <Category Icon="about-us.png" Name="Horarios" Description="Conoce tus horarios de clase" PageName="Views.HorarioPage"/>
+  <Category Icon="about-us.png" Name="Calificaciones" Description="Comprueba tus Calificaciones" PageName="Views.ErrorAndEmpty.NoInternetConnectionPage"/>
   <Category Icon="article.png" Name="Ayuda" Description="Instrucciones paso a paso para disfutar de la aplicación" PageName="Views.OnBoarding.OnBoardingGradientPage"/>
 </Items>

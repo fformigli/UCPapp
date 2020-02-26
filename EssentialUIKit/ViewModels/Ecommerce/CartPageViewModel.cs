@@ -355,20 +355,20 @@ namespace EssentialUIKit.ViewModels.ECommerce
             this.CartDetails = new ObservableCollection<Product>();
 
             RestAPI api = new RestAPI();
-            api.HoraraiosDS2_ServiceResponse("3593109");
+            //api.HoraraiosDS2_ServiceResponse("3593109");
             //.ContinueWith((antecedent) => {
             this.materias = new ObservableCollection<Materia>();
-            for (int i = 0; i < api.horariosDS_response.materia.Count; i++)
+            for (int i = 0; i < api.HorarioResponse.materia.Count; i++)
             {
                 this.Materias.Add(new Materia
                 {
-                    curso = api.horariosDS_response.materia[i].curso,
-                    horario = api.horariosDS_response.materia[i].horario,
-                    nombreCarrera = api.horariosDS_response.materia[i].nombreCarrera,
-                    seccion = api.horariosDS_response.materia[i].seccion,
-                    semestre = api.horariosDS_response.materia[i].semestre,
-                    nombreMateria = api.horariosDS_response.materia[i].nombreMateria,
-                    turno = api.horariosDS_response.materia[i].turno
+                    curso = api.HorarioResponse.materia[i].curso,
+                    horario = api.HorarioResponse.materia[i].horario,
+                    nombreCarrera = api.HorarioResponse.materia[i].nombreCarrera,
+                    seccion = api.HorarioResponse.materia[i].seccion,
+                    semestre = api.HorarioResponse.materia[i].semestre,
+                    nombreMateria = api.HorarioResponse.materia[i].nombreMateria,
+                    turno = api.HorarioResponse.materia[i].turno
 
                 });
 
