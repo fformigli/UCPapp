@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace EssentialUIKit.Models.Rendimiento.Perfil
+namespace EssentialUIKit.Models
 {
 
 

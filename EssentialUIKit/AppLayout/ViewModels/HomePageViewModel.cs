@@ -53,7 +53,7 @@ namespace EssentialUIKit.AppLayout.ViewModels
             UserLogged = textInfo.ToTitleCase(UserLogged.ToLower());
             Wellcome =  RestAPI.PerfilResponse.Sexo.Contains("M") ? "Bienvenido" : "Bienvenida";
             DescAlumno = UserLogged;
-            DescAlumno += RestAPI.PerfilResponse.Sexo.Contains("M") ? "futuro" : "futura";
+            DescAlumno += RestAPI.PerfilResponse.Sexo.Contains("M") ? " futuro" : " futura";
             DescAlumno += " profesional de ";
 
             var carrera = "";

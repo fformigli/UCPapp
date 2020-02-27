@@ -2,7 +2,6 @@
 using EssentialUIKit.Models.Rendimiento.Examenes;
 using EssentialUIKit.Models.Rendimiento.Financiero;
 using EssentialUIKit.Models.Rendimiento.Horarios;
-using EssentialUIKit.Models.Rendimiento.Perfil;
 using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
@@ -14,7 +13,8 @@ namespace EssentialUIKit.DataService
     {
         //private const string UrlService = "http://192.168.1.137:8480/hubcolumbia/rest/mobileService/";
         //private const string UrlService = "https://www.columbia.edu.py/acadweb/phone/mobileService/";
-        private const string UrlService = "http://192.168.1.180:8080/acadweb/phone/mobileService/";
+        //private const string UrlService = "http://192.168.1.180:8080/acadweb/phone/mobileService/";
+        private const string UrlService = "http://192.168.0.3:5000/";
         private const string UrlLogin = "https://www.columbia.edu.py/ajax/loginMobile.php";
         
         public static string Cedula;

@@ -15,6 +15,7 @@ namespace EssentialUIKit.Models
     public class CarreraRendimiento
     {
         public string DuracionCarrera { get; set; }
+        public string Nombre { get; set; }
     }
     public class RendimientoResult
     {
