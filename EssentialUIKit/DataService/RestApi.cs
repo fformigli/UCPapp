@@ -6,29 +6,13 @@ using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using EssentialUIKit.Models;
+using EssentialUIKit.Data;
 
 namespace EssentialUIKit.DataService
 {
     public class RestAPI
     {
-        //private const string UrlService = "http://192.168.1.137:8480/hubcolumbia/rest/mobileService/";
-        //private const string UrlService = "https://www.columbia.edu.py/acadweb/phone/mobileService/";
-        //private const string UrlService = "http://192.168.1.180:8080/acadweb/phone/mobileService/";
-        private const string UrlService = "http://192.168.0.3:5000/";
-        private const string UrlLogin = "https://www.columbia.edu.py/ajax/loginMobile.php";
-        
         public static string Cedula;
-
-        private const string RendimientoServiceGet = UrlService + "rendimiento?cedula={0}&cantexam=4";
-        private const string AsistenciaServiceGet = UrlService + "asistenciaAlumno?cedula={0}";
-
-        private const string HorarioServiceGet = UrlService + "horarioAlumno?cedula={0}";
-        private const string ExamenesServiceGet = UrlService + "examenesAlumno?cedula={0}";
-        private const string CalificacionesServiceGet = UrlService + "calificacionAlumno?cedula={0}&mostrar=todas";
-        private const string FinancieroServiceGet = UrlService + "financieroAlumno?cedula={0}&mostrar=todas";
-        private const string PerfilServiceGet = UrlService + "perfil?cedula={0}";
-
-
 
         public static PerfilResult PerfilResponse { get; set; }
         public static RendimientoResult RendimientoResponse { get; set; }
@@ -42,7 +26,7 @@ namespace EssentialUIKit.DataService
 
         public static string AuthenticateLDAP(string username, string password)
         {
-            var login = RestUtility.Login(UrlLogin, username, password);
+            var login = RestUtility.Login(Constants.UrlLogin, username, password);
             Cedula = login.Cedula.Trim();
 
             return login.Status.Equals("error")?login.Msg:login.Status;
@@ -52,7 +36,7 @@ namespace EssentialUIKit.DataService
         {
             if (PerfilResponse != null)
                 return;
-            PerfilResponse = RestUtility.CallServiceSync<PerfilResult>(string.Format(PerfilServiceGet, Cedula), string.Empty, null, "GET",
+            PerfilResponse = RestUtility.CallServiceSync<PerfilResult>(string.Format(Constants.PerfilServiceGet, Cedula), string.Empty, null, "GET",
                string.Empty, string.Empty) as PerfilResult;
         }
 
@@ -60,7 +44,7 @@ namespace EssentialUIKit.DataService
         {
             if (RendimientoResponse != null)
                 return;
-            RendimientoResponse = RestUtility.CallServiceSync<RendimientoResult>(string.Format(RendimientoServiceGet, Cedula), string.Empty, null, "GET",
+            RendimientoResponse = RestUtility.CallServiceSync<RendimientoResult>(string.Format(Constants.RendimientoServiceGet, Cedula), string.Empty, null, "GET",
                string.Empty, string.Empty) as RendimientoResult;
         }
 
@@ -68,7 +52,7 @@ namespace EssentialUIKit.DataService
         {
             if (AsistenciaResponse != null)
                 return;
-            AsistenciaResponse = RestUtility.CallServiceSync<AsistenciaResult>(string.Format(AsistenciaServiceGet, Cedula), string.Empty, null, "GET",
+            AsistenciaResponse = RestUtility.CallServiceSync<AsistenciaResult>(string.Format(Constants.AsistenciaServiceGet, Cedula), string.Empty, null, "GET",
                string.Empty, string.Empty) as AsistenciaResult;
         }
 
@@ -78,30 +62,30 @@ namespace EssentialUIKit.DataService
         {
             if (HorarioResponse != null)
                 return;
-            HorarioResponse = RestUtility.CallServiceSync<HorariosResult>(string.Format(HorarioServiceGet, Cedula), string.Empty, null, "GET",
+            HorarioResponse = RestUtility.CallServiceSync<HorariosResult>(string.Format(Constants.HorarioServiceGet, Cedula), string.Empty, null, "GET",
                string.Empty, string.Empty) as HorariosResult;
         }
         
         async public void demo()
         {
 
-            ExamenesResult lst_examenesDS_response = await RestUtility.CallServiceAsync<ExamenesResult>(ExamenesServiceGet, string.Empty, null, "GET",
+            ExamenesResult lst_examenesDS_response = await RestUtility.CallServiceAsync<ExamenesResult>(Constants.ExamenesServiceGet, string.Empty, null, "GET",
                   string.Empty, string.Empty) as ExamenesResult;
 
 
-            CalificacionesResult lst_calificacionesDS_response = await RestUtility.CallServiceAsync<CalificacionesResult>(CalificacionesServiceGet, string.Empty, null, "GET",
+            CalificacionesResult lst_calificacionesDS_response = await RestUtility.CallServiceAsync<CalificacionesResult>(Constants.CalificacionesServiceGet, string.Empty, null, "GET",
              string.Empty, string.Empty) as CalificacionesResult;
 
 
-            FinancieroResult lst_financieroDS_response = await RestUtility.CallServiceAsync<FinancieroResult>(FinancieroServiceGet, string.Empty, null, "GET",
+            FinancieroResult lst_financieroDS_response = await RestUtility.CallServiceAsync<FinancieroResult>(Constants.FinancieroServiceGet, string.Empty, null, "GET",
              string.Empty, string.Empty) as FinancieroResult;
 
 
-            AsistenciaResult lst_asistenciaDS_response = await RestUtility.CallServiceAsync<AsistenciaResult>(AsistenciaServiceGet, string.Empty, null, "GET",
+            AsistenciaResult lst_asistenciaDS_response = await RestUtility.CallServiceAsync<AsistenciaResult>(Constants.AsistenciaServiceGet, string.Empty, null, "GET",
              string.Empty, string.Empty) as AsistenciaResult;
 
 
-            PerfilResult lst_perfilDS_response = await RestUtility.CallServiceAsync<PerfilResult>(PerfilServiceGet, string.Empty, null, "GET",
+            PerfilResult lst_perfilDS_response = await RestUtility.CallServiceAsync<PerfilResult>(Constants.PerfilServiceGet, string.Empty, null, "GET",
              string.Empty, string.Empty) as PerfilResult;
 
             Debug.WriteLine(@"\tDIEGO MENDEZ - RestApi {0}", lst_examenesDS_response.materia.Count);

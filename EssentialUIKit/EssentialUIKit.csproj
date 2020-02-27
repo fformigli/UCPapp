@@ -43,37 +43,27 @@
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Remove="AppLayout\Views\MasterDetailPage1.xaml.cs" />
-    <Compile Remove="AppLayout\Views\MasterDetailPage1Detail.xaml.cs" />
-    <Compile Remove="AppLayout\Views\MasterDetailPage1Master.xaml.cs" />
-    <Compile Remove="AppLayout\Views\MasterDetailPage1MasterMenuItem.cs" />
     <Compile Remove="Models\ECommerce\Filter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Remove="AppLayout\Views\MasterDetailPage1.xaml" />
-    <EmbeddedResource Remove="AppLayout\Views\MasterDetailPage1Detail.xaml" />
-    <EmbeddedResource Remove="AppLayout\Views\MasterDetailPage1Master.xaml" />
+    <None Remove="Icons\asistencia.png" />
+    <None Remove="Icons\calif.png" />
+    <None Remove="Icons\error.png" />
+    <None Remove="Icons\financiero.png" />
+    <None Remove="Icons\rendimiento.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="AppLayout\Menu.xml" />
-    <None Remove="Data\ecommerce.json" />
+    <EmbeddedResource Include="Icons\about-us.png" />
+    <EmbeddedResource Include="Icons\asistencia.png" />
+    <EmbeddedResource Include="Icons\calif.png" />
+    <EmbeddedResource Include="Icons\error-empty.png" />
+    <EmbeddedResource Include="Icons\error.png" />
+    <EmbeddedResource Include="Icons\financiero.png" />
+    <EmbeddedResource Include="Icons\rendimiento.png" />
+    <EmbeddedResource Include="Data\Menu.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AppLayout\Icons\about-us.png" />
-    <EmbeddedResource Include="AppLayout\Icons\article.png" />
-    <EmbeddedResource Include="AppLayout\Icons\chat.png" />
-    <EmbeddedResource Include="AppLayout\Icons\contact-us.png" />
-    <EmbeddedResource Include="AppLayout\Icons\ecommerce.png" />
-    <EmbeddedResource Include="AppLayout\Icons\error-empty.png" />
-    <EmbeddedResource Include="AppLayout\Icons\feedback.png" />
-    <EmbeddedResource Include="AppLayout\Icons\log-in.png" />
-    <EmbeddedResource Include="AppLayout\Icons\navigation.png" />
-    <EmbeddedResource Include="AppLayout\Icons\on-boarding.png" />
-    <EmbeddedResource Include="AppLayout\Menu.xml" />
-    <EmbeddedResource Include="Data\ecommerce.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="AppLayout\Views\Styles.xaml.cs">
+    <Compile Update="Views\Styles.xaml.cs">
         <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
     <Compile Update="Views\AboutUs\AboutUsWithCardsPage.xaml.cs">
@@ -154,25 +144,28 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="AppLayout\AppShell.xaml">
+    <EmbeddedResource Update="AppShell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Themes\LightTheme.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="AppLayout\Views\HomePage.xaml">
+    <EmbeddedResource Update="Views\HomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="App.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="AppLayout\Views\SettingsView.xaml">
+    <EmbeddedResource Update="Views\SettingsView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Article\MasterPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Article\ProfilePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\AsistenciaPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\HorarioPage.xaml">
@@ -329,24 +322,6 @@
 
   <ItemGroup>
     <None Update="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="AppLayout\AppShell.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="AppLayout\Views\HomePage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="AppLayout\Views\SettingsView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="AppLayout\Views\Styles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="AppLayout\Views\TemplateHostPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="AppLayout\Views\TemplatePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="HomePage.xaml">

@@ -1,9 +1,8 @@
-﻿using EssentialUIKit.AppLayout.Views;
+﻿using EssentialUIKit.Views;
 using EssentialUIKit.DataService;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
-using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -118,8 +117,6 @@ namespace EssentialUIKit.ViewModels.Login
         /// <param name="obj">The Object</param>
         private void LoginClicked(object obj)
         {
-            Console.WriteLine("Login clicked -----------------------");
-
             var status = RestAPI.AuthenticateLDAP(username, password);
             if (status.Equals("ok"))
                 App.Current.MainPage = new NavigationPage(new HomePage());
