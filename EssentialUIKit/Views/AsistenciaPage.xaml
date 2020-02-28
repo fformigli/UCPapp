@@ -4,6 +4,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:EssentialUIKit.Controls"
+    xmlns:viewModels="clr-namespace:EssentialUIKit.ViewModels;assembly=EssentialUIKit"
     BackgroundColor="{DynamicResource Gray-F4}"
     NavigationPage.HasNavigationBar="False"
     Shell.NavBarIsVisible="False">
@@ -16,6 +17,10 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
+    <ContentPage.BindingContext>
+        <viewModels:AsistenciaPageViewModel/>
+    </ContentPage.BindingContext>
+    
     <ContentPage.ControlTemplate>
         <ControlTemplate>
             <StackLayout Spacing="5">
@@ -31,7 +36,7 @@
                     Grid.RowSpan="2"
                     SeparatorVisibility="None"
                     HasUnevenRows="True"
-                    ItemsSource="{Binding Templates}">
+                    ItemsSource="{Binding Materias}">
 
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -48,140 +53,16 @@
                                         <ColumnDefinition Width="Auto" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-
-                                    <Image
-                                Grid.RowSpan="3"
-                                Grid.Column="0"
-                                HeightRequest="50"
-                                WidthRequest="50"
-                                Aspect="AspectFit"
-                                Style="{StaticResource ItemImageStyle}"/>
+                                    <Label
+                                        Text="test" />
 
                                     <Label
-                                Grid.Row="0" 
-                                Grid.Column="1"
-                                Style="{StaticResource ItemTitleStyle}"/>
-
-                                    <Label
-                                Grid.Row="1" Grid.Column="1"
-                                Style="{StaticResource ItemDescriptionStyle}"/>
-
+                                        Text="{Binding NombreMateria}" />
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
-
-                    <ListView.Header>
-                        <Grid x:Name="ListViewHeader"
-                    Margin="0,0,0,-3"
-                    HeightRequest="275"
-                    IsClippedToBounds="True"
-                    RowSpacing="0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="0" x:Name="iOSSafeArea"/>
-                                <RowDefinition Height="265" />
-                                <RowDefinition Height="10" />
-                            </Grid.RowDefinitions>
-
-                            <Grid 
-                        Opacity="0.9" 
-                        Grid.Row="1" 
-                        Grid.RowSpan="2"
-                        HeightRequest="200"
-                        ColumnSpacing="0"
-                        RowSpacing="0">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="10*" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="5*" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="10*" />
-                                </Grid.RowDefinitions>
-
-
-                                <Image
-                                x:Name="HeaderBackground"
-                                Source="@drawable/HomeBackground"
-                                HorizontalOptions="FillAndExpand"
-                                VerticalOptions="FillAndExpand"
-                                Aspect="AspectFill"
-                                Grid.RowSpan="6" />
-
-                                <Image
-                            x:Name="HeaderImage"
-                            Grid.Row="1"
-                            Style="{StaticResource HeaderIconStyle}"/>
-
-                                <Label
-                            x:Name="BrandName"
-                            Grid.Row="2"
-                            FontSize="Large"
-                            HorizontalOptions="CenterAndExpand"
-                            Text="{DynamicResource userLogged}"
-                            FontFamily="{StaticResource Montserrat-Regular}"
-                            TextColor="White"
-                            />
-
-                                <Label
-                            x:Name="HeaderText"
-                            Grid.Row="3"
-                            FontSize="16"
-                            TextColor="White"
-                            FontFamily="{StaticResource Montserrat-Regular}"
-                            HorizontalOptions="CenterAndExpand"
-                            Text="{Binding Wellcome}" />
-
-                                <Label
-                            x:Name="Description"
-                            Grid.Row="4"
-                            Margin="10,0,10,0"
-                            FontSize="15"
-                            FontFamily="{StaticResource Montserrat-Regular}"
-                            TextColor="White"
-                            HorizontalOptions="CenterAndExpand"
-                            HorizontalTextAlignment="Center"
-                            VerticalOptions="EndAndExpand"
-                            Text="{DynamicResource Description}" />
-
-                            </Grid>
-
-                            <Image
-                        Opacity="1" 
-                        Source="HeaderTriangle.png" 
-                        WidthRequest="170"
-                        Grid.Row="1" 
-                        Margin="0,0,0,-60"
-                        VerticalOptions="EndAndExpand"
-                        HorizontalOptions="StartAndExpand" />
-
-                            <Image Opacity="1"
-                           Source="InvertedTriangle.png" 
-                           WidthRequest="190" 
-                           Grid.Row="1" 
-                           Margin="0,0,0,-110"
-                           VerticalOptions="EndAndExpand" 
-                           HorizontalOptions="EndAndExpand" />
-
-                            <Frame
-                        Grid.Row="2"
-                        Padding="0"
-                        BackgroundColor="{DynamicResource Gray-White}"
-                        CornerRadius="{OnPlatform 20, iOS=10}"
-                        HasShadow="False" />
-
-                            <!--<Button
-                        x:Name="SettingsIcon"
-                        Style="{StaticResource ActionBarSettingIconStyle}"
-                        Grid.Row="1"
-                        Clicked="ShowSettings"
-                        VerticalOptions="Start"
-                        HorizontalOptions="EndAndExpand"/>-->
-
-                        </Grid>
-                    </ListView.Header>
                 </controls:ParallaxListView>
-
             </StackLayout>
         </ControlTemplate>
     </ContentPage.ControlTemplate>
