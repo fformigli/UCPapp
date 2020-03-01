@@ -58,7 +58,7 @@ namespace EssentialUIKit.Droid.Renderers
 
             var pageView = e.NewElement as TemplateHostView;
 
-            var nativePage = this.GetNativeView(pageView?.Template, pageView);
+            var nativePage = this.GetNativeView(TemplateHostView.Template, pageView);
 
             if (nativePage != null)
             {

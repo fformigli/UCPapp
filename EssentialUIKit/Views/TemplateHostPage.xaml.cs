@@ -72,7 +72,7 @@ namespace EssentialUIKit.Views
 
                     if (Device.RuntimePlatform == "iOS")
                     {
-                        (TemplateHostView.Template as NavigationPage).CurrentPage.Layout(new Rectangle(0, 0, width, height - safeAreaHeight));
+                        (Controls.TemplateHostView.Template as NavigationPage).CurrentPage.Layout(new Rectangle(0, 0, width, height - safeAreaHeight));
                     }
                 }
             }
@@ -84,12 +84,12 @@ namespace EssentialUIKit.Views
 
             var page = (Page)Activator.CreateInstance(assembly.GetType($"EssentialUIKit.{pageURL}"));
 
-            TemplateHostView.Template = new NavigationPage(page);
+            Controls.TemplateHostView.Template = new NavigationPage(page);
         }
 
         private void BackButtonPressed(object sender, EventArgs e)
         {
-            Navigation.PopAsync(true);
+            Device.BeginInvokeOnMainThread(async () => await Navigation.PopAsync(true));
         }
 
         #endregion

@@ -1,6 +1,6 @@
 ﻿using EssentialUIKit.DataService;
 using EssentialUIKit.Models.Rendimiento;
-using EssentialUIKit.Models;
+using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -93,6 +93,7 @@ namespace EssentialUIKit.ViewModels
             await Task.Delay(100);
             label.BackgroundColor = Color.Transparent;
         }
+
         #endregion
     }
 }

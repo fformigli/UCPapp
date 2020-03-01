@@ -20,7 +20,7 @@ namespace EssentialUIKit.ViewModels.ECommerce
     {
         #region Fields
 
-        private ECommerceDataService dataService = ECommerceDataService.Instance;
+        //private ECommerceDataService dataService = ECommerceDataService.Instance;
 
         private ObservableCollection<Product> cartDetails;
         private ObservableCollection<Materia> materias;

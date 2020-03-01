@@ -89,7 +89,6 @@ namespace EssentialUIKit.ViewModels
                     {
                         case "Category" when xmlReader.IsStartElement():
                             {
-
                                 var platform = GetDataFromXmlReader(xmlReader, "Platform");
                                 if (string.IsNullOrEmpty(platform) || platform.ToLower().Contains(runtimePlatform))
                                 {

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Xamarin.Forms.Internals;
 using EssentialUIKit.Models;
 using EssentialUIKit.DataService;
@@ -23,10 +21,6 @@ namespace EssentialUIKit.ViewModels
         {
             var api = new RestAPI();
             api.getAsistencia();
-            foreach (var item in RestAPI.AsistenciaResponse.MateriaAsistenciaAlumno)
-            {
-                Console.Write(item.NombreMateria);
-            }
 
             Materias.Clear();
             Materias = RestAPI.AsistenciaResponse.MateriaAsistenciaAlumno;
