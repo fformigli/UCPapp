@@ -12,64 +12,56 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="ECommerce/Styles.xaml" />
+                <ResourceDictionary Source="Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <ContentPage.BindingContext>
-        <viewModels:AsistenciaPageViewModel/>
+        <viewModels:AsistenciaPageViewModel />
     </ContentPage.BindingContext>
+
+    <!--  Title View  -->
     
-    <ContentPage.ControlTemplate>
-        <ControlTemplate>
-            <StackLayout Spacing="5">
-
-                <!--  Title View  -->
-                <controls:TitleView Title="Asistencia" BackgroundColor="{DynamicResource Gray-White}" />
-
-                <ContentPresenter />
-
-                <controls:ParallaxListView
-                    x:Name="listView"
-                    Grid.Row="0"
-                    Grid.RowSpan="2"
-                    SeparatorVisibility="None"
-                    HasUnevenRows="True"
-                    ItemsSource="{Binding Materias}">
-
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <!--The image at the left will be rendered with some space.-->
-                                <Grid RowSpacing="8" Margin="3,16,16,8">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
-                                    </Grid.RowDefinitions>
-
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    <Label
-                                        Text="test" />
-
-                                    <Label
-                                        Text="{Binding NombreMateria}" />
-                                </Grid>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </controls:ParallaxListView>
-            </StackLayout>
-        </ControlTemplate>
-    </ContentPage.ControlTemplate>
 
     <ContentPage.Content>
-        <ScrollView VerticalScrollBarVisibility="Never">
-            
-        </ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="70"/>
+            </Grid.ColumnDefinitions>
+            <controls:TitleView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Title="Asistencia" BackgroundColor="{DynamicResource Gray-White}" />
+            <ListView
+                x:Name="listView"
+                Grid.Row="1"
+                Grid.Column="0" Grid.ColumnSpan="3"
+                HasUnevenRows="True"
+                
+                ItemsSource="{Binding Materias}">
+                <ListView.Header>
+                    <StackLayout>
+                        <Label Text="Materia" />
+                        <Label Text="Porcentaje de Asistencia" />
+                        <Label Text="Cantidad de Ausencias" />
+                    </StackLayout>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Label Grid.Column="0" Text="{Binding NombreMateria}" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start" />
+                                <Label Grid.Column="1" Text="{Binding PorcentajeDeAsistencia}" />
+                                <Label Grid.Column="2" Text="{Binding CantidadDeAusencias}" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

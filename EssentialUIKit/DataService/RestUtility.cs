@@ -113,7 +113,7 @@ namespace EssentialUIKit.DataService
 
             var responseContent = streamReader.ReadToEnd().Trim();
 
-            Console.WriteLine(responseContent);
+            Console.WriteLine("RestUtility 116: "+responseContent);
 
             var jsonObject = JsonConvert.DeserializeObject<Login>(responseContent);
 

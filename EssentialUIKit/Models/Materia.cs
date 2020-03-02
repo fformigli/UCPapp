@@ -14,5 +14,10 @@ namespace EssentialUIKit.Models
         public string Seccion { get; set; }
         public string Semestre { get; set; }
 
+        public Materia(string a, string b)
+        {
+            this.Anho = a;
+            this.NombreMateria = b;
+        }
     }
 }
