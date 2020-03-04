@@ -1,17 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="EssentialUIKit.Views.HorarioPage"
+    x:Class="EssentialUIKit.Views.AsistenciaPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:behaviors="clr-namespace:EssentialUIKit.Behaviors.ECommerce"
-    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
-    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
-    xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
     xmlns:controls="clr-namespace:EssentialUIKit.Controls"
-    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-    xmlns:helper="clr-namespace:EssentialUIKit.Helpers"
-    xmlns:local="clr-namespace:EssentialUIKit.Views.ECommerce"
-    xmlns:viewModel="clr-namespace:EssentialUIKit.ViewModels.ECommerce"
+    xmlns:viewModels="clr-namespace:EssentialUIKit.ViewModels;assembly=EssentialUIKit"
     BackgroundColor="{DynamicResource Gray-F4}"
     NavigationPage.HasNavigationBar="False"
     Shell.NavBarIsVisible="False">
@@ -19,25 +12,122 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="ECommerce/Styles.xaml" />
+                <ResourceDictionary Source="Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </ContentPage.Resources>
-    
-    <ContentPage.ControlTemplate>
-        <ControlTemplate>
-            <StackLayout Spacing="5">
 
-                <!--  Title View  -->
-                <controls:TitleView Title="Horario de Clases" BackgroundColor="{DynamicResource Gray-White}" />
-
-                <ContentPresenter />
-
-            </StackLayout>
-        </ControlTemplate>
-    </ContentPage.ControlTemplate>
+    <ContentPage.BindingContext>
+        <viewModels:AsistenciaPageViewModel />
+    </ContentPage.BindingContext>
 
     <ContentPage.Content>
-        <ScrollView VerticalScrollBarVisibility="Never"></ScrollView>
+        <StackLayout Spacing="5">
+
+            <!--  Title View  -->
+            <controls:TitleView Title="Horario" BackgroundColor="{DynamicResource Gray-White}"/>
+
+            <ContentPresenter />
+
+            <ListView
+                x:Name="listView"
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                SeparatorVisibility="Default"
+                HasUnevenRows="True"
+                SelectionMode="None"
+                ItemsSource="{Binding horario}">
+                <ListView.Header>
+                    <Grid
+                        Padding="10,0,0,0">
+                        <Label
+                            Grid.Column="0"
+                            FontSize="Large"
+                            FontAttributes="Bold"
+                            Text="Materia:"/>
+                        <Label 
+                            Grid.Column="1"
+                            FontSize="Large"
+                            FontAttributes="Bold"
+                            Text="Porcentaje de Asistencia:"/>
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid RowSpacing="8" Margin="3,16,16,8" Padding="10,0,0,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="1*" />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label
+                                    Grid.ColumnSpan="4"
+                                    FontSize="Large"
+                                    FontAttributes="Bold"
+                                    TextColor="{DynamicResource PrimaryColor}"
+                                    Text="{Binding NombreMateria}" />
+                                <Label
+                                    Grid.Column="4"
+                                    FontSize="Medium"
+                                    HorizontalTextAlignment="Center"
+                                    FontAttributes="Bold"
+                                    TextColor="{DynamicResource PrimaryColor}"
+                                    Text="Cant. Ausencias" />
+
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="0"
+                                    Text="{Binding Anho, StringFormat='Año: {0}'}" />
+
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="1" >
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <FormattedString.Spans>
+                                                <Span Text="{Binding Turno, StringFormat='Turno: {0}-'}"/>
+                                                <Span Text="{Binding Seccion, StringFormat='{0}'}"/>
+                                            </FormattedString.Spans>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="2"
+                                    Text="{Binding Curso, StringFormat='Curso: {0}'}" />
+
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="4"
+                                    HorizontalTextAlignment="Center"
+                                    Text="{Binding CantidadDeAusencias}" />
+
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.RowSpan="2"
+                                    Grid.Column="5"
+                                    FontSize="Title"
+                                    FontAttributes="Bold"
+                                    VerticalTextAlignment="Center"
+                                    HorizontalTextAlignment="End"
+                                    TextColor="{DynamicResource PrimaryColor}"
+                                    Text="{Binding PorcentajeDeAsistencia, StringFormat='{0}%'}" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

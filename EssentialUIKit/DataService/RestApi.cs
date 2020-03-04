@@ -1,7 +1,6 @@
 ﻿using EssentialUIKit.Models.Rendimiento.Calificaciones;
 using EssentialUIKit.Models.Rendimiento.Examenes;
 using EssentialUIKit.Models.Rendimiento.Financiero;
-using EssentialUIKit.Models.Rendimiento.Horarios;
 using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
@@ -18,10 +17,9 @@ namespace EssentialUIKit.DataService
         public static RendimientoResult RendimientoResponse { get; set; }
         public static ExamenesResult ExamenesResponse { get; set; }
         public static AsistenciaResult AsistenciaResponse { get; set; }
-        public HorariosResult HorarioResponse { get; set; }
-
-        public CalificacionesResult calificacionesDS_response { get; set; }
-        public FinancieroResult financieroDS_response { get; set; }
+        public static HorariosResult HorarioResponse { get; set; }
+        public static CalificacionesResult CalificacionResponse { get; set; }
+        public static FinancieroResult FinancieroResponse { get; set; }
 
 
         public static string AuthenticateLDAP(string username, string password)
@@ -32,7 +30,17 @@ namespace EssentialUIKit.DataService
             return login.Status.Equals("error")?login.Msg:login.Status;
         }
 
-        public void getPerfil()
+        public static void Clear()
+        {
+            PerfilResponse = null;
+            RendimientoResponse = null;
+            AsistenciaResponse = null;
+            HorarioResponse= null;
+            CalificacionResponse = null;
+            FinancieroResponse = null;
+        }
+
+        public void GetPerfil()
         {
             if (PerfilResponse != null)
                 return;
@@ -40,7 +48,7 @@ namespace EssentialUIKit.DataService
                string.Empty, string.Empty) as PerfilResult;
         }
 
-        public void getRendimiento()
+        public void GetRendimiento()
         {
             if (RendimientoResponse != null)
                 return;
@@ -48,7 +56,7 @@ namespace EssentialUIKit.DataService
                string.Empty, string.Empty) as RendimientoResult;
         }
 
-        public void getAsistencia()
+        public void GetAsistencia()
         {
             if (AsistenciaResponse != null)
                 return;
@@ -56,9 +64,7 @@ namespace EssentialUIKit.DataService
                string.Empty, string.Empty) as AsistenciaResult;
         }
 
-
-
-        public void getHorario()
+        public void GetHorario()
         {
             if (HorarioResponse != null)
                 return;

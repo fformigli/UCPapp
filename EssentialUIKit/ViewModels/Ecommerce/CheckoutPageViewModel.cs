@@ -1,5 +1,4 @@
 ﻿using EssentialUIKit.DataService;
-using EssentialUIKit.Models.Rendimiento.Horarios;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -17,7 +16,7 @@ namespace EssentialUIKit.ViewModels.ECommerce
     {
         #region Fields
 
-        private ObservableCollection<Materia> materias;
+        
 
 
 
@@ -34,23 +33,7 @@ namespace EssentialUIKit.ViewModels.ECommerce
             RestAPI api = new RestAPI();
             //api.HoraraiosDS2_ServiceResponse("3593109");
             //.ContinueWith((antecedent) => {
-            this.materias = new ObservableCollection<Materia>();
-            for (int i = 0; i < api.HorarioResponse.materia.Count; i++)
-            {
-                this.Materias.Add(new Materia
-                {
-                    curso = api.HorarioResponse.materia[i].curso,
-                    horario = api.HorarioResponse.materia[i].horario,
-                    nombreCarrera = api.HorarioResponse.materia[i].nombreCarrera,
-                    seccion = api.HorarioResponse.materia[i].seccion,
-                    semestre = api.HorarioResponse.materia[i].semestre,
-                    nombreMateria = api.HorarioResponse.materia[i].nombreMateria,
-                    turno = api.HorarioResponse.materia[i].turno
-
-                });
-
-            }
-
+      
             //   });
 
 
@@ -79,21 +62,7 @@ namespace EssentialUIKit.ViewModels.ECommerce
 
 
 
-        public ObservableCollection<Materia> Materias
-        {
-            get { return this.materias; }
-
-            set
-            {
-                if (this.materias == value)
-                {
-                    return;
-                }
-
-                this.materias = value;
-                this.NotifyPropertyChanged();
-            }
-        }
+ 
 
 
 

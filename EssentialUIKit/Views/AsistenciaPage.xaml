@@ -20,48 +20,114 @@
     <ContentPage.BindingContext>
         <viewModels:AsistenciaPageViewModel />
     </ContentPage.BindingContext>
-
-    <!--  Title View  -->
-    
-
+   
     <ContentPage.Content>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="auto"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="100"/>
-                <ColumnDefinition Width="70"/>
-            </Grid.ColumnDefinitions>
-            <controls:TitleView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Title="Asistencia" BackgroundColor="{DynamicResource Gray-White}" />
+        <StackLayout Spacing="5">
+
+            <!--  Title View  -->
+            <controls:TitleView Title="Asistencia" BackgroundColor="{DynamicResource Gray-White}"/>
+
+            <ContentPresenter />
+            
             <ListView
                 x:Name="listView"
-                Grid.Row="1"
-                Grid.Column="0" Grid.ColumnSpan="3"
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                SeparatorVisibility="Default"
                 HasUnevenRows="True"
-                
+                SelectionMode="None"
                 ItemsSource="{Binding Materias}">
                 <ListView.Header>
-                    <StackLayout>
-                        <Label Text="Materia" />
-                        <Label Text="Porcentaje de Asistencia" />
-                        <Label Text="Cantidad de Ausencias" />
-                    </StackLayout>
+                    <Grid
+                        Padding="10,0,0,0">
+                        <Label
+                            Grid.Column="0"
+                            FontSize="Large"
+                            FontAttributes="Bold"
+                            Text="Materia:"/>
+                        <Label 
+                            Grid.Column="1"
+                            FontSize="Large"
+                            FontAttributes="Bold"
+                            Text="Porcentaje de Asistencia:"/>
+                    </Grid>
                 </ListView.Header>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid>
-                                <Label Grid.Column="0" Text="{Binding NombreMateria}" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start" />
-                                <Label Grid.Column="1" Text="{Binding PorcentajeDeAsistencia}" />
-                                <Label Grid.Column="2" Text="{Binding CantidadDeAusencias}" />
+                            <Grid RowSpacing="8" Margin="3,16,16,8" Padding="10,0,0,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="1*" />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label
+                                    Grid.ColumnSpan="4"
+                                    FontSize="Large"
+                                    FontAttributes="Bold"
+                                    TextColor="{DynamicResource PrimaryColor}"
+                                    Text="{Binding NombreMateria}" />
+                                <Label
+                                    Grid.Column="4"
+                                    FontSize="Medium"
+                                    HorizontalTextAlignment="Center"
+                                    FontAttributes="Bold"
+                                    TextColor="{DynamicResource PrimaryColor}"
+                                    Text="Cant. Ausencias" />
+
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="0"
+                                    Text="{Binding Anho, StringFormat='Año: {0}'}" />
+
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="1" >
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <FormattedString.Spans>
+                                                <Span Text="{Binding Turno, StringFormat='Turno: {0}-'}"/>
+                                                <Span Text="{Binding Seccion, StringFormat='{0}'}"/>
+                                            </FormattedString.Spans>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="2"
+                                    Text="{Binding Curso, StringFormat='Curso: {0}'}" />
+
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="4"
+                                    HorizontalTextAlignment="Center"
+                                    Text="{Binding CantidadDeAusencias}" />
+
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.RowSpan="2"
+                                    Grid.Column="5"
+                                    FontSize="Title"
+                                    FontAttributes="Bold"
+                                    VerticalTextAlignment="Center"
+                                    HorizontalTextAlignment="End"
+                                    TextColor="{DynamicResource PrimaryColor}"
+                                    Text="{Binding PorcentajeDeAsistencia, StringFormat='{0}%'}" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-        </Grid>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -1,6 +1,6 @@
 ﻿using EssentialUIKit.DataService;
 using EssentialUIKit.Models.Rendimiento;
-using EssentialUIKit.Models;
+using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -45,8 +45,8 @@ namespace EssentialUIKit.ViewModels
 
             Statistics = new ObservableCollection<Stats> { };
 
-            api.getRendimiento();
-            api.getAsistencia();
+            api.GetRendimiento();
+            api.GetAsistencia();
 
             PromedioActualT = "Promedio Actual: " + RestAPI.RendimientoResponse.PromedioActual;
             DeudaTotalT = string.Format("{0:c}",RestAPI.RendimientoResponse.DeudaTotal)+ " pendiente de pago";
@@ -93,6 +93,7 @@ namespace EssentialUIKit.ViewModels
             await Task.Delay(100);
             label.BackgroundColor = Color.Transparent;
         }
+
         #endregion
     }
 }

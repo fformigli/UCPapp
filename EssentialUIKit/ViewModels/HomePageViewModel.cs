@@ -42,7 +42,7 @@ namespace EssentialUIKit.ViewModels
         private void InitPerfil()
         {
             var api = new RestAPI();
-            api.getPerfil();
+            api.GetPerfil();
 
             UserLogged = RestAPI.PerfilResponse.Nombres + " " + RestAPI.PerfilResponse.Apellidos;
 
@@ -60,7 +60,7 @@ namespace EssentialUIKit.ViewModels
                 if (i == 0)
                     carrera += RestAPI.PerfilResponse.Carreras[i].CarreraPerfil;
                 else if (i == RestAPI.PerfilResponse.Carreras.Count - 1)
-                    carrera += " y " + RestAPI.PerfilResponse.Carreras[i].CarreraPerfil;
+                    carrera += (RestAPI.PerfilResponse.Carreras[i].CarreraPerfil.StartsWith("I")?" e ":" y ") + RestAPI.PerfilResponse.Carreras[i].CarreraPerfil;
                 else if (i > 0)
                     carrera += ", " + RestAPI.PerfilResponse.Carreras[i].CarreraPerfil;
             }
@@ -89,7 +89,6 @@ namespace EssentialUIKit.ViewModels
                     {
                         case "Category" when xmlReader.IsStartElement():
                             {
-
                                 var platform = GetDataFromXmlReader(xmlReader, "Platform");
                                 if (string.IsNullOrEmpty(platform) || platform.ToLower().Contains(runtimePlatform))
                                 {

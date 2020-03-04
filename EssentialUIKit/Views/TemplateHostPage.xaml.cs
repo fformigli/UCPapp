@@ -89,7 +89,7 @@ namespace EssentialUIKit.Views
 
         private void BackButtonPressed(object sender, EventArgs e)
         {
-            Navigation.PopAsync(true);
+            Device.BeginInvokeOnMainThread(async () => await Navigation.PopAsync(true));
         }
 
         #endregion

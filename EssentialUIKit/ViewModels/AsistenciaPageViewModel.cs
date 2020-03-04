@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms;
 using EssentialUIKit.Models;
@@ -12,7 +10,6 @@ namespace EssentialUIKit.ViewModels
     class AsistenciaPageViewModel : ContentPage
     {
         public List<MateriaAsistenciaAlumno> Materias { get; set; }
-        public string Test { get; set; }
 
         public AsistenciaPageViewModel()
         {
@@ -25,7 +22,7 @@ namespace EssentialUIKit.ViewModels
         private void InitAsistencia()
         {
             var api = new RestAPI();
-            api.getAsistencia();
+            api.GetAsistencia();
 
             Materias.Clear();
             Materias.AddRange(RestAPI.AsistenciaResponse.MateriaAsistenciaAlumno);

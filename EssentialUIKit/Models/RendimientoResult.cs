@@ -7,7 +7,6 @@ namespace EssentialUIKit.Models
     public class ExamenRendimiento
     {
         public string Fecha { get; set; }
-
         public string Materia { get; set; }
         public string TipoExamen { get; set; }
 
