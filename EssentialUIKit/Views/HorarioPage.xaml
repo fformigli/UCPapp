@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="EssentialUIKit.Views.AsistenciaPage"
+    x:Class="EssentialUIKit.Views.HorarioPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:EssentialUIKit.Controls"
@@ -36,7 +36,7 @@
                 SeparatorVisibility="Default"
                 HasUnevenRows="True"
                 SelectionMode="None"
-                ItemsSource="{Binding horario}">
+                ItemsSource="{Binding Materias}">
                 <ListView.Header>
                     <Grid
                         Padding="10,0,0,0">
@@ -49,7 +49,7 @@
                             Grid.Column="1"
                             FontSize="Large"
                             FontAttributes="Bold"
-                            Text="Porcentaje de Asistencia:"/>
+                            Text="Horario:"/>
                     </Grid>
                 </ListView.Header>
                 <ListView.ItemTemplate>
@@ -76,13 +76,6 @@
                                     FontAttributes="Bold"
                                     TextColor="{DynamicResource PrimaryColor}"
                                     Text="{Binding NombreMateria}" />
-                                <Label
-                                    Grid.Column="4"
-                                    FontSize="Medium"
-                                    HorizontalTextAlignment="Center"
-                                    FontAttributes="Bold"
-                                    TextColor="{DynamicResource PrimaryColor}"
-                                    Text="Cant. Ausencias" />
 
                                 <Label
                                     Grid.Row="1"
@@ -95,34 +88,50 @@
                                     <Label.FormattedText>
                                         <FormattedString>
                                             <FormattedString.Spans>
-                                                <Span Text="{Binding Turno, StringFormat='Turno: {0}-'}"/>
+                                                <Span Text="{Binding Curso, StringFormat='{0}°'}"/>
+                                                <Span Text="{Binding Turno, StringFormat=' {0}-'}"/>
                                                 <Span Text="{Binding Seccion, StringFormat='{0}'}"/>
                                             </FormattedString.Spans>
                                         </FormattedString>
                                     </Label.FormattedText>
                                 </Label>
 
-                                <Label
-                                    Grid.Row="1"
-                                    Grid.Column="2"
-                                    Text="{Binding Curso, StringFormat='Curso: {0}'}" />
-
-                                <Label
-                                    Grid.Row="1"
-                                    Grid.Column="4"
-                                    HorizontalTextAlignment="Center"
-                                    Text="{Binding CantidadDeAusencias}" />
-
-                                <Label
+                                <!--<Label
                                     Grid.Row="0"
                                     Grid.RowSpan="2"
                                     Grid.Column="5"
-                                    FontSize="Title"
+                                    FontSize="Large"
                                     FontAttributes="Bold"
                                     VerticalTextAlignment="Center"
                                     HorizontalTextAlignment="End"
                                     TextColor="{DynamicResource PrimaryColor}"
-                                    Text="{Binding PorcentajeDeAsistencia, StringFormat='{0}%'}" />
+                                    Text="{Binding HoraInicio, StringFormat='{0}'}" />-->
+
+                                <!--<Label
+                                    Grid.Row="1"
+                                    Grid.Column="1" >
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <FormattedString.Spans>
+                                                <Span Text="{Binding Horario.HoraInicio, StringFormat='{0}°'}"/>
+                                                <Span Text="{Binding Horario.HoraFin, StringFormat='{0}'}"/>
+                                            </FormattedString.Spans>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>-->
+
+                                <ListView
+                                    x:Name="listView2"
+                                    Grid.Row="0"
+                                    Grid.Column="5"
+                                    SelectionMode="None"
+                                    ItemsSource="{Binding Horario}">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Label Text="{Binding HoraInicio}"/>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

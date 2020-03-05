@@ -9,6 +9,7 @@ using System.Threading;
 using System.Xml;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
+using EssentialUIKit;
 
 namespace EssentialUIKit.ViewModels
 {
@@ -54,17 +55,7 @@ namespace EssentialUIKit.ViewModels
             DescAlumno += RestAPI.PerfilResponse.Sexo.Contains("M") ? " futuro" : " futura";
             DescAlumno += " profesional de ";
 
-            var carrera = "";
-            for (var i = 0; i < RestAPI.PerfilResponse.Carreras.Count; i++)
-            {
-                if (i == 0)
-                    carrera += RestAPI.PerfilResponse.Carreras[i].CarreraPerfil;
-                else if (i == RestAPI.PerfilResponse.Carreras.Count - 1)
-                    carrera += (RestAPI.PerfilResponse.Carreras[i].CarreraPerfil.StartsWith("I")?" e ":" y ") + RestAPI.PerfilResponse.Carreras[i].CarreraPerfil;
-                else if (i > 0)
-                    carrera += ", " + RestAPI.PerfilResponse.Carreras[i].CarreraPerfil;
-            }
-            DescAlumno += carrera + ". En este portal encontrarás toda la información sobre tu estadía en la Universidad";
+            DescAlumno += Extensions.GetCarrerasPerfil() + ". En este portal encontrarás toda la información sobre tu estadía en la Universidad";
 
             Application.Current.Resources["Description"] = DescAlumno;
         }

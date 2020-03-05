@@ -2,6 +2,7 @@
 using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
+using EssentialUIKit.DataService;
 
 namespace EssentialUIKit
 {
@@ -96,6 +97,23 @@ namespace EssentialUIKit
             Application.Current.Resources["PrimaryLighterColor"] = Color.FromHex("#fa9e7c");
             Application.Current.Resources["PrimaryLight"] = Color.FromHex("#fee7de");
             Application.Current.Resources["PrimaryGradient"] = Color.FromHex("#ff6374");
+        }
+
+        public static string GetCarrerasPerfil()
+        {
+            if (RestAPI.PerfilResponse == null)
+                return "";
+            var c = "";
+            for(var i = 0; i < RestAPI.PerfilResponse.Carreras.Count; i++)
+            {
+                if (i == 0)
+                    c += RestAPI.PerfilResponse.Carreras[i].CarreraPerfil;
+                else if (i == RestAPI.PerfilResponse.Carreras.Count - 1)
+                    c += (RestAPI.PerfilResponse.Carreras[i].CarreraPerfil.StartsWith("I") ? " e " : " y ") + RestAPI.PerfilResponse.Carreras[i].CarreraPerfil;
+                else if (i > 0)
+                    c += ", " + RestAPI.PerfilResponse.Carreras[i].CarreraPerfil;
+            }
+            return c;
         }
     }
 }

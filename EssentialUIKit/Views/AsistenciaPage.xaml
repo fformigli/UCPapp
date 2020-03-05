@@ -95,17 +95,13 @@
                                     <Label.FormattedText>
                                         <FormattedString>
                                             <FormattedString.Spans>
-                                                <Span Text="{Binding Turno, StringFormat='Turno: {0}-'}"/>
+                                                <Span Text="{Binding Curso, StringFormat='{0}°'}"/>
+                                                <Span Text="{Binding Turno, StringFormat=' {0}-'}"/>
                                                 <Span Text="{Binding Seccion, StringFormat='{0}'}"/>
                                             </FormattedString.Spans>
                                         </FormattedString>
                                     </Label.FormattedText>
                                 </Label>
-
-                                <Label
-                                    Grid.Row="1"
-                                    Grid.Column="2"
-                                    Text="{Binding Curso, StringFormat='Curso: {0}'}" />
 
                                 <Label
                                     Grid.Row="1"

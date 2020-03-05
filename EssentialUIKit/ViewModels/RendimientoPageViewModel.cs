@@ -32,16 +32,7 @@ namespace EssentialUIKit.ViewModels
             //cargar perfil
             var api = new RestAPI();
             NombreAlumno = RestAPI.PerfilResponse.Nombres + " " + RestAPI.PerfilResponse.Apellidos;
-            CarreraPerfil = "";
-            for (var i = 0; i < RestAPI.PerfilResponse.Carreras.Count; i++)
-            {
-                if (i == 0)
-                    CarreraPerfil += RestAPI.PerfilResponse.Carreras[i].CarreraPerfil;
-                else if (i == RestAPI.PerfilResponse.Carreras.Count - 1)
-                    CarreraPerfil += " y " + RestAPI.PerfilResponse.Carreras[i].CarreraPerfil;
-                else if (i > 0)
-                    CarreraPerfil += ", " + RestAPI.PerfilResponse.Carreras[i].CarreraPerfil;
-            }
+            CarreraPerfil = Extensions.GetCarrerasPerfil();
 
             Statistics = new ObservableCollection<Stats> { };
 

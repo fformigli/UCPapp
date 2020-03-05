@@ -10,24 +10,24 @@ namespace EssentialUIKit.ViewModels
     [Preserve(AllMembers = true)]
     class HorarioPageViewModel : ContentPage
     {
-        public HorariosResult Horarios { get; set; }
+        public List<MateriaHorario> Materias { get; set; }
 
         public HorarioPageViewModel()
         {
-            Horarios = new HorariosResult();
+            Materias = new List<MateriaHorario>();
 
-            InitAsistencia();
+            InitHorario();
 
         }
 
-        private void InitAsistencia()
+        private void InitHorario()
         {
             var api = new RestAPI();
-            api.GetAsistencia();
+            api.GetHorario();
 
-            Horarios = RestAPI.HorarioResponse;
+            Materias = RestAPI.HorarioResponse.Materia;
 
-            foreach (var item in Horarios.Materia)
+            foreach (var item in Materias)
             {
                 Console.WriteLine(item.NombreMateria);
                 foreach (var item2 in item.Horario)
