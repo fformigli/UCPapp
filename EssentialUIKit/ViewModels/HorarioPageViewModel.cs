@@ -4,20 +4,20 @@ using Xamarin.Forms.Internals;
 using Xamarin.Forms;
 using EssentialUIKit.Models;
 using EssentialUIKit.DataService;
+using System.Collections.ObjectModel;
 
 namespace EssentialUIKit.ViewModels
 {
     [Preserve(AllMembers = true)]
     class HorarioPageViewModel : ContentPage
     {
-        public List<MateriaHorario> Materias { get; set; }
+        public List<MateriaHorarioList> Materias { get; set; }
 
         public HorarioPageViewModel()
         {
-            Materias = new List<MateriaHorario>();
+            Materias = new List<MateriaHorarioList>();
 
             InitHorario();
-
         }
 
         private void InitHorario()
@@ -25,15 +25,19 @@ namespace EssentialUIKit.ViewModels
             var api = new RestAPI();
             api.GetHorario();
 
-            Materias = RestAPI.HorarioResponse.Materia;
-
-            foreach (var item in Materias)
+            foreach (var materia in RestAPI.HorarioResponse.Materia)
             {
-                Console.WriteLine(item.NombreMateria);
-                foreach (var item2 in item.Horario)
+                /*Materias.Add(new MateriaHorarioList
                 {
-                    Console.WriteLine("-----------"+ item2.HoraInicio+ " " + item2.HoraFin);
+                    Materia = materia
+                });*/
+                var Mhl = new MateriaHorarioList { Materia = materia };
+                foreach (var horario in materia.Horario)
+                {
+                    Mhl.Add(horario);
                 }
+                Materias.Add(Mhl);
+
             }
         }
     }

@@ -23,7 +23,6 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <!--  Binding context for login page  -->
     <ContentPage.BindingContext>
         <viewModel:RendimientoPageViewModel />
     </ContentPage.BindingContext>

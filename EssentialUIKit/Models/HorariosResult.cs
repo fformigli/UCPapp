@@ -32,4 +32,11 @@ namespace EssentialUIKit.Models
         public List<Feriado> Feriados { get; set; }
         public List<MateriaHorario> Materia { get; set; }
     }
+
+    public class MateriaHorarioList : List<Horario>
+    {
+        public Materia Materia { get; set; }
+        public List<Horario> Horarios => this;
+
+    }
 }

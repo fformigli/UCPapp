@@ -3,6 +3,7 @@ using Xamarin.Forms.Internals;
 using Xamarin.Forms;
 using EssentialUIKit.Models;
 using EssentialUIKit.DataService;
+using System.Collections.ObjectModel;
 
 namespace EssentialUIKit.ViewModels
 {
@@ -25,7 +26,7 @@ namespace EssentialUIKit.ViewModels
             api.GetAsistencia();
 
             Materias.Clear();
-            Materias.AddRange(RestAPI.AsistenciaResponse.MateriaAsistenciaAlumno);
+            Materias = RestAPI.AsistenciaResponse.MateriaAsistenciaAlumno;
         }
     }
 }

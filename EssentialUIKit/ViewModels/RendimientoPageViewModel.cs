@@ -29,44 +29,48 @@ namespace EssentialUIKit.ViewModels
 
         public RendimientoPageViewModel()
         {
-            //cargar perfil
-            var api = new RestAPI();
-            NombreAlumno = RestAPI.PerfilResponse.Nombres + " " + RestAPI.PerfilResponse.Apellidos;
-            CarreraPerfil = Extensions.GetCarrerasPerfil();
+            try {
+                //cargar perfil
+                var api = new RestAPI();
+                NombreAlumno = RestAPI.PerfilResponse.Nombres + " " + RestAPI.PerfilResponse.Apellidos;
+                CarreraPerfil = Extensions.GetCarrerasPerfil();
 
-            Statistics = new ObservableCollection<Stats> { };
+                Statistics = new ObservableCollection<Stats> { };
 
-            api.GetRendimiento();
-            api.GetAsistencia();
+                api.GetRendimiento();
+                api.GetAsistencia();
 
-            PromedioActualT = "Promedio Actual: " + RestAPI.RendimientoResponse.PromedioActual;
-            DeudaTotalT = string.Format("{0:c}",RestAPI.RendimientoResponse.DeudaTotal)+ " pendiente de pago";
-            AsistenciaCount = RestAPI.AsistenciaResponse.MateriaAsistenciaAlumno.Count;
+                PromedioActualT = "Promedio Actual: " + RestAPI.RendimientoResponse.PromedioActual;
+                DeudaTotalT = string.Format("{0:c}",RestAPI.RendimientoResponse.DeudaTotal)+ " pendiente de pago";
+                AsistenciaCount = RestAPI.AsistenciaResponse.MateriaAsistenciaAlumno.Count;
 
-            var title = "Examenes Próximos";          
-            var materia1 = "";
-            var fecha1 = "";
-            var examen1 = "";
-            for (var i = 0; i < RestAPI.RendimientoResponse.ExamenesProximos.Count; i++)
-            {
-                if ((i % 2) == 0)
+                var title = "Examenes Próximos";          
+                var materia1 = "";
+                var fecha1 = "";
+                var examen1 = "";
+                for (var i = 0; i < RestAPI.RendimientoResponse.ExamenesProximos.Count; i++)
                 {
-                    materia1 = RestAPI.RendimientoResponse.ExamenesProximos[i].Materia;
-                    fecha1 = RestAPI.RendimientoResponse.ExamenesProximos[i].Fecha;
-                    examen1 = RestAPI.RendimientoResponse.ExamenesProximos[i].TipoExamen;
-                }
-                else
-                {
-                    string materia2 = RestAPI.RendimientoResponse.ExamenesProximos[i].Materia;
-                    string fecha2 = RestAPI.RendimientoResponse.ExamenesProximos[i].Fecha;
-                    string examen2 = RestAPI.RendimientoResponse.ExamenesProximos[i].TipoExamen;
+                    if ((i % 2) == 0)
+                    {
+                        materia1 = RestAPI.RendimientoResponse.ExamenesProximos[i].Materia;
+                        fecha1 = RestAPI.RendimientoResponse.ExamenesProximos[i].Fecha;
+                        examen1 = RestAPI.RendimientoResponse.ExamenesProximos[i].TipoExamen;
+                    }
+                    else
+                    {
+                        string materia2 = RestAPI.RendimientoResponse.ExamenesProximos[i].Materia;
+                        string fecha2 = RestAPI.RendimientoResponse.ExamenesProximos[i].Fecha;
+                        string examen2 = RestAPI.RendimientoResponse.ExamenesProximos[i].TipoExamen;
 
-                    Statistics.Add(new Stats { Title = title, Materia1 = materia1, Materia2 = materia2, 
-                        Fecha1 = fecha1, Fecha2 = fecha2, Examen1 = examen1, Examen2 = examen2 });
+                        Statistics.Add(new Stats { Title = title, Materia1 = materia1, Materia2 = materia2, 
+                            Fecha1 = fecha1, Fecha2 = fecha2, Examen1 = examen1, Examen2 = examen2 });
+                    }
                 }
             }
-
-
+            catch (Exception e)
+            {
+                Console.Write(e.StackTrace);
+            }
         }
 
         #endregion

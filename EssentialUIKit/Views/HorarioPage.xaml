@@ -18,7 +18,7 @@
     </ContentPage.Resources>
 
     <ContentPage.BindingContext>
-        <viewModels:AsistenciaPageViewModel />
+        <viewModels:HorarioPageViewModel />
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
@@ -30,108 +30,88 @@
             <ContentPresenter />
 
             <ListView
-                x:Name="listView"
-                Grid.Row="0"
-                Grid.RowSpan="2"
-                SeparatorVisibility="Default"
-                HasUnevenRows="True"
+                
+                SeparatorVisibility="None"
                 SelectionMode="None"
-                ItemsSource="{Binding Materias}">
-                <ListView.Header>
-                    <Grid
-                        Padding="10,0,0,0">
-                        <Label
-                            Grid.Column="0"
-                            FontSize="Large"
-                            FontAttributes="Bold"
-                            Text="Materia:"/>
-                        <Label 
-                            Grid.Column="1"
-                            FontSize="Large"
-                            FontAttributes="Bold"
-                            Text="Horario:"/>
-                    </Grid>
-                </ListView.Header>
-                <ListView.ItemTemplate>
+                ItemsSource="{Binding Materias}"
+                IsGroupingEnabled="True"
+                HasUnevenRows="True">
+                
+                <ListView.GroupHeaderTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid RowSpacing="8" Margin="3,16,16,8" Padding="10,0,0,0">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="1*" />
-                                    <RowDefinition Height="1*" />
-                                </Grid.RowDefinitions>
-
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="2*" />
-                                    <ColumnDefinition Width="2*" />
-                                    <ColumnDefinition Width="1*" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="2*" />
-                                    <ColumnDefinition Width="3*"/>
-                                </Grid.ColumnDefinitions>
-
-                                <Label
-                                    Grid.ColumnSpan="4"
+                            <StackLayout Orientation="Horizontal" Padding="15,10,30,2" >
+                                <Label 
+                                    Text="{Binding Materia.NombreMateria, StringFormat='{0}'}"
                                     FontSize="Large"
                                     FontAttributes="Bold"
-                                    TextColor="{DynamicResource PrimaryColor}"
-                                    Text="{Binding NombreMateria}" />
-
+                                    VerticalOptions="Center"
+                                    TextColor="{DynamicResource PrimaryColor}" />
                                 <Label
-                                    Grid.Row="1"
-                                    Grid.Column="0"
-                                    Text="{Binding Anho, StringFormat='Año: {0}'}" />
-
-                                <Label
-                                    Grid.Row="1"
-                                    Grid.Column="1" >
+                                    VerticalOptions="Center"
+                                    FontSize="Large"
+                                    HorizontalOptions="EndAndExpand"
+                                    >
                                     <Label.FormattedText>
                                         <FormattedString>
                                             <FormattedString.Spans>
-                                                <Span Text="{Binding Curso, StringFormat='{0}°'}"/>
-                                                <Span Text="{Binding Turno, StringFormat=' {0}-'}"/>
-                                                <Span Text="{Binding Seccion, StringFormat='{0}'}"/>
+                                                <Span Text="{Binding Materia.Curso, StringFormat='{0}° Curso'}"/>
+                                                <Span Text="{Binding Materia.Turno, StringFormat=' {0}-'}"/>
+                                                <Span Text="{Binding Materia.Seccion, StringFormat='{0}'}"/>
                                             </FormattedString.Spans>
                                         </FormattedString>
                                     </Label.FormattedText>
                                 </Label>
-
-                                <!--<Label
-                                    Grid.Row="0"
-                                    Grid.RowSpan="2"
-                                    Grid.Column="5"
-                                    FontSize="Large"
-                                    FontAttributes="Bold"
-                                    VerticalTextAlignment="Center"
-                                    HorizontalTextAlignment="End"
-                                    TextColor="{DynamicResource PrimaryColor}"
-                                    Text="{Binding HoraInicio, StringFormat='{0}'}" />-->
-
-                                <!--<Label
-                                    Grid.Row="1"
-                                    Grid.Column="1" >
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid HorizontalOptions="Center" Padding="15,2,30,2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="2*" />
+                                </Grid.ColumnDefinitions>
+                                <Label 
+                                    Grid.Column="0" 
+                                    Text="{Binding Dia}" 
+                                    FontSize="Medium"
+                                    VerticalOptions="Center"/>
+                                <Label 
+                                    Grid.Column="1" 
+                                    Text="{Binding Fecha}" 
+                                    FontSize="Medium"
+                                    VerticalOptions="Center"/>
+                                <Label 
+                                    Grid.Column="2"
+                                    FontSize="Medium"
+                                    VerticalOptions="Center">
                                     <Label.FormattedText>
                                         <FormattedString>
                                             <FormattedString.Spans>
-                                                <Span Text="{Binding Horario.HoraInicio, StringFormat='{0}°'}"/>
-                                                <Span Text="{Binding Horario.HoraFin, StringFormat='{0}'}"/>
+                                                <!--<Span Text="{Binding Edificio, StringFormat='{0}'}"/>-->
+                                                <Span Text="{Binding Nombre_aula, StringFormat='{0}'}"/>
                                             </FormattedString.Spans>
                                         </FormattedString>
                                     </Label.FormattedText>
-                                </Label>-->
-
-                                <ListView
-                                    x:Name="listView2"
-                                    Grid.Row="0"
-                                    Grid.Column="5"
-                                    SelectionMode="None"
-                                    ItemsSource="{Binding Horario}">
-                                    <ListView.ItemTemplate>
-                                        <DataTemplate>
-                                            <Label Text="{Binding HoraInicio}"/>
-                                        </DataTemplate>
-                                    </ListView.ItemTemplate>
-                                </ListView>
+                                </Label>
+                                <Label 
+                                    Grid.Column="3"
+                                    FontSize="Medium"
+                                    VerticalOptions="Center">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <FormattedString.Spans>
+                                                <Span Text="{Binding HoraInicio, StringFormat='{0:c}'}"/>
+                                                <Span Text="{Binding HoraFin, StringFormat=' a {0:c} Hs.'}"/>
+                                            </FormattedString.Spans>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
