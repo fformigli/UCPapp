@@ -21,6 +21,11 @@ namespace EssentialUIKit.Views
         {
             Device.BeginInvokeOnMainThread(async () => await Navigation.PushAsync(new AsistenciaPage(), false));
         }
+
+        private void CalificacionTapped(object sender, EventArgs e)
+        {
+            Device.BeginInvokeOnMainThread(async () => await Navigation.PushAsync(new CalificacionPage(), false));
+        }
     }
 
 }

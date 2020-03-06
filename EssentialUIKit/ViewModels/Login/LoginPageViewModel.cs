@@ -17,8 +17,8 @@ namespace EssentialUIKit.ViewModels.Login
     {
         #region Fields
 
-        private string username = "croa2";
-        private string password = "zbul";
+        private string username = "lmarengo";
+        private string password = "agpl";
 
 
         #endregion

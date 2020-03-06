@@ -3,7 +3,6 @@ using Xamarin.Forms.Internals;
 using Xamarin.Forms;
 using EssentialUIKit.Models;
 using EssentialUIKit.DataService;
-using System.Collections.ObjectModel;
 
 namespace EssentialUIKit.ViewModels
 {

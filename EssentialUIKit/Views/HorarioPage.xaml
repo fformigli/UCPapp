@@ -31,23 +31,41 @@
 
             <ListView
                 
-                SeparatorVisibility="None"
+                SeparatorVisibility="Default"
                 SelectionMode="None"
                 ItemsSource="{Binding Materias}"
                 IsGroupingEnabled="True"
-                HasUnevenRows="True">
+                HasUnevenRows="True"
+                >
                 
                 <ListView.GroupHeaderTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal" Padding="15,10,30,2" >
+                            <Grid Padding="15,10,20,2" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="2*" />
+                                    <RowDefinition Height="1*" />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="3*" />
+                                </Grid.ColumnDefinitions>
+                                
                                 <Label 
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="3"
                                     Text="{Binding Materia.NombreMateria, StringFormat='{0}'}"
                                     FontSize="Large"
                                     FontAttributes="Bold"
                                     VerticalOptions="Center"
                                     TextColor="{DynamicResource PrimaryColor}" />
                                 <Label
+                                    Grid.Row="0"
+                                    Grid.Column="3"
                                     VerticalOptions="Center"
                                     FontSize="Large"
                                     HorizontalOptions="EndAndExpand"
@@ -55,32 +73,55 @@
                                     <Label.FormattedText>
                                         <FormattedString>
                                             <FormattedString.Spans>
-                                                <Span Text="{Binding Materia.Curso, StringFormat='{0}° Curso'}"/>
-                                                <Span Text="{Binding Materia.Turno, StringFormat=' {0}-'}"/>
-                                                <Span Text="{Binding Materia.Seccion, StringFormat='{0}'}"/>
+                                                <Span Text="{Binding Materia.Curso, StringFormat=' {0}° Curso'}"/>
+                                                <Span Text="{Binding Materia.Turno, StringFormat=' {0}'}"/>
+                                                <Span Text="{Binding Materia.Anho, StringFormat=' {0}'}"/>
                                             </FormattedString.Spans>
                                         </FormattedString>
                                     </Label.FormattedText>
                                 </Label>
-                            </StackLayout>
+                                <Label
+                                    Grid.Row="1" 
+                                    Grid.Column="0"
+                                    FontAttributes="Bold"
+                                    Text="Día"/>
+                                <Label 
+                                    Grid.Row="1" 
+                                    Grid.Column="1"
+                                    FontAttributes="Bold"
+                                    Text="Fecha"/>
+                                <Label 
+                                    Grid.Row="1" 
+                                    Grid.Column="2"
+                                    FontAttributes="Bold"
+                                    Text="Aula"/>
+
+                                <Label 
+                                    Grid.Row="1" 
+                                    Grid.Column="3"
+                                    FontAttributes="Bold"
+                                    Text="Horario"/>
+                            </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.GroupHeaderTemplate>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid HorizontalOptions="Center" Padding="15,2,30,2">
+                            <Grid HorizontalOptions="Center" Padding="0,2,10,0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="2*" />
                                     <ColumnDefinition Width="1*" />
                                     <ColumnDefinition Width="3*" />
-                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="3*" />
                                 </Grid.ColumnDefinitions>
                                 <Label 
                                     Grid.Column="0" 
                                     Text="{Binding Dia}" 
                                     FontSize="Medium"
-                                    VerticalOptions="Center"/>
+                                    VerticalOptions="Center"
+                                    HorizontalOptions="Start"
+                                    HorizontalTextAlignment="Start"/>
                                 <Label 
                                     Grid.Column="1" 
                                     Text="{Binding Fecha}" 
@@ -106,8 +147,8 @@
                                     <Label.FormattedText>
                                         <FormattedString>
                                             <FormattedString.Spans>
-                                                <Span Text="{Binding HoraInicio, StringFormat='{0:c}'}"/>
-                                                <Span Text="{Binding HoraFin, StringFormat=' a {0:c} Hs.'}"/>
+                                                <Span Text="{Binding HoraInicio, StringFormat='{0}'}"/>
+                                                <Span Text="{Binding HoraFin, StringFormat=' a {0} Hs.'}"/>
                                             </FormattedString.Spans>
                                         </FormattedString>
                                     </Label.FormattedText>

@@ -1,9 +1,6 @@
-﻿using EssentialUIKit.Models.Rendimiento.Calificaciones;
+﻿
 using EssentialUIKit.Models.Rendimiento.Examenes;
 using EssentialUIKit.Models.Rendimiento.Financiero;
-using System;
-using System.Diagnostics;
-using System.Threading.Tasks;
 using EssentialUIKit.Models;
 using EssentialUIKit.Data;
 
@@ -18,7 +15,7 @@ namespace EssentialUIKit.DataService
         public static ExamenesResult ExamenesResponse { get; set; }
         public static AsistenciaResult AsistenciaResponse { get; set; }
         public static HorariosResult HorarioResponse { get; set; }
-        public static CalificacionesResult CalificacionResponse { get; set; }
+        public static CalificacionResult CalificacionResponse { get; set; }
         public static FinancieroResult FinancieroResponse { get; set; }
 
 
@@ -71,35 +68,13 @@ namespace EssentialUIKit.DataService
             HorarioResponse = RestUtility.CallServiceSync<HorariosResult>(string.Format(Constants.HorarioServiceGet, Cedula), string.Empty, null, "GET",
                string.Empty, string.Empty) as HorariosResult;
         }
-        
-        async public void demo()
+
+        public void GetCalificacion()
         {
-
-            ExamenesResult lst_examenesDS_response = await RestUtility.CallServiceAsync<ExamenesResult>(Constants.ExamenesServiceGet, string.Empty, null, "GET",
-                  string.Empty, string.Empty) as ExamenesResult;
-
-
-            CalificacionesResult lst_calificacionesDS_response = await RestUtility.CallServiceAsync<CalificacionesResult>(Constants.CalificacionesServiceGet, string.Empty, null, "GET",
-             string.Empty, string.Empty) as CalificacionesResult;
-
-
-            FinancieroResult lst_financieroDS_response = await RestUtility.CallServiceAsync<FinancieroResult>(Constants.FinancieroServiceGet, string.Empty, null, "GET",
-             string.Empty, string.Empty) as FinancieroResult;
-
-
-            AsistenciaResult lst_asistenciaDS_response = await RestUtility.CallServiceAsync<AsistenciaResult>(Constants.AsistenciaServiceGet, string.Empty, null, "GET",
-             string.Empty, string.Empty) as AsistenciaResult;
-
-
-            PerfilResult lst_perfilDS_response = await RestUtility.CallServiceAsync<PerfilResult>(Constants.PerfilServiceGet, string.Empty, null, "GET",
-             string.Empty, string.Empty) as PerfilResult;
-
-            Debug.WriteLine(@"\tDIEGO MENDEZ - RestApi {0}", lst_examenesDS_response.materia.Count);
-            Debug.WriteLine(@"\tDIEGO MENDEZ - RestApi {0}", lst_calificacionesDS_response.materia.Count);
-            Debug.WriteLine(@"\tDIEGO MENDEZ - RestApi {0}", lst_financieroDS_response.cabeceraFinancieroAlumno.Count);
-            Debug.WriteLine(@"\tDIEGO MENDEZ - RestApi {0}", lst_asistenciaDS_response.MateriaAsistenciaAlumno.Count);
-            Debug.WriteLine(@"\tDIEGO MENDEZ - RestApi {0}", lst_perfilDS_response.Carreras.Count);
-
+            if (CalificacionResponse != null)
+                return;
+            CalificacionResponse = RestUtility.CallServiceSync<CalificacionResult>(string.Format(Constants.CalificacionesServiceGet, Cedula), string.Empty, null, "GET",
+               string.Empty, string.Empty) as CalificacionResult;
         }
     }
 }

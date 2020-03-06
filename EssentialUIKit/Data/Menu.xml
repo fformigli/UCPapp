@@ -3,7 +3,7 @@
   <Category Icon="rendimiento.png" Name="Rendimiento" Description="Un solo panel, toda la información sobre tu desempeño" PageName="Views.RendimientoPage"/>
   <Category Icon="asistencia.png" Name="Asistencia" Description="Checkea tus ausencias y porcentaje de Asistencia" PageName="Views.AsistenciaPage"/>
   <Category Icon="about-us.png" Name="Horarios" Description="Conoce tus horarios de clase" PageName="Views.HorarioPage"/>
-  <Category Icon="calif.png" Name="Calificaciones" Description="Comprueba tus Calificaciones" PageName="Views.ErrorAndEmpty.NoInternetConnectionPage"/>
-  <Category Icon="financiero.png" Name="Situación Financiera" Description="Estados de Cuenta" PageName="Views.ErrorAndEmpty.NoInternetConnectionPage"/>
+  <Category Icon="calif.png" Name="Calificaciones" Description="Comprueba tus Calificaciones" PageName="Views.CalificacionPage"/>
+  <!--<Category Icon="financiero.png" Name="Situación Financiera" Description="Estados de Cuenta" PageName="Views.ErrorAndEmpty.NoInternetConnectionPage"/>-->
   <!--<Category Icon="article.png" Name="Ayuda" Description="Instrucciones paso a paso para disfutar de la aplicación" PageName="Views.OnBoarding.OnBoardingGradientPage"/>-->
 </Items>
