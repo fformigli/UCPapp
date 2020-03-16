@@ -2,7 +2,6 @@
 {
     public static class Constants
     {
-
         //URLS PRINCIPALES
         //private const string UrlService = "http://192.168.1.137:8480/hubcolumbia/rest/mobileService/";
         private const string UrlService = "https://www.columbia.edu.py/acadweb/phone/mobileService/";
@@ -18,5 +17,4 @@
         public const string FinancieroServiceGet = UrlService + "financieroAlumno?cedula={0}&mostrar=todas";
         public const string ExamenesServiceGet = UrlService + "examenesAlumno?cedula={0}";
     }
-
 }
