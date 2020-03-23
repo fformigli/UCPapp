@@ -1,7 +1,4 @@
-﻿
-using EssentialUIKit.Models.Rendimiento.Examenes;
-using EssentialUIKit.Models.Rendimiento.Financiero;
-using EssentialUIKit.Models;
+﻿using EssentialUIKit.Models;
 using EssentialUIKit.Data;
 
 namespace EssentialUIKit.DataService
@@ -12,7 +9,6 @@ namespace EssentialUIKit.DataService
 
         public static PerfilResult PerfilResponse { get; set; }
         public static RendimientoResult RendimientoResponse { get; set; }
-        public static ExamenesResult ExamenesResponse { get; set; }
         public static AsistenciaResult AsistenciaResponse { get; set; }
         public static HorariosResult HorarioResponse { get; set; }
         public static CalificacionResult CalificacionResponse { get; set; }
@@ -75,6 +71,14 @@ namespace EssentialUIKit.DataService
                 return;
             CalificacionResponse = RestUtility.CallServiceSync<CalificacionResult>(string.Format(Constants.CalificacionesServiceGet, Cedula), string.Empty, null, "GET",
                string.Empty, string.Empty) as CalificacionResult;
+        }
+
+        public void GetFinanciero()
+        {
+            if (FinancieroResponse != null)
+                return;
+            FinancieroResponse = RestUtility.CallServiceSync<FinancieroResult>(string.Format(Constants.FinancieroServiceGet, Cedula), string.Empty, null, "GET",
+               string.Empty, string.Empty) as FinancieroResult;
         }
     }
 }
