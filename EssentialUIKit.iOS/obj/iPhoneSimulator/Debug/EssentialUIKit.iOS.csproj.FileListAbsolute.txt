@@ -111,3 +111,5 @@ E:\work\UCPapp\EssentialUIKit.iOS\obj\iPhoneSimulator\Debug\XamlC.stamp
 E:\work\UCPapp\EssentialUIKit.iOS\obj\iPhoneSimulator\Debug\EssentialUIKit.iOS.csproj.CopyComplete
 E:\work\UCPapp\EssentialUIKit.iOS\obj\iPhoneSimulator\Debug\EssentialUIKit.iOS.exe
 E:\work\UCPapp\EssentialUIKit.iOS\obj\iPhoneSimulator\Debug\EssentialUIKit.iOS.pdb
+E:\work\UCPapp\EssentialUIKit.iOS\bin\iPhoneSimulator\Debug\EssentialUIKit.dll.mdb
+E:\work\UCPapp\EssentialUIKit.iOS\obj\iPhoneSimulator\Debug\EssentialUIKit.iOS.csproj.CoreCompileInputs.cache
