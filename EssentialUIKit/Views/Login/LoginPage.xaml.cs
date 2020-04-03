@@ -1,5 +1,6 @@
 ﻿using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
+using Xamarin.Forms;
 using System;
 
 namespace EssentialUIKit.Views.Login
@@ -17,6 +18,7 @@ namespace EssentialUIKit.Views.Login
         public LoginPage()
         {
             this.InitializeComponent();
+            this.BackgroundImageSource = FileImageSource.FromFile("LoginBackground");
         }
 
         private void PasswordToggle(object sender, EventArgs e)

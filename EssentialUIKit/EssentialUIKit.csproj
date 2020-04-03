@@ -46,6 +46,58 @@
     <Compile Remove="Models\ECommerce\Filter.cs" />
     <Compile Remove="Views\AsistenciaPage %28copy%29.xaml.cs" />
     <Compile Remove="Models\ExamenesDS.cs" />
+    <Compile Remove="Views\Chat\ProfilePage.xaml.cs" />
+    <Compile Remove="Views\Chat\Styles.xaml.cs" />
+    <Compile Remove="Views\Chat\ChatMessagePage.xaml.cs" />
+    <Compile Remove="Views\Chat\ContactProfilePage.xaml.cs" />
+    <Compile Remove="Views\Chat\RecentChatPage.xaml.cs" />
+    <Compile Remove="Views\Chat\Templates\IncomingImageTemplate.xaml.cs" />
+    <Compile Remove="Views\Chat\Templates\IncomingTextTemplate.xaml.cs" />
+    <Compile Remove="Views\Chat\Templates\OutgoingImageTemplate.xaml.cs" />
+    <Compile Remove="Views\Chat\Templates\OutgoingTextTemplate.xaml.cs" />
+    <Compile Remove="Views\Chat\Selectors\MessageDataTemplateSelector.cs" />
+    <Compile Remove="Views\Navigation\AlbumPage.xaml.cs" />
+    <Compile Remove="Views\Navigation\Styles.xaml.cs" />
+    <Compile Remove="Views\Navigation\NavigationTileCardPage.xaml.cs" />
+    <Compile Remove="Views\Navigation\NavigationListCardPage.xaml.cs" />
+    <Compile Remove="Views\Feedback\ReviewPage.xaml.cs" />
+    <Compile Remove="Views\Feedback\Styles.xaml.cs" />
+    <Compile Remove="Views\Feedback\FeedbackPage.xaml.cs" />
+    <Compile Remove="Views\Feedback\FeedbackDetailPage.xaml.cs" />
+    <Compile Remove="Views\Feedback\Templates\MobileView.xaml.cs" />
+    <Compile Remove="Views\Feedback\Templates\TabletView.xaml.cs" />
+    <Compile Remove="Views\Feedback\Templates\FeedbackTemplate.xaml.cs" />
+    <Compile Remove="Views\ContactUs\Styles.xaml.cs" />
+    <Compile Remove="Views\ContactUs\ContactUsPage.xaml.cs" />
+    <Compile Remove="Views\Article\ProfilePage.xaml.cs" />
+    <Compile Remove="Views\Article\ArticleTilePage.xaml.cs" />
+    <Compile Remove="Views\Article\ArticleListPage.xaml.cs" />
+    <Compile Remove="Views\Article\Styles.xaml.cs" />
+    <Compile Remove="Views\Article\MasterPage.xaml.cs" />
+    <Compile Remove="Views\Article\BookmarksPage.xaml.cs" />
+    <Compile Remove="Views\OnBoarding\OnBoardingGradientPage.xaml.cs" />
+    <Compile Remove="Views\OnBoarding\Styles.xaml.cs" />
+    <Compile Remove="ViewModels\About\AboutUsViewModel.cs" />
+    <Compile Remove="ViewModels\Ecommerce\CheckoutPageViewModel.cs" />
+    <Compile Remove="ViewModels\Ecommerce\DetailPageViewModel.cs" />
+    <Compile Remove="ViewModels\Ecommerce\CartPageViewModel.cs" />
+    <Compile Remove="ViewModels\Ecommerce\CategoryPageViewModel.cs" />
+    <Compile Remove="ViewModels\Ecommerce\CatalogPageViewModel.cs" />
+    <Compile Remove="ViewModels\Ecommerce\CheckoutOriginalPageViewModel.cs" />
+    <Compile Remove="ViewModels\Chat\ProfileViewModel.cs" />
+    <Compile Remove="ViewModels\Chat\RecentChatViewModel.cs" />
+    <Compile Remove="ViewModels\Chat\ContactProfileViewModel.cs" />
+    <Compile Remove="ViewModels\Chat\ChatMessageViewModel.cs" />
+    <Compile Remove="ViewModels\Feedback\ReviewPageViewModel.cs" />
+    <Compile Remove="ViewModels\Feedback\DetailViewModel.cs" />
+    <Compile Remove="ViewModels\Feedback\FeedbackViewModel.cs" />
+    <Compile Remove="ViewModels\ContactUs\ContactUsViewModel.cs" />
+    <Compile Remove="ViewModels\Article\ProfileViewModel.cs" />
+    <Compile Remove="ViewModels\Article\MasterPageViewModel.cs" />
+    <Compile Remove="ViewModels\Article\BookmarksViewModel.cs" />
+    <Compile Remove="ViewModels\Navigation\NavigationListViewModel.cs" />
+    <Compile Remove="ViewModels\Navigation\AlbumViewModel.cs" />
+    <Compile Remove="ViewModels\Navigation\NavigationTileViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Icons\asistencia.png" />
@@ -53,6 +105,39 @@
     <None Remove="Icons\error.png" />
     <None Remove="Icons\financiero.png" />
     <None Remove="Icons\rendimiento.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\AboutUs\AboutUsSimplePage.xaml" />
+    <EmbeddedResource Remove="Views\Chat\ChatMessagePage.xaml" />
+    <EmbeddedResource Remove="Views\Chat\Styles.xaml" />
+    <EmbeddedResource Remove="Views\Chat\ProfilePage.xaml" />
+    <EmbeddedResource Remove="Views\Chat\ContactProfilePage.xaml" />
+    <EmbeddedResource Remove="Views\Chat\RecentChatPage.xaml" />
+    <EmbeddedResource Remove="Views\Chat\Templates\OutgoingTextTemplate.xaml" />
+    <EmbeddedResource Remove="Views\Chat\Templates\IncomingTextTemplate.xaml" />
+    <EmbeddedResource Remove="Views\Chat\Templates\IncomingImageTemplate.xaml" />
+    <EmbeddedResource Remove="Views\Chat\Templates\OutgoingImageTemplate.xaml" />
+    <EmbeddedResource Remove="Views\Navigation\AlbumPage.xaml" />
+    <EmbeddedResource Remove="Views\Navigation\Styles.xaml" />
+    <EmbeddedResource Remove="Views\Navigation\NavigationListCardPage.xaml" />
+    <EmbeddedResource Remove="Views\Navigation\NavigationTileCardPage.xaml" />
+    <EmbeddedResource Remove="Views\Feedback\FeedbackPage.xaml" />
+    <EmbeddedResource Remove="Views\Feedback\ReviewPage.xaml" />
+    <EmbeddedResource Remove="Views\Feedback\Styles.xaml" />
+    <EmbeddedResource Remove="Views\Feedback\FeedbackDetailPage.xaml" />
+    <EmbeddedResource Remove="Views\Feedback\Templates\MobileView.xaml" />
+    <EmbeddedResource Remove="Views\Feedback\Templates\TabletView.xaml" />
+    <EmbeddedResource Remove="Views\Feedback\Templates\FeedbackTemplate.xaml" />
+    <EmbeddedResource Remove="Views\ContactUs\ContactUsPage.xaml" />
+    <EmbeddedResource Remove="Views\ContactUs\Styles.xaml" />
+    <EmbeddedResource Remove="Views\Article\MasterPage.xaml" />
+    <EmbeddedResource Remove="Views\Article\BookmarksPage.xaml" />
+    <EmbeddedResource Remove="Views\Article\Styles.xaml" />
+    <EmbeddedResource Remove="Views\Article\ProfilePage.xaml" />
+    <EmbeddedResource Remove="Views\Article\ArticleTilePage.xaml" />
+    <EmbeddedResource Remove="Views\Article\ArticleListPage.xaml" />
+    <EmbeddedResource Remove="Views\OnBoarding\OnBoardingGradientPage.xaml" />
+    <EmbeddedResource Remove="Views\OnBoarding\Styles.xaml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icons\about-us.png" />
@@ -68,50 +153,14 @@
     <Compile Update="Views\Styles.xaml.cs">
         <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
-    <Compile Update="Views\AboutUs\AboutUsWithCardsPage.xaml.cs">
-      <DependentUpon>AboutUsWithCardsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\AboutUs\AboutUsWithParallaxScrollPage.xaml.cs">
-      <DependentUpon>AboutUsWithParallaxScrollPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\Article\ArticleListPage.xaml.cs">
-      <DependentUpon>ArticleListPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\Article\ArticleTilePage.xaml.cs">
-      <DependentUpon>ArticleTilePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\Article\BookmarksPage.xaml.cs">
-      <DependentUpon>BookmarksPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\Article\MasterPage.xaml.cs">
-      <DependentUpon>MasterPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\Article\ProfilePage.xaml.cs">
-      <DependentUpon>ProfilePage.xaml</DependentUpon>
-    </Compile>
     <Compile Update="Views\HorarioPage.xaml.cs">
       <DependentUpon>HorarioPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\Chat\ContactProfilePage.xaml.cs">
-      <DependentUpon>ContactProfilePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\Chat\ProfilePage.xaml.cs">
-      <DependentUpon>ProfilePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\ContactUs\Styles.xaml.cs">
-      <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\Chat\RecentChatPage.xaml.cs">
-      <DependentUpon>RecentChatPage.xaml</DependentUpon>
-    </Compile>
     <Compile Update="Views\ErrorAndEmpty\Styles.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
-    </Compile>
-    <Compile Update="Views\Feedback\FeedbackPage.xaml.cs">
-      <DependentUpon>FeedbackPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\Login\SimpleEmailEntry.xaml.cs">
       <DependentUpon>SimpleEmailEntry.xaml</DependentUpon>
@@ -131,9 +180,6 @@
     <Compile Update="Views\Login\SimpleSignUpPage.xaml.cs">
       <DependentUpon>SimpleSignUpPage.xaml</DependentUpon>
     </Compile>
-	<Compile Update="Views\OnBoarding\Styles.xaml.cs">
-      <DependentUpon>%(Filename)</DependentUpon>
-    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -146,9 +192,6 @@
     <None Update="Themes\LightTheme.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Views\AboutUs\AboutUsSimplePage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
     <None Update="Views\AboutUs\AboutUsWithCardsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
@@ -158,64 +201,16 @@
     <None Update="Views\AboutUs\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Views\Article\ArticleListPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\Article\ArticleTilePage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\Article\BookmarksPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\Article\MasterPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\Article\ProfilePage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\Article\Styles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
     <None Update="Views\Chat\ChatMessage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Views\Chat\ChatMessagePage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
     <None Update="Views\Chat\ChatPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\Chat\ContactProfilePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Views\Chat\IncomingTextTemplate.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Views\Chat\OutgoingTextTemplate.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\Chat\ProfilePage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\Chat\RecentChatPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\Chat\Templates\IncomingImageTemplate.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\Chat\Templates\IncomingTextTemplate.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\Chat\Templates\OutgoingImageTemplate.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\Chat\Templates\OutgoingTextTemplate.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\ContactUs\ContactUsPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\ContactUs\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Views\ErrorAndEmpty\EmptyCartPage.xaml">
@@ -254,27 +249,6 @@
     <None Update="Views\ErrorAndEmpty\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Views\Feedback\FeedbackDetailPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\Feedback\FeedbackPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\Feedback\ReviewPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\Feedback\Styles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\Feedback\Templates\FeedbackTemplate.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\Feedback\Templates\MobileView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\Feedback\Templates\TabletView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
     <None Update="Views\Login\EmailEntry.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
@@ -306,24 +280,6 @@
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Views\Login\Styles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\Navigation\AlbumPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\Navigation\NavigationListCardPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\Navigation\NavigationTileCardPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\Navigation\Styles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\OnBoarding\OnBoardingGradientPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\OnBoarding\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
   </ItemGroup>

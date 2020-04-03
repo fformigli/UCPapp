@@ -4,9 +4,9 @@
     {
         //URLS PRINCIPALES
         //private const string UrlService = "http://192.168.1.137:8480/hubcolumbia/rest/mobileService/";
-        //private const string UrlService = "https://www.columbia.edu.py/acadweb/phone/mobileService/";
+        private const string UrlService = "https://www.columbia.edu.py/acadweb/phone/mobileService/";
         //public const string UrlService = "http://192.168.1.180:8080/acadweb/phone/mobileService/";
-        private const string UrlService = "http://192.168.0.7:8080/acadweb/phone/mobileService/";
+        //private const string UrlService = "http://192.168.0.7:8080/acadweb/phone/mobileService/";
         public const string UrlLogin = "https://www.columbia.edu.py/ajax/loginMobile.php";
 
         public const string PerfilServiceGet = UrlService + "perfil?cedula={0}";
