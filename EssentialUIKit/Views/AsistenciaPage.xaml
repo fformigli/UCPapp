@@ -1,9 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage
     x:Class="EssentialUIKit.Views.AsistenciaPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:controls="clr-namespace:EssentialUIKit.Controls"
     xmlns:viewModels="clr-namespace:EssentialUIKit.ViewModels;assembly=EssentialUIKit"
     BackgroundColor="{DynamicResource Gray-F4}"
     NavigationPage.HasNavigationBar="False"
@@ -27,163 +26,188 @@
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
-        <CollectionView ItemsSource="{Binding Materias}">
-            <CollectionView.ItemTemplate>
+        <ListView
+            x:Name="listView"
+            Grid.Row="0"
+            SeparatorVisibility="Default"
+            HasUnevenRows="True"
+            SelectionMode="None"
+            ItemsSource="{Binding Materias}">
+            <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Margin="5">
-                    <Frame 
-                        CornerRadius="10" 
-                        Margin="10"
-                        Padding="10"
-                        >
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                                <Grid> <!--Cabecera -->
+                    <ViewCell>
+                        <Grid Margin="0">
+                            <Frame 
+                                CornerRadius="10" 
+                                Margin="10"
+                                Padding="10"
+                                >
+                                <Grid>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
-                                    <Grid Grid.Row="0">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="20" />
-                                            <ColumnDefinition Width="*" />
-                                        </Grid.ColumnDefinitions>
-                                        <Image
-                                            Source="iconMateria.png" 
-                                        />       
-                                        <Label 
-                                            Grid.Column="1"
-                                            Text="{Binding NombreMateria}"
-                                            Style="{StaticResource HeaderMateria}"/>
-                                         />
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="20" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Image
+                                                Source="iconMateria.png" 
+                                            />
+                                            <Label 
+                                                Grid.Column="1"
+                                                Text="{Binding NombreMateria}"
+                                                Style="{StaticResource HeaderMateria}"
+                                            />
+                                        </Grid>
+                                    </Grid>
+                                    <Grid Grid.Row="1">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label 
+                                                Grid.Column="0"
+                                                TextColor="#005a43"
+                                                FontSize="Micro"
+                                                Text="Porcentaje Asistencia:"
+                                                HorizontalTextAlignment="Start"
+                                            />
+                                            <Label 
+                                                Grid.Column="1"
+                                                TextColor="#005a43"
+                                                FontSize="Micro"
+                                                Text="Cant. Ausencias:"
+                                                HorizontalTextAlignment="End"
+                                            />
+                                        </Grid>
+                                    </Grid>
+                                    <Grid Grid.Row="2">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label 
+                                                Grid.Column="0"
+                                                TextColor="#005a43"
+                                                FontSize="Micro"
+                                                FontFamily="{StaticResource Montserrat-Bold}"
+                                                Text="{Binding PorcentajeDeAsistencia, StringFormat='{0}%'}"
+                                                HorizontalTextAlignment="Start"
+                                            />
+                                            <Grid 
+                                                Grid.Column="1" 
+                                                HeightRequest="1"
+                                                BackgroundColor="Gray"
+                                                VerticalOptions="CenterAndExpand"
+                                            />
+                                            <Label 
+                                                Grid.Column="2"
+                                                TextColor="#005a43"
+                                                FontSize="Micro"
+                                                FontFamily="{StaticResource Montserrat-Bold}"
+                                                Text="{Binding CantidadDeAusencias}"
+                                                HorizontalTextAlignment="End"
+                                            />
+                                        </Grid>
+                                    </Grid>
+                                    <Grid Grid.Row="3">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label 
+                                                Grid.Column="0"
+                                                TextColor="#005a43"
+                                                FontSize="Micro"
+                                                Text="Año:"
+                                                HorizontalTextAlignment="Start"
+                                            />
+                                            <Label 
+                                                Grid.Column="1"
+                                                TextColor="#005a43"
+                                                FontSize="Micro"
+                                                Text="Curso:"
+                                                HorizontalTextAlignment="End"
+                                            />
+                                        </Grid>
+                                    </Grid>
+                                    <Grid Grid.Row="4">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label 
+                                                Grid.Column="0"
+                                                TextColor="#005a43"
+                                                FontSize="Micro"
+                                                FontFamily="{StaticResource Montserrat-Bold}"
+                                                Text="{Binding Anho, StringFormat='Año: {0}'}"
+                                                HorizontalTextAlignment="Start"
+                                            />
+                                            <Grid 
+                                                Grid.Column="1" 
+                                                HeightRequest="1"
+                                                BackgroundColor="Gray"
+                                                VerticalOptions="CenterAndExpand"
+                                            />
+                                            <Label 
+                                                Grid.Column="2"
+                                                TextColor="#005a43"
+                                                FontSize="Micro"
+                                                FontFamily="{StaticResource Montserrat-Bold}"
+                                                HorizontalTextAlignment="End"
+                                            >
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <FormattedString.Spans>
+                                                            <Span Text="{Binding Curso, StringFormat='{0}°'}"/>
+                                                            <Span Text="{Binding Turno, StringFormat=' {0}-'}"/>
+                                                            <Span Text="{Binding Seccion, StringFormat='{0}'}"/>
+                                                        </FormattedString.Spans>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                        </Grid>
                                     </Grid>
                                 </Grid>
-                                <Grid Grid.Row="1">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
-                                    </Grid.RowDefinitions>
-                                    <Grid Grid.Row="0">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="*" />
-                                        </Grid.ColumnDefinitions>
-                                        <Label 
-                                            Grid.Column="0"
-                                            TextColor="#005a43"
-                                            FontSize="Micro"
-                                            Text="Porcentaje Asistencia:"
-                                            HorizontalTextAlignment="Start"
-                                        />
-                                        <Label 
-                                            Grid.Column="1"
-                                            TextColor="#005a43"
-                                            FontSize="Micro"
-                                            Text="Cant. Ausencias:"
-                                            HorizontalTextAlignment="End"
-                                        />
-                                    </Grid>
-                                </Grid>
-                                <Grid Grid.Row="2">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
-                                    </Grid.RowDefinitions>
-                                    <Grid Grid.Row="0">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="*" />
-                                        </Grid.ColumnDefinitions>
-                                        <Label 
-                                            Grid.Column="0"
-                                            TextColor="#005a43"
-                                            FontSize="Micro"
-                                            FontFamily="{StaticResource Montserrat-Bold}"
-                                            Text="{Binding PorcentajeDeAsistencia, StringFormat='{0}%'}"
-                                            HorizontalTextAlignment="Start"
-                                        />
-                                        <Label 
-                                            Grid.Column="1"
-                                            TextColor="#005a43"
-                                            FontSize="Micro"
-                                            FontFamily="{StaticResource Montserrat-Bold}"
-                                            Text="{Binding CantidadDeAusencias}"
-                                            HorizontalTextAlignment="End"
-                                        />
-                                    </Grid>
-                                </Grid>
-                                <Grid Grid.Row="3">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
-                                    </Grid.RowDefinitions>
-                                    <Grid Grid.Row="0">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="*" />
-                                        </Grid.ColumnDefinitions>
-                                        <Label 
-                                            Grid.Column="0"
-                                            TextColor="#005a43"
-                                            FontSize="Micro"
-                                            Text="Año:"
-                                            HorizontalTextAlignment="Start"
-                                        />
-                                        <Label 
-                                            Grid.Column="1"
-                                            TextColor="#005a43"
-                                            FontSize="Micro"
-                                            Text="Curso:"
-                                            HorizontalTextAlignment="End"
-                                        />
-                                    </Grid>
-                                </Grid>
-                                <Grid Grid.Row="4">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
-                                    </Grid.RowDefinitions>
-                                    <Grid Grid.Row="0">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="*" />
-                                        </Grid.ColumnDefinitions>
-                                        <Label 
-                                            Grid.Column="0"
-                                            TextColor="#005a43"
-                                            FontSize="Micro"
-                                            FontFamily="{StaticResource Montserrat-Bold}"
-                                            Text="{Binding Anho, StringFormat='Año: {0}'}"
-                                            HorizontalTextAlignment="Start"
-                                        />
-                                        <Label 
-                                            Grid.Column="1"
-                                            TextColor="#005a43"
-                                            FontSize="Micro"
-                                            FontFamily="{StaticResource Montserrat-Bold}"
-                                            HorizontalTextAlignment="End">
-                                            <Label.FormattedText>
-                                            <FormattedString>
-                                                <FormattedString.Spans>
-                                                    <Span Text="{Binding Curso, StringFormat='{0}°'}"/>
-                                                    <Span Text="{Binding Turno, StringFormat=' {0}-'}"/>
-                                                    <Span Text="{Binding Seccion, StringFormat='{0}'}"/>
-                                                </FormattedString.Spans>
-                                            </FormattedString>
-                                            </Label.FormattedText>
-                                        </Label>
-                                    </Grid>
-                                </Grid>
-                            </Grid>
-                    </Frame>
-                    </Grid>
+                            </Frame>
+                        </Grid>
+                    </ViewCell>
                 </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+            </ListView.ItemTemplate>
+        </ListView>
     </ContentPage.Content>
 </ContentPage>
