@@ -1,9 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage
     x:Class="EssentialUIKit.Views.CalificacionPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:controls="clr-namespace:EssentialUIKit.Controls"
     xmlns:viewModels="clr-namespace:EssentialUIKit.ViewModels;assembly=EssentialUIKit"
     BackgroundColor="{DynamicResource Gray-F4}"
     NavigationPage.HasNavigationBar="False"
@@ -11,6 +10,21 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
+            <Style x:Key="HeaderMateria" TargetType="Label">
+                <Setter Property="TextColor" Value="#003225" />
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="FontFamily" Value="{StaticResource Montserrat-Bold}"/>
+            </Style>
+            <Style x:Key="TitlelMateria" TargetType="Label">
+                <Setter Property="TextColor" Value="#005a43" />
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="FontFamily" Value="{StaticResource Montserrat-Bold}"/>
+            </Style>
+            <Style x:Key="DetailMateria" TargetType="Label">
+                <Setter Property="TextColor" Value="#003225" />
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="FontFamily" Value="{StaticResource Montserrat-Bold}"/>
+            </Style>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
@@ -22,120 +36,137 @@
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
-        <StackLayout Spacing="5">
-
-            <!--  Title View  -->
-            <controls:TitleView Title="Calificaciones" BackgroundColor="{DynamicResource Gray-White}"/>
-
-            <ContentPresenter />
-
-            <ListView
-                x:Name="listView"
-                Grid.Row="0"
-                Grid.RowSpan="2"
-                SeparatorVisibility="Default"
-                HasUnevenRows="True"
-                SelectionMode="None"
-                ItemsSource="{Binding Materias}">
-                <ListView.Header>
-                    <Grid
-                        Padding="10,0,20,0">
-                        <Label
-                            Grid.Column="0"
-                            FontSize="Large"
-                            FontAttributes="Bold"
-                            Text="Materia:"/>
-                        <Label 
-                            Grid.Column="1"
-                            HorizontalTextAlignment="Center"
-                            FontSize="Large"
-                            FontAttributes="Bold"
-                            Text="Nota:"/>
-                    </Grid>
-                </ListView.Header>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid RowSpacing="8" Margin="3,16,16,8" Padding="10,0,0,0">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="1*" />
-                                    <RowDefinition Height="1*" />
-                                </Grid.RowDefinitions>
-
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="2*" />
-                                    <ColumnDefinition Width="2*" />
-                                    <ColumnDefinition Width="1*" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="2*" />
-                                    <ColumnDefinition Width="3*"/>
-                                </Grid.ColumnDefinitions>
-
-                                <Label
-                                    Grid.ColumnSpan="4"
-                                    FontSize="Large"
-                                    FontAttributes="Bold"
-                                    TextColor="{DynamicResource PrimaryColor}"
-                                    Text="{Binding NombreMateria}" />
-                                <!--<Label
-                                    Grid.Column="4"
-                                    FontSize="Medium"
-                                    HorizontalTextAlignment="Center"
-                                    FontAttributes="Bold"
-                                    TextColor="{DynamicResource PrimaryColor}"
-                                    Text="Cant. Ausencias" />-->
-
-                                <Label
-                                    Grid.Row="1"
-                                    Grid.Column="0"
-                                    Text="{Binding Anho, StringFormat='Año: {0}'}" />
-
-                                <Label
-                                    Grid.Row="1"
-                                    Grid.Column="1"
-                                    Grid.ColumnSpan="2">
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <FormattedString.Spans>
-                                                <Span Text="{Binding Curso, StringFormat='{0}°'}"/>
-                                                <Span Text="{Binding Turno, StringFormat=' {0} -'}"/>
-                                                <Span Text="{Binding Seccion, StringFormat=' {0}'}"/>
-                                            </FormattedString.Spans>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-
-                                <!--<Label
-                                    Grid.Row="1"
-                                    Grid.Column="4"
-                                    HorizontalTextAlignment="Center"
-                                    Text="{Binding CantidadDeAusencias}" />-->
-
-
-
-                                <Label
-                                    Grid.Row="0"
-                                    Grid.Column="4"
-                                    Grid.ColumnSpan="2"
-                                    FontSize="Title"
-                                    FontAttributes="Bold"
-                                    VerticalTextAlignment="Center"
-                                    HorizontalTextAlignment="End"
-                                    TextColor="{DynamicResource PrimaryColor}">
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <FormattedString.Spans>
-                                                <Span Text="{Binding UltimaNota.NotaPlanilla, StringFormat='{0}'}"/>
-                                                <Span Text="{Binding UltimaNota.NombreLargo, StringFormat=' ({0})'}"/>
-                                            </FormattedString.Spans>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+        <ListView
+            x:Name="listView"
+            Grid.Row="0"
+            SeparatorVisibility="Default"
+            HasUnevenRows="True"
+            SelectionMode="None"
+            ItemsSource="{Binding Materias}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Margin="0">
+                            <Frame 
+                                Margin="10"
+                                Padding="10"
+                                >
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Row="0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="20" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Image
+                                                Source="iconMateria.png" 
+                                            />
+                                            <Label 
+                                                Grid.Column="1"
+                                                Style="{StaticResource DetailMateria}"
+                                                Text="{Binding NombreMateria}"
+                                                HorizontalTextAlignment="Start"
+                                            />
+                                        </Grid>
+                                    </Grid>
+                                    <Grid Grid.Row="1">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label 
+                                                Grid.Column="0"
+                                                Style="{StaticResource TitlelMateria}"
+                                                Text="Año:"
+                                                HorizontalTextAlignment="Start"
+                                            />
+                                            <Label 
+                                                Grid.Column="1"
+                                                Style="{StaticResource TitlelMateria}"
+                                                Text="Curso:"
+                                                HorizontalTextAlignment="Center"
+                                            />
+                                            <Label 
+                                                Grid.Column="2"
+                                                Style="{StaticResource TitlelMateria}"
+                                                Text="Nota:"
+                                                HorizontalTextAlignment="End"
+                                            />
+                                        </Grid>
+                                    </Grid>
+                                    <Grid Grid.Row="2">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label 
+                                                Grid.Column="0"
+                                                Style="{StaticResource DetailMateria}"
+                                                Text="{Binding Anho, StringFormat='{0}'}"
+                                                HorizontalTextAlignment="Start"
+                                            />
+                                            <Label 
+                                                Grid.Column="1"
+                                                Style="{StaticResource DetailMateria}"
+                                                HorizontalTextAlignment="Center"
+                                            >
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <FormattedString.Spans>
+                                                            <Span Text="{Binding Curso, StringFormat='{0}°'}"/>
+                                                            <Span Text="{Binding Turno, StringFormat=' {0}-'}"/>
+                                                            <Span Text="{Binding Seccion, StringFormat='{0}'}"/>
+                                                        </FormattedString.Spans>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                            <Label 
+                                                Grid.Column="2"
+                                                Style="{StaticResource DetailMateria}"
+                                                Text="Nota:"
+                                                HorizontalTextAlignment="End"
+                                            >
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <FormattedString.Spans>
+                                                            <Span Text="{Binding UltimaNota.NotaPlanilla, StringFormat='{0}'}"/>
+                                                            <Span Text="{Binding UltimaNota.NombreLargo, StringFormat=' ({0})'}"/>
+                                                        </FormattedString.Spans>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </ContentPage.Content>
 </ContentPage>

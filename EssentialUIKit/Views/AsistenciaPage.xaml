@@ -12,7 +12,17 @@
         <ResourceDictionary>
             <Style x:Key="HeaderMateria" TargetType="Label">
                 <Setter Property="TextColor" Value="#003225" />
-                <Setter Property="FontSize" Value="Micro"/>
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="FontFamily" Value="{StaticResource Montserrat-Bold}"/>
+            </Style>
+            <Style x:Key="TitlelMateria" TargetType="Label">
+                <Setter Property="TextColor" Value="#005a43" />
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="FontFamily" Value="{StaticResource Montserrat-Bold}"/>
+            </Style>
+            <Style x:Key="DetailMateria" TargetType="Label">
+                <Setter Property="TextColor" Value="#003225" />
+                <Setter Property="FontSize" Value="Small"/>
                 <Setter Property="FontFamily" Value="{StaticResource Montserrat-Bold}"/>
             </Style>
             <ResourceDictionary.MergedDictionaries>
@@ -56,11 +66,12 @@
                                         </Grid.RowDefinitions>
                                         <Grid Grid.Row="0">
                                             <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="20" />
+                                                <ColumnDefinition Width="35" />
                                                 <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
                                             <Image
-                                                Source="iconMateria.png" 
+                                                Source="iconMateria.png"
+                                                HeightRequest="48"
                                             />
                                             <Label 
                                                 Grid.Column="1"
@@ -81,15 +92,13 @@
                                             </Grid.ColumnDefinitions>
                                             <Label 
                                                 Grid.Column="0"
-                                                TextColor="#005a43"
-                                                FontSize="Micro"
+                                                Style="{StaticResource TitlelMateria}"
                                                 Text="Porcentaje Asistencia:"
                                                 HorizontalTextAlignment="Start"
                                             />
                                             <Label 
                                                 Grid.Column="1"
-                                                TextColor="#005a43"
-                                                FontSize="Micro"
+                                                Style="{StaticResource TitlelMateria}"
                                                 Text="Cant. Ausencias:"
                                                 HorizontalTextAlignment="End"
                                             />
@@ -109,23 +118,19 @@
                                             </Grid.ColumnDefinitions>
                                             <Label 
                                                 Grid.Column="0"
-                                                TextColor="#005a43"
-                                                FontSize="Micro"
-                                                FontFamily="{StaticResource Montserrat-Bold}"
+                                                Style="{StaticResource DetailMateria}"
                                                 Text="{Binding PorcentajeDeAsistencia, StringFormat='{0}%'}"
                                                 HorizontalTextAlignment="Start"
                                             />
                                             <Grid 
                                                 Grid.Column="1" 
-                                                HeightRequest="1"
+                                                HeightRequest="2"
                                                 BackgroundColor="Gray"
                                                 VerticalOptions="CenterAndExpand"
                                             />
                                             <Label 
                                                 Grid.Column="2"
-                                                TextColor="#005a43"
-                                                FontSize="Micro"
-                                                FontFamily="{StaticResource Montserrat-Bold}"
+                                                Style="{StaticResource DetailMateria}"
                                                 Text="{Binding CantidadDeAusencias}"
                                                 HorizontalTextAlignment="End"
                                             />
@@ -143,15 +148,13 @@
                                             </Grid.ColumnDefinitions>
                                             <Label 
                                                 Grid.Column="0"
-                                                TextColor="#005a43"
-                                                FontSize="Micro"
+                                                Style="{StaticResource TitlelMateria}"
                                                 Text="Año:"
                                                 HorizontalTextAlignment="Start"
                                             />
                                             <Label 
                                                 Grid.Column="1"
-                                                TextColor="#005a43"
-                                                FontSize="Micro"
+                                                Style="{StaticResource TitlelMateria}"
                                                 Text="Curso:"
                                                 HorizontalTextAlignment="End"
                                             />
@@ -171,23 +174,19 @@
                                             </Grid.ColumnDefinitions>
                                             <Label 
                                                 Grid.Column="0"
-                                                TextColor="#005a43"
-                                                FontSize="Micro"
-                                                FontFamily="{StaticResource Montserrat-Bold}"
+                                                Style="{StaticResource DetailMateria}"
                                                 Text="{Binding Anho, StringFormat='Año: {0}'}"
                                                 HorizontalTextAlignment="Start"
                                             />
                                             <Grid 
                                                 Grid.Column="1" 
-                                                HeightRequest="1"
+                                                HeightRequest="2"
                                                 BackgroundColor="Gray"
                                                 VerticalOptions="CenterAndExpand"
                                             />
                                             <Label 
                                                 Grid.Column="2"
-                                                TextColor="#005a43"
-                                                FontSize="Micro"
-                                                FontFamily="{StaticResource Montserrat-Bold}"
+                                                Style="{StaticResource DetailMateria}"
                                                 HorizontalTextAlignment="End"
                                             >
                                                 <Label.FormattedText>
