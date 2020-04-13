@@ -18,7 +18,6 @@ namespace EssentialUIKit.Views.Login
         public LoginPage()
         {
             this.InitializeComponent();
-            this.BackgroundImageSource = FileImageSource.FromFile("LoginBackground");
         }
 
         private void PasswordToggle(object sender, EventArgs e)

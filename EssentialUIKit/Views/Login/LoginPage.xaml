@@ -32,6 +32,12 @@
     <ContentPage.Content>
         <Grid>
 
+            <Image
+                Aspect="AspectFill"
+                Source="LoginBackground.png"
+                RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" />
+
             <gradient:SfGradientView
                 Opacity="0.46"
                 Style="{StaticResource SfGradientViewStyle}" />
@@ -144,7 +150,7 @@
 
                         <buttons:SfButton
                             Grid.Column="1"
-                            Grid.Row="5"
+                            Grid.Row="6"
                             ShowIcon="True"
                             ImageSource="ic_action_remove_red_eye.png"
                             HorizontalOptions="End"

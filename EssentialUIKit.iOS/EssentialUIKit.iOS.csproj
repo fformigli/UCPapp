@@ -127,6 +127,8 @@
     <BundleResource Include="Resources\Montserrat-Medium.ttf" />
     <BundleResource Include="Resources\Montserrat-Regular.ttf" />
     <BundleResource Include="Resources\Montserrat-SemiBold.ttf" />
+    <BundleResource Include="Resources\ic_account_box.png" />
+    <BundleResource Include="Resources\atention.png" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -482,6 +484,12 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\HeaderIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\ic_action_remove_red_eye.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="..\build\tools\Syncfusion.CodeAnalysis.StyleCop\tools\StyleCop.MsBuild.targets" Condition="Exists('..\build\tools\Syncfusion.CodeAnalysis.StyleCop\tools\StyleCop.MsBuild.targets')" />
   <Target Name="_VerifyBuildSignature" />
