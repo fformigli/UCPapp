@@ -11,12 +11,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="Views\Chat\Styles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="CarouselView.FormsPlugin" Version="4.4.2" />
     <PackageReference Include="Microsoft.Net.Http" Version="2.2.29" />
     <PackageReference Include="NETStandard.Library" Version="2.0.3" />
@@ -109,7 +103,6 @@
   <ItemGroup>
     <EmbeddedResource Remove="Views\AboutUs\AboutUsSimplePage.xaml" />
     <EmbeddedResource Remove="Views\Chat\ChatMessagePage.xaml" />
-    <EmbeddedResource Remove="Views\Chat\Styles.xaml" />
     <EmbeddedResource Remove="Views\Chat\ProfilePage.xaml" />
     <EmbeddedResource Remove="Views\Chat\ContactProfilePage.xaml" />
     <EmbeddedResource Remove="Views\Chat\RecentChatPage.xaml" />

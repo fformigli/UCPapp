@@ -1,32 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "E:\\work\\UCPapp\\EssentialUIKit\\EssentialUIKit.csproj": {}
+    "/Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit/EssentialUIKit.csproj": {}
   },
   "projects": {
-    "E:\\work\\UCPapp\\EssentialUIKit\\EssentialUIKit.csproj": {
+    "/Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit/EssentialUIKit.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\work\\UCPapp\\EssentialUIKit\\EssentialUIKit.csproj",
+        "projectUniqueName": "/Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit/EssentialUIKit.csproj",
         "projectName": "EssentialUIKit",
-        "projectPath": "E:\\work\\UCPapp\\EssentialUIKit\\EssentialUIKit.csproj",
-        "packagesPath": "C:\\Users\\Desarrollo\\.nuget\\packages\\",
-        "outputPath": "E:\\work\\UCPapp\\EssentialUIKit\\obj\\",
+        "projectPath": "/Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit/EssentialUIKit.csproj",
+        "packagesPath": "/Users/desarrollo/.nuget/packages/",
+        "outputPath": "/Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "E:\\work\\UCPapp\\NuGet.Config",
-          "C:\\Users\\Desarrollo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "/Users/desarrollo/Documents/dev/UCPapp/NuGet.Config",
+          "/Users/desarrollo/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

@@ -213,12 +213,6 @@ E:/work/UCPapp/EssentialUIKit.iOS/obj/iPhoneSimulator/Debug/EssentialUIKit.iOS.p
 /Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit.iOS/bin/iPhoneSimulator/Debug/zh-Hant/Xamarin.Forms.Platform.iOS.resources.dll
 /Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit.iOS/bin/iPhoneSimulator/Debug/EssentialUIKit.dll
 /Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit.iOS/bin/iPhoneSimulator/Debug/EssentialUIKit.pdb
-/Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit.iOS/obj/iPhoneSimulator/Debug/EssentialUIKit.iOS.csprojAssemblyReference.cache
-/Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit.iOS/obj/iPhoneSimulator/Debug/EssentialUIKit.iOS.csproj.CoreCompileInputs.cache
-/Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit.iOS/obj/iPhoneSimulator/Debug/XamlC.stamp
-/Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit.iOS/obj/iPhoneSimulator/Debug/EssentialUIKit.iOS.csproj.CopyComplete
-/Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit.iOS/obj/iPhoneSimulator/Debug/EssentialUIKit.iOS.exe
-/Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit.iOS/obj/iPhoneSimulator/Debug/EssentialUIKit.iOS.pdb
 /Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-13.4/ibtool/_BundleResourceWithLogicalName.items
 /Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-13.4/actool/_PartialAppManifest.items
 /Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-13.4/actool/_BundleResourceWithLogicalName.items
@@ -249,3 +243,9 @@ E:/work/UCPapp/EssentialUIKit.iOS/obj/iPhoneSimulator/Debug/EssentialUIKit.iOS.p
 /Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-13.4/optimized/PlaceHolderRectangle.png
 /Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-13.4/optimized/HeaderIcon.png
 /Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 11-13.4/optimized/
+/Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit.iOS/obj/iPhoneSimulator/Debug/EssentialUIKit.iOS.csprojAssemblyReference.cache
+/Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit.iOS/obj/iPhoneSimulator/Debug/EssentialUIKit.iOS.csproj.CoreCompileInputs.cache
+/Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit.iOS/obj/iPhoneSimulator/Debug/XamlC.stamp
+/Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit.iOS/obj/iPhoneSimulator/Debug/EssentialUIKit.iOS.csproj.CopyComplete
+/Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit.iOS/obj/iPhoneSimulator/Debug/EssentialUIKit.iOS.exe
+/Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit.iOS/obj/iPhoneSimulator/Debug/EssentialUIKit.iOS.pdb
