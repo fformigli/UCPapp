@@ -32,7 +32,7 @@
 		<string>Montserrat-SemiBold.ttf</string>
 	</array>
 	<key>MinimumOSVersion</key>
-	<string>9.0</string>
+	<string>10.3</string>
 	<key>CFBundleDisplayName</key>
 	<string>Xamarin UI Kit</string>
 	<key>CFBundleIdentifier</key>

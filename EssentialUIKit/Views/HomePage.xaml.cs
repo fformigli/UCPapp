@@ -19,7 +19,7 @@ namespace EssentialUIKit.Views
 
         private const double TranslatedHeaderX = 15;
 
-        private const double TranslatedHeaderY = 10;
+        private const double TranslatedHeaderY = 0;
 
         private bool loaded;
 

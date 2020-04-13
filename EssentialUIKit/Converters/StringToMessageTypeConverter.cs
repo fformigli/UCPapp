@@ -1,5 +1,4 @@
-﻿using EssentialUIKit.Models.Chat;
-using System;
+﻿using System;
 using System.Globalization;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
@@ -30,39 +29,39 @@ namespace EssentialUIKit.Converters
                 case "Contact":
                     messageType = "John Deo Sync";
                     break;
-                case "Text":
-                    var message = bindingContext != null ? ((ChatDetail)bindingContext).Message : string.Empty;
-                    messageType = message;
-                    break;
+                //case "Text":
+                //    var message = bindingContext != null ? ((ChatDetail)bindingContext).Message : string.Empty;
+                //    messageType = message;
+                //    break;
                 default:
                     messageType = (string)value;
                     break;
             }
 
-            if (!string.IsNullOrEmpty((string)messageType) && ((ChatDetail)bindingContext).NotificationType == "New")
-            {
-                Application.Current.Resources.TryGetValue("Gray-56", out var returnColor);
+            //if (!string.IsNullOrEmpty((string)messageType) && ((ChatDetail)bindingContext).NotificationType == "New")
+            //{
+            //    Application.Current.Resources.TryGetValue("Gray-56", out var returnColor);
 
-                ((Label)parameter).FontFamily = Device.RuntimePlatform == Device.Android
-                    ? "Montserrat-SemiBold.ttf#Montserrat-SemiBold"
-                    : Device.RuntimePlatform == Device.iOS
-                        ? "Montserrat-SemiBold"
-                        : "Assets/Montserrat-SemiBold.ttf#Montserrat-SemiBold";
+            //    ((Label)parameter).FontFamily = Device.RuntimePlatform == Device.Android
+            //        ? "Montserrat-SemiBold.ttf#Montserrat-SemiBold"
+            //        : Device.RuntimePlatform == Device.iOS
+            //            ? "Montserrat-SemiBold"
+            //            : "Assets/Montserrat-SemiBold.ttf#Montserrat-SemiBold";
 
-                ((Label)parameter).TextColor = (Color)returnColor;
-            }
-            else
-            {
-                Application.Current.Resources.TryGetValue("Gray-AB", out var returnColor);
+            //    ((Label)parameter).TextColor = (Color)returnColor;
+            //}
+            //else
+            //{
+            //    Application.Current.Resources.TryGetValue("Gray-AB", out var returnColor);
 
-                ((Label)parameter).FontFamily = Device.RuntimePlatform == Device.Android
-                    ? "Montserrat-Medium.ttf#Montserrat-Medium"
-                    : Device.RuntimePlatform == Device.iOS
-                        ? "Montserrat-Medium"
-                        : "Assets/Montserrat-Medium.ttf#Montserrat-Medium";
+            //    ((Label)parameter).FontFamily = Device.RuntimePlatform == Device.Android
+            //        ? "Montserrat-Medium.ttf#Montserrat-Medium"
+            //        : Device.RuntimePlatform == Device.iOS
+            //            ? "Montserrat-Medium"
+            //            : "Assets/Montserrat-Medium.ttf#Montserrat-Medium";
 
-                ((Label)parameter).TextColor = (Color)returnColor;
-            }
+            //    ((Label)parameter).TextColor = (Color)returnColor;
+            //}
 
             return messageType;
         }
