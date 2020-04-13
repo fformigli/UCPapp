@@ -1,9 +1,8 @@
-﻿using EssentialUIKit.AppLayout.Views;
+﻿using EssentialUIKit.Views;
 using EssentialUIKit.DataService;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
-using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -18,8 +17,8 @@ namespace EssentialUIKit.ViewModels.Login
     {
         #region Fields
 
-        private string username = "lgvaldez";
-        private string password = "sblm";
+        private string username = "lmarengo";
+        private string password = "agpl";
 
 
         #endregion
@@ -35,6 +34,7 @@ namespace EssentialUIKit.ViewModels.Login
             this.SignUpCommand = new Command(this.SignUpClicked);
             this.ForgotPasswordCommand = new Command(this.ForgotPasswordClicked);
             this.SocialMediaLoginCommand = new Command(this.SocialLoggedIn);
+            RestAPI.Clear();
         }
 
         #endregion
@@ -119,6 +119,7 @@ namespace EssentialUIKit.ViewModels.Login
         private void LoginClicked(object obj)
         {
             var status = RestAPI.AuthenticateLDAP(username, password);
+
             if (status.Equals("ok"))
                 App.Current.MainPage = new NavigationPage(new HomePage());
             else if (status.Equals("fail"))
@@ -157,7 +158,7 @@ namespace EssentialUIKit.ViewModels.Login
             // Do something
         }
 
-                protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

@@ -1,5 +1,4 @@
-﻿using EssentialUIKit.Models.ECommerce;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
 namespace EssentialUIKit.Helpers
@@ -33,16 +32,16 @@ namespace EssentialUIKit.Helpers
         /// <param name="container">The bindable object</param>
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
         {
-            var payment = item as Payment;
+            //var payment = item as Payment;
 
-            if (payment.CardNumber != null)
-            {
-                return this.CardTemplate;
-            }
-            else
-            {
+            //if (payment.CardNumber != null)
+            //{
+            //    return this.CardTemplate;
+            //}
+            //else
+            //{
                 return this.CommonTemplate;
-            }
+            //}
         }
 
         #endregion

@@ -1,4 +1,5 @@
 ﻿using Android.App;
+using Android.Content.PM;
 using Android.OS;
 using Android.Views;
 
@@ -6,6 +7,7 @@ namespace EssentialUIKit.Droid
 {
     [Activity(Theme = "@style/Theme.Splash",
               MainLauncher = true,
+              ScreenOrientation = ScreenOrientation.Portrait,
               NoHistory = true, Icon = "@drawable/Icon")]
     public class SplashScreenActivity : Activity
     {

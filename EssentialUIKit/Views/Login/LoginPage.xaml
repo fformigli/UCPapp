@@ -11,9 +11,6 @@
     xmlns:gradient="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
     xmlns:local="clr-namespace:EssentialUIKit.Views.Login"
     xmlns:viewModel="clr-namespace:EssentialUIKit.ViewModels.Login"
-    BackgroundImageSource="{core:OnPlatformOrientationStringValue Default=LoginBackground.png,
-                                                                  iOSPhoneLandscape=LoginBackground-Landscape.png,
-                                                                  iOSTabletLandscape=LoginBackground-Landscape.png}"
     NavigationPage.HasNavigationBar="False"
     Shell.NavBarIsVisible="False"
     Style="{StaticResource ContentPageStyle}">
@@ -34,7 +31,16 @@
 
     <ContentPage.Content>
         <Grid>
-            <gradient:SfGradientView Style="{StaticResource SfGradientViewStyle}" />
+
+            <Image
+                Aspect="AspectFill"
+                Source="LoginBackground.png"
+                RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}" />
+
+            <gradient:SfGradientView
+                Opacity="0.46"
+                Style="{StaticResource SfGradientViewStyle}" />
 
             <ScrollView HorizontalOptions="Center">
                 <ScrollView.VerticalOptions>
@@ -144,12 +150,13 @@
 
                         <buttons:SfButton
                             Grid.Column="1"
-                            Grid.Row="5"
+                            Grid.Row="6"
                             ShowIcon="True"
                             ImageSource="ic_action_remove_red_eye.png"
                             HorizontalOptions="End"
                             BackgroundColor="Transparent"
                             Opacity="0.7"
+                            CornerRadius="20"
                             Clicked="PasswordToggle"
                             />
 

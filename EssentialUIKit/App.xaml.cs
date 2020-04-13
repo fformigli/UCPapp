@@ -3,7 +3,7 @@ using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 #endif
-using EssentialUIKit.AppLayout.Views;
+using EssentialUIKit.Views;
 using EssentialUIKit.Views.Login;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;

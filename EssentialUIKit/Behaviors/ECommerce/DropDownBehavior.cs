@@ -1,5 +1,4 @@
-﻿using EssentialUIKit.Models.ECommerce;
-using Syncfusion.XForms.ComboBox;
+﻿using Syncfusion.XForms.ComboBox;
 using System;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -81,6 +80,7 @@ namespace EssentialUIKit.Behaviors.ECommerce
         /// <param name="e">The selection changed event args</param>
         private void SelectionChanged(object sender, Syncfusion.XForms.ComboBox.SelectionChangedEventArgs e)
         {
+            /*
             int totalQuantity;
             int.TryParse(e.Value.ToString(), out totalQuantity);
             ((sender as SfComboBox).BindingContext as Product).TotalQuantity = totalQuantity;
@@ -93,6 +93,7 @@ namespace EssentialUIKit.Behaviors.ECommerce
                 if (this.Command.CanExecute(((sender as SfComboBox).BindingContext as Product)))
                     this.Command.Execute(((sender as SfComboBox).BindingContext as Product));
             }
+            */
 
             isCheckboxLoaded = true;
         }

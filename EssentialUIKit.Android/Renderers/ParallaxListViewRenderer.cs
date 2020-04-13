@@ -1,5 +1,5 @@
 ﻿using Android.Content;
-using EssentialUIKit.AppLayout.Controls;
+using EssentialUIKit.Controls;
 using EssentialUIKit.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;

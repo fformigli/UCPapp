@@ -10,7 +10,7 @@
         "projectUniqueName": "E:\\work\\UCPapp\\EssentialUIKit\\EssentialUIKit.csproj",
         "projectName": "EssentialUIKit",
         "projectPath": "E:\\work\\UCPapp\\EssentialUIKit\\EssentialUIKit.csproj",
-        "packagesPath": "C:\\Users\\Fernando Formigli\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Desarrollo\\.nuget\\packages\\",
         "outputPath": "E:\\work\\UCPapp\\EssentialUIKit\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
@@ -18,7 +18,7 @@
         ],
         "configFilePaths": [
           "E:\\work\\UCPapp\\NuGet.Config",
-          "C:\\Users\\Fernando Formigli\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Desarrollo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -150,7 +150,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.200/RuntimeIdentifierGraph.json"
         }
       }
     }

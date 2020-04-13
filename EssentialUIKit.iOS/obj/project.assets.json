@@ -3763,7 +3763,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Fernando Formigli\\.nuget\\packages\\": {},
+    "C:\\Users\\Desarrollo\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
@@ -3772,7 +3772,7 @@
       "projectUniqueName": "E:\\work\\UCPapp\\EssentialUIKit.iOS\\EssentialUIKit.iOS.csproj",
       "projectName": "EssentialUIKit.iOS",
       "projectPath": "E:\\work\\UCPapp\\EssentialUIKit.iOS\\EssentialUIKit.iOS.csproj",
-      "packagesPath": "C:\\Users\\Fernando Formigli\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\Desarrollo\\.nuget\\packages\\",
       "outputPath": "E:\\work\\UCPapp\\EssentialUIKit.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
@@ -3781,7 +3781,7 @@
       ],
       "configFilePaths": [
         "E:\\work\\UCPapp\\NuGet.Config",
-        "C:\\Users\\Fernando Formigli\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Desarrollo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],

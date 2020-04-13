@@ -1,5 +1,4 @@
-﻿using EssentialUIKit.Models.Chat;
-using Syncfusion.ListView.XForms;
+﻿using Syncfusion.ListView.XForms;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
@@ -67,7 +66,7 @@ namespace EssentialUIKit.Controls
             if (newValue != null && listView.DataSource != null)
             {
                 listView.searchText = (string)newValue;
-                listView.DataSource.Filter = listView.FilterContacts;
+//                listView.DataSource.Filter = listView.FilterContacts;
                 listView.DataSource.RefreshFilter();
             }
 
@@ -89,29 +88,6 @@ namespace EssentialUIKit.Controls
             await Task.Delay(100);
             this.SelectionBackgroundColor = Color.Transparent;
             SelectedItems.Clear();
-        }
-
-        /// <summary>
-        /// Filtering the list view items based on the search text.
-        /// </summary>
-        /// <param name="obj">The list view item</param>
-        /// <returns>Returns the filtered item</returns>
-        private bool FilterContacts(object obj)
-        {
-            var taskInfo = obj as ChatDetail;
-            var message = taskInfo.Message;
-            if (taskInfo.MessageType != "Text")
-            {
-                message = string.Empty;
-            }
-
-            if (this.searchText == null || taskInfo.SenderName == null || message == null)
-            {
-                return true;
-            }
-
-            return taskInfo.SenderName.ToLower().Contains(this.searchText.ToLower())
-                   || message.ToLower().Contains(this.searchText.ToLower());
         }
 
         #endregion

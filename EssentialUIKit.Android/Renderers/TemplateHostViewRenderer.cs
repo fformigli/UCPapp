@@ -1,6 +1,6 @@
 ﻿using Android.Content;
 using Android.Widget;
-using EssentialUIKit.AppLayout.Controls;
+using EssentialUIKit.Controls;
 using EssentialUIKit.Droid.Renderers;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
