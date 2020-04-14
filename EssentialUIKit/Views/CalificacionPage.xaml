@@ -25,6 +25,10 @@
                 <Setter Property="FontSize" Value="Small"/>
                 <Setter Property="FontFamily" Value="{StaticResource Montserrat-Bold}"/>
             </Style>
+            <Style TargetType="Grid">
+                <Setter Property="ColumnSpacing" Value="0" />
+                <Setter Property="RowSpacing" Value="1" />
+            </Style>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
@@ -39,7 +43,7 @@
         <ListView
             x:Name="listView"
             Grid.Row="0"
-            SeparatorVisibility="Default"
+            SeparatorVisibility="None"
             HasUnevenRows="True"
             SelectionMode="None"
             ItemsSource="{Binding Materias}">
@@ -48,32 +52,33 @@
                     <ViewCell>
                         <Grid Margin="0">
                             <Frame 
+                                CornerRadius="10" 
                                 Margin="10"
                                 Padding="10"
                                 >
                                 <Grid>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="Auto" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <Grid Grid.Row="0">
+                                    <Grid Grid.Row="0" Margin="0" Padding="0">
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="auto" />
                                             <RowDefinition Height="Auto" />
                                         </Grid.RowDefinitions>
                                         <Grid Grid.Row="0">
                                             <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="20" />
+                                                <ColumnDefinition Width="35" />
                                                 <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
                                             <Image
-                                                Source="iconMateria.png" 
+                                                Source="iconMateria.png"
+                                                HeightRequest="48"
                                             />
                                             <Label 
                                                 Grid.Column="1"
-                                                Style="{StaticResource DetailMateria}"
+                                                Style="{StaticResource HeaderMateria}"
                                                 Text="{Binding NombreMateria}"
                                                 HorizontalTextAlignment="Start"
                                             />
@@ -81,8 +86,6 @@
                                     </Grid>
                                     <Grid Grid.Row="1">
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto" />
-                                            <RowDefinition Height="Auto" />
                                             <RowDefinition Height="Auto" />
                                         </Grid.RowDefinitions>
                                         <Grid Grid.Row="0">
@@ -113,8 +116,6 @@
                                     </Grid>
                                     <Grid Grid.Row="2">
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto" />
-                                            <RowDefinition Height="Auto" />
                                             <RowDefinition Height="Auto" />
                                         </Grid.RowDefinitions>
                                         <Grid Grid.Row="0">

@@ -25,6 +25,10 @@
                 <Setter Property="FontSize" Value="Small"/>
                 <Setter Property="FontFamily" Value="{StaticResource Montserrat-Bold}"/>
             </Style>
+            <Style TargetType="Grid">
+                <Setter Property="ColumnSpacing" Value="0" />
+                <Setter Property="RowSpacing" Value="1" />
+            </Style>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
@@ -39,7 +43,7 @@
         <ListView
             x:Name="listView"
             Grid.Row="0"
-            SeparatorVisibility="Default"
+            SeparatorVisibility="None"
             HasUnevenRows="True"
             SelectionMode="None"
             ItemsSource="{Binding Materias}">
@@ -52,16 +56,15 @@
                                 Margin="10"
                                 Padding="10"
                                 >
-                                <Grid>
+                                <Grid Grid.Row="0" Margin="0" Padding="0">
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="Auto" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
                                     <Grid>
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto" />
                                             <RowDefinition Height="Auto" />
                                         </Grid.RowDefinitions>
                                         <Grid Grid.Row="0">
@@ -83,12 +86,11 @@
                                     <Grid Grid.Row="1">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto" />
-                                            <RowDefinition Height="Auto" />
                                         </Grid.RowDefinitions>
                                         <Grid Grid.Row="0">
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="*" />
-                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="80" />
                                             </Grid.ColumnDefinitions>
                                             <Label 
                                                 Grid.Column="0"
@@ -99,15 +101,13 @@
                                             <Label 
                                                 Grid.Column="1"
                                                 Style="{StaticResource TitlelMateria}"
-                                                Text="Cant. Ausencias:"
+                                                Text="Ausencias:"
                                                 HorizontalTextAlignment="End"
                                             />
                                         </Grid>
                                     </Grid>
                                     <Grid Grid.Row="2">
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto" />
-                                            <RowDefinition Height="Auto" />
                                             <RowDefinition Height="Auto" />
                                         </Grid.RowDefinitions>
                                         <Grid Grid.Row="0">
@@ -139,10 +139,12 @@
                                     <Grid Grid.Row="3">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto" />
-                                            <RowDefinition Height="Auto" />
                                         </Grid.RowDefinitions>
                                         <Grid Grid.Row="0">
                                             <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
                                                 <ColumnDefinition Width="*" />
                                                 <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
@@ -154,38 +156,24 @@
                                             />
                                             <Label 
                                                 Grid.Column="1"
-                                                Style="{StaticResource TitlelMateria}"
-                                                Text="Curso:"
-                                                HorizontalTextAlignment="End"
-                                            />
-                                        </Grid>
-                                    </Grid>
-                                    <Grid Grid.Row="4">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto" />
-                                            <RowDefinition Height="Auto" />
-                                            <RowDefinition Height="Auto" />
-                                        </Grid.RowDefinitions>
-                                        <Grid Grid.Row="0">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="*" />
-                                                <ColumnDefinition Width="*" />
-                                                <ColumnDefinition Width="*" />
-                                            </Grid.ColumnDefinitions>
-                                            <Label 
-                                                Grid.Column="0"
                                                 Style="{StaticResource DetailMateria}"
-                                                Text="{Binding Anho, StringFormat='Año: {0}'}"
+                                                Text="{Binding Anho, StringFormat='{0}'}"
                                                 HorizontalTextAlignment="Start"
                                             />
                                             <Grid 
-                                                Grid.Column="1" 
+                                                Grid.Column="2" 
                                                 HeightRequest="2"
                                                 BackgroundColor="Gray"
                                                 VerticalOptions="CenterAndExpand"
                                             />
                                             <Label 
-                                                Grid.Column="2"
+                                                Grid.Column="3"
+                                                Style="{StaticResource TitlelMateria}"
+                                                Text="Curso:"
+                                                HorizontalTextAlignment="End"
+                                            />
+                                            <Label 
+                                                Grid.Column="4"
                                                 Style="{StaticResource DetailMateria}"
                                                 HorizontalTextAlignment="End"
                                             >
