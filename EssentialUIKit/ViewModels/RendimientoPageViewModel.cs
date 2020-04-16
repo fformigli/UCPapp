@@ -41,7 +41,7 @@ namespace EssentialUIKit.ViewModels
                 api.GetAsistencia();
                 api.GetCalificacion();
 
-                PromedioActualT = "Promedio Actual: " + RestAPI.RendimientoResponse.PromedioActual;
+                PromedioActualT = "" + RestAPI.RendimientoResponse.PromedioActual;
                 DeudaTotalT = string.Format("{0:c}",RestAPI.RendimientoResponse.DeudaTotal)+ " pendiente de pago";
                 AsistenciaCount = RestAPI.AsistenciaResponse.MateriaAsistenciaAlumno.Count;
 
