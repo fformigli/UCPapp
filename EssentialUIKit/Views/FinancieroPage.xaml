@@ -1,9 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage
     x:Class="EssentialUIKit.Views.FinancieroPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:controls="clr-namespace:EssentialUIKit.Controls"
     xmlns:viewModels="clr-namespace:EssentialUIKit.ViewModels;assembly=EssentialUIKit"
     BackgroundColor="{DynamicResource Gray-F4}"
     NavigationPage.HasNavigationBar="False"
@@ -11,6 +10,30 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
+            <Style x:Key="HeaderMateria" TargetType="Label">
+                <Setter Property="TextColor" Value="#003225" />
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="FontFamily" Value="{StaticResource Montserrat-Bold}"/>
+            </Style>
+            <Style x:Key="TitlelMateria" TargetType="Label">
+                <Setter Property="TextColor" Value="#005a43" />
+                <Setter Property="FontSize" Value="13"/>
+                <Setter Property="FontFamily" Value="{StaticResource Montserrat-Bold}"/>
+            </Style>
+            <Style x:Key="DetailMateria" TargetType="Label">
+                <Setter Property="TextColor" Value="#003225" />
+                <Setter Property="FontSize" Value="13"/>
+                <Setter Property="FontFamily" Value="{StaticResource Montserrat-Bold}"/>
+            </Style>
+            <Style x:Key="SubMateria" TargetType="Label">
+                <Setter Property="TextColor" Value="Gray" />
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="FontFamily" Value="{StaticResource Montserrat-Bold}"/>
+            </Style>
+            <Style TargetType="Grid">
+                <Setter Property="ColumnSpacing" Value="0" />
+                <Setter Property="RowSpacing" Value="1" />
+            </Style>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
@@ -20,110 +43,171 @@
     <ContentPage.BindingContext>
         <viewModels:FinancieroPageViewModel />
     </ContentPage.BindingContext>
-   
+
     <ContentPage.Content>
-        <StackLayout Spacing="5">
-
-            <!--  Title View  -->
-            <controls:TitleView Title="Estado Financiero" BackgroundColor="{DynamicResource Gray-White}"/>
-
-            <ContentPresenter />
-            
-            <ListView
-                x:Name="listView"
-                Grid.Row="0"
-                Grid.RowSpan="2"
-                SeparatorVisibility="Default"
-                HasUnevenRows="True"
-                SelectionMode="None"
-                ItemsSource="{Binding Financieros}">
-                <ListView.Header>
-                    <Grid
-                        Padding="10,0,0,0">
-                        <Label
-                            Grid.Column="0"
-                            FontSize="Large"
-                            FontAttributes="Bold"
-                            Text="Materia:"/>
-                        <Label 
-                            Grid.Column="1"
-                            FontSize="Large"
-                            FontAttributes="Bold"
-                            Text="Det:"/>
-                    </Grid>
-                </ListView.Header>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid RowSpacing="8" Margin="3,16,16,8" Padding="10,0,0,0">
+        <ListView
+            x:Name="listView"
+            Grid.Row="0"
+            SeparatorVisibility="None"
+            HasUnevenRows="True"
+            SelectionMode="None"
+            ItemsSource="{Binding Financieros}"
+        >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame 
+                            CornerRadius="10" 
+                            Margin="10"
+                            Padding="10"
+                         >
+                            <Grid>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="1*" />
-                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="Auto" />
                                 </Grid.RowDefinitions>
-
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="2*" />
-                                    <ColumnDefinition Width="2*" />
-                                    <ColumnDefinition Width="1*" />
                                     <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="2*" />
-                                    <ColumnDefinition Width="3*"/>
                                 </Grid.ColumnDefinitions>
-
-                                <Label
-                                    Grid.ColumnSpan="4"
-                                    FontSize="Large"
-                                    FontAttributes="Bold"
-                                    TextColor="{DynamicResource PrimaryColor}"
-                                    Text="{Binding Arancel}" />
-
-                                <Label
-                                    Grid.Row="0"
-                                    Grid.Column="4">
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <FormattedString.Spans>
-                                                <Span Text="{Binding NroCuota, StringFormat='Cuota {0} de'}"/>
-                                                <Span Text="{Binding CantidadCuotas, StringFormat=' {0}'}"/>
-                                            </FormattedString.Spans>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                                
-
-                                <Label
-                                    Grid.Row="1"
-                                    Grid.Column="0"
-                                    Text="{Binding Asignatura}" />
-
-
-                                <Label
-                                    Grid.Row="1"
-                                    Grid.Column="3"
-                                    HorizontalTextAlignment="Center"
-                                    Text="{Binding Monto}" />
-
-                                <Label
-                                    Grid.Row="1"
-                                    Grid.Column="4"
-                                    HorizontalTextAlignment="Center"
-                                    Text="{Binding Descuento}" />
-
-                                <Label
-                                    Grid.Row="0"
-                                    Grid.RowSpan="2"
-                                    Grid.Column="5"
-                                    FontSize="Title"
-                                    FontAttributes="Bold"
-                                    VerticalTextAlignment="Center"
-                                    HorizontalTextAlignment="End"
-                                    TextColor="{DynamicResource PrimaryColor}"
-                                    Text="{Binding Saldo}" />
+                                <Grid Grid.Row="0" Margin="0" Padding="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label
+                                            Grid.Column="0"
+                                            HorizontalTextAlignment="Start"
+                                            FontSize="Large"
+                                            FontAttributes="Bold"
+                                            TextColor="{DynamicResource PrimaryColor}"
+                                            Text="{Binding Arancel}" 
+                                        />
+                                        <Label
+                                            Grid.Column="1"
+                                            HorizontalTextAlignment="End"
+                                        >
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <FormattedString.Spans>
+                                                        <Span Text="{Binding NroCuota, StringFormat='Cuota {0} de'}"/>
+                                                        <Span Text="{Binding CantidadCuotas, StringFormat=' {0}'}"/>
+                                                    </FormattedString.Spans>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                    </Grid>
+                                </Grid>
+                                <Grid Grid.Row="1" Margin="0,0,0,10" Padding="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label 
+                                            Grid.Column="0"
+                                            Style="{StaticResource SubMateria}"
+                                            HorizontalTextAlignment="Start"
+                                            Text="{Binding Asignatura}"
+                                        />
+                                    </Grid>
+                                </Grid>
+                                <Grid Grid.Row="2" Margin="0" Padding="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label 
+                                        Grid.Column="0"
+                                        Style="{StaticResource DetailMateria}"
+                                        HorizontalTextAlignment="Start"
+                                        Text="Monto:"
+                                    />
+                                    <Grid 
+                                        Grid.Column="1" 
+                                        HeightRequest="2"
+                                         BackgroundColor="Gray"
+                                        VerticalOptions="Center"
+                                        Margin="10,0,10,0"
+                                    />
+                                    <Label 
+                                        Grid.Column="2"
+                                        Style="{StaticResource DetailMateria}"
+                                        HorizontalTextAlignment="End"
+                                        Text="{Binding Monto}"
+                                    />
+                                </Grid>
+                                <Grid Grid.Row="3" Margin="0" Padding="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label 
+                                        Grid.Column="0"
+                                        Style="{StaticResource DetailMateria}"
+                                        HorizontalTextAlignment="Start"
+                                        Text="Descuento:"
+                                    />
+                                    <Grid 
+                                        Grid.Column="1" 
+                                        HeightRequest="2"
+                                         BackgroundColor="Gray"
+                                        VerticalOptions="Center"
+                                        Margin="10,0,10,0"
+                                    />
+                                    <Label 
+                                        Grid.Column="2"
+                                        Style="{StaticResource DetailMateria}"
+                                        HorizontalTextAlignment="End"
+                                        Text="{Binding Descuento}"
+                                    />
+                                </Grid>
+                                <Grid Grid.Row="4" Margin="0" Padding="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label 
+                                        Grid.Column="0"
+                                        Style="{StaticResource DetailMateria}"
+                                        HorizontalTextAlignment="Start"
+                                        Text="Saldo:"
+                                    />
+                                    <Grid 
+                                        Grid.Column="1" 
+                                        HeightRequest="2"
+                                         BackgroundColor="Gray"
+                                        VerticalOptions="Center"
+                                        Margin="10,0,10,0"
+                                    />
+                                    <Label 
+                                        Grid.Column="2"
+                                        Style="{StaticResource DetailMateria}"
+                                        HorizontalTextAlignment="End"
+                                        Text="{Binding Saldo}"
+                                    />
+                                </Grid>
                             </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </ContentPage.Content>
 </ContentPage>
