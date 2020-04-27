@@ -12,6 +12,7 @@ namespace EssentialUIKit.Models
     public class Horario
     {
         public string Descripcion_aula { get; set; }
+        public string CustomDia { get { return Dia.Substring(0, 2); } }
         public string Dia { get; set; }
         public string Edificio { get; set; }
         public string Fecha { get; set; }

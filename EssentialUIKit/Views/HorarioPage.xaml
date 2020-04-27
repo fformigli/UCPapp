@@ -25,6 +25,11 @@
                 <Setter Property="FontSize" Value="13"/>
                 <Setter Property="FontFamily" Value="{StaticResource Montserrat-Bold}"/>
             </Style>
+            <Style x:Key="IconDia" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="11"/>
+                <Setter Property="FontFamily" Value="{StaticResource Montserrat-Bold}"/>
+            </Style>
             <Style TargetType="Grid">
                 <Setter Property="ColumnSpacing" Value="0" />
                 <Setter Property="RowSpacing" Value="0" />
@@ -147,17 +152,19 @@
                                     <RowDefinition Height="Auto" />
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="45" />
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
-                                <Label 
-                                Grid.Column="0" 
-                                Text="{Binding Dia}" 
-                                Style="{StaticResource DetailMateria}"
-                                HorizontalTextAlignment="Start"
-                            />
+                                <Frame CornerRadius="20" Padding="8" BackgroundColor="#007153" WidthRequest="35" Margin="10,-5,0,0">
+                                    <Label 
+                                        Grid.Column="0" 
+                                        Text="{Binding CustomDia}"
+                                        Style="{StaticResource IconDia}"
+                                        HorizontalTextAlignment="Center"
+                                    />
+                                </Frame>
                                 <Label 
                                 Grid.Column="1"
                                 Style="{StaticResource DetailMateria}"
