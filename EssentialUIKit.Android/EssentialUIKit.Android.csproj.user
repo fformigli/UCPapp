@@ -1,8 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
+<<<<<<< HEAD
     <SelectedDevice>1440_2560</SelectedDevice>
     <DefaultDevice>1440_2560</DefaultDevice>
+=======
+    <SelectedDevice>HUAWEI BLA-L09</SelectedDevice>
+    <DefaultDevice>nexus_7_pie_9_0_-_api_28</DefaultDevice>
+>>>>>>> devIOS
     <AndroidDesignerPreferredTheme>Theme.AppCompat.Light.NoActionBar</AndroidDesignerPreferredTheme>
     <AndroidDesignerPreferredDevice>Nexus 4</AndroidDesignerPreferredDevice>
   </PropertyGroup>

@@ -16,9 +16,18 @@ namespace EssentialUIKit.iOS
 
             var pageView = e.NewElement as TemplateHostView;
 
-            var nativePage = this.GetNativeView(pageView.Template, pageView);
+            var nativePage = this.GetNativeView(pageView?.Template, pageView);
 
-            this.SetNativeControl((nativePage as UIViewController).View);
+            //this.SetNativeControl((nativePage as UIViewController).View);
+
+            if (nativePage != null)
+            {
+                this.SetNativeControl((nativePage as UIViewController).View);
+            }
+            else
+            {
+                this.SetNativeControl(new UITextView() { Text = "There is no loaded page" });
+            }
         }
 
         private static Page GetPage(VisualElement element)
