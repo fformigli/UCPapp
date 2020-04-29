@@ -8,3 +8,6 @@ EssentialUIKit.IOS/obj
 EssentialUIKit.IOS/bin
 .DS_Store
 EssentialUIKit/.DS_Store
+EssentialUIKit.Android.csproj.user
+EssentialUIKit.iOS.csproj.user
+EssentialUIKit.csproj.user
