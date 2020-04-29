@@ -3763,33 +3763,40 @@
     ]
   },
   "packageFolders": {
-    "/Users/desarrollo/.nuget/packages/": {}
+    "C:\\Users\\Fernando Formigli\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit.iOS/EssentialUIKit.iOS.csproj",
+      "projectUniqueName": "E:\\work\\UCPapp\\EssentialUIKit.iOS\\EssentialUIKit.iOS.csproj",
       "projectName": "EssentialUIKit.iOS",
-      "projectPath": "/Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit.iOS/EssentialUIKit.iOS.csproj",
-      "packagesPath": "/Users/desarrollo/.nuget/packages/",
-      "outputPath": "/Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit.iOS/obj/",
+      "projectPath": "E:\\work\\UCPapp\\EssentialUIKit.iOS\\EssentialUIKit.iOS.csproj",
+      "packagesPath": "C:\\Users\\Fernando Formigli\\.nuget\\packages\\",
+      "outputPath": "E:\\work\\UCPapp\\EssentialUIKit.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "/Users/desarrollo/Documents/dev/UCPapp/NuGet.Config",
-        "/Users/desarrollo/.config/NuGet/NuGet.Config"
+        "E:\\work\\UCPapp\\NuGet.Config",
+        "C:\\Users\\Fernando Formigli\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "xamarinios10"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "/Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit/EssentialUIKit.csproj": {
-              "projectPath": "/Users/desarrollo/Documents/dev/UCPapp/EssentialUIKit/EssentialUIKit.csproj"
+            "E:\\work\\UCPapp\\EssentialUIKit\\EssentialUIKit.csproj": {
+              "projectPath": "E:\\work\\UCPapp\\EssentialUIKit\\EssentialUIKit.csproj"
             }
           }
         }

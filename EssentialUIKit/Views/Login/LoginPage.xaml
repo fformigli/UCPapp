@@ -149,8 +149,8 @@
                         </border:SfBorder>
 
                         <buttons:SfButton
+                            Grid.Row="5"
                             Grid.Column="1"
-                            Grid.Row="6"
                             ShowIcon="True"
                             ImageSource="ic_action_remove_red_eye.png"
                             HorizontalOptions="End"
