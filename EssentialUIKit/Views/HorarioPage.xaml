@@ -154,8 +154,6 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="45" />
                                     <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
                                 <Frame CornerRadius="20" Padding="8" BackgroundColor="#007153" WidthRequest="35" Margin="10,-5,0,0">
                                     <Label 
@@ -166,26 +164,7 @@
                                     />
                                 </Frame>
                                 <Label 
-                                Grid.Column="1"
-                                Style="{StaticResource DetailMateria}"
-                                HorizontalTextAlignment="Center"
-                            >
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <FormattedString.Spans>
-                                                <Span Text="{Binding Nombre_aula, StringFormat='{0}'}"/>
-                                            </FormattedString.Spans>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                                <Label 
-                                Grid.Column="2" 
-                                Text="{Binding Edificio}" 
-                                Style="{StaticResource DetailMateria}"
-                                HorizontalTextAlignment="Center"
-                            />
-                                <Label 
-                                    Grid.Column="3"
+                                    Grid.Column="1"
                                     Style="{StaticResource DetailMateria}"
                                     HorizontalTextAlignment="End">
                                     <Label.FormattedText>

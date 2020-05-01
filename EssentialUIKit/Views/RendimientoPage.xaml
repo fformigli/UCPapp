@@ -204,8 +204,8 @@
                                     <RowDefinition Height="*" />
                                 </Grid.RowDefinitions>
                                 <Label Text="Estado financiero" TextColor="#212121" FontSize="18" VerticalTextAlignment="Center" Grid.Row="0"/>
-                                <Label Text="Deuda Total:" TextColor="#777777" FontSize="14" Margin="25,0,105,0" VerticalTextAlignment="Center" Grid.Row="1"/>
-                                <Label Text="700.500 Gs." TextColor="#212121" FontSize="19" Margin="0,0,0,0" HorizontalTextAlignment="End" Grid.Row="1"/>
+                                <Label Text="Deuda Total:" TextColor="#777777" FontSize="14" Margin="25,0,130,0" VerticalTextAlignment="Center" Grid.Row="1"/>
+                                <Label Text="{Binding DeudaTotalT, StringFormat='{0} Gs.'}" TextColor="#212121" FontSize="19" Margin="0,0,0,0" HorizontalTextAlignment="End" Grid.Row="1"/>
                             </Grid>
                         </Grid>
                         <Grid Grid.Column="2">

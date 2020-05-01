@@ -7,6 +7,10 @@ namespace EssentialUIKit.Models
         public string Arancel { get; set; }
         public string Asignatura { get; set; }
         public string Curso { get; set; }
+        public string CustomMonto { get {
+                return string.Format("{0:0}", Monto); 
+            } 
+        }
         public string Descuento { get; set; }
         public string DescuentoDescripcion { get; set; }
         public string FechaVencimiento { get; set; }

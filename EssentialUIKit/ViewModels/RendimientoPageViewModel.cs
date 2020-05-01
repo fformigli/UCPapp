@@ -42,7 +42,7 @@ namespace EssentialUIKit.ViewModels
                 api.GetCalificacion();
 
                 PromedioActualT = "" + RestAPI.RendimientoResponse.PromedioActual;
-                DeudaTotalT = string.Format("{0:c}",RestAPI.RendimientoResponse.DeudaTotal)+ " pendiente de pago";
+                DeudaTotalT = RestAPI.RendimientoResponse.DeudaTotal.ToString("N0",System.Globalization.CultureInfo.GetCultureInfo("de"));
                 AsistenciaCount = RestAPI.AsistenciaResponse.MateriaAsistenciaAlumno.Count;
 
                 var title = "Examenes Próximos";          
@@ -73,9 +73,9 @@ namespace EssentialUIKit.ViewModels
                     Statistics.Add(new Stats
                     {
                         Title = title,
-                        Materia1 = "",
+                        Materia1 = "Sin examenes próximos.",
                         Materia2 = "",
-                        Fecha1 = "Sin "+title,
+                        Fecha1 = "",
                         Fecha2 = "",
                         Examen1 = "",
                         Examen2 = ""

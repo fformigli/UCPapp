@@ -142,7 +142,7 @@
                                         Grid.Column="2"
                                         Style="{StaticResource DetailMateria}"
                                         HorizontalTextAlignment="End"
-                                        Text="{Binding Monto}"
+                                        Text="{Binding Monto,StringFormat='{0:0}'}"
                                     />
                                 </Grid>
                                 <Grid Grid.Row="3" Margin="0" Padding="0">
@@ -171,7 +171,7 @@
                                         Grid.Column="2"
                                         Style="{StaticResource DetailMateria}"
                                         HorizontalTextAlignment="End"
-                                        Text="{Binding Descuento}"
+                                        Text="{Binding Descuento, StringFormat='{0}'}"
                                     />
                                 </Grid>
                                 <Grid Grid.Row="4" Margin="0" Padding="0">
