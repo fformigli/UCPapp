@@ -143,6 +143,12 @@
     <EmbeddedResource Include="Data\Menu.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\InscripcionPage.xaml.cs">
+      <DependentUpon>InscripcionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ContactoPage.xaml.cs">
+      <DependentUpon>ContactoPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Styles.xaml.cs">
         <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
@@ -176,11 +182,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Views\ContactoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="HomePage.xaml">
       <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Icons\inscripcion.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Themes\LightTheme.xaml">
       <Generator>MSBuild:Compile</Generator>
